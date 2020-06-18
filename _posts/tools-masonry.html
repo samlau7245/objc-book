@@ -1,0 +1,2043 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Masonry · Objective-C</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Sam Lau">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tools-Reactivecocoa.html" />
+    
+    
+    <link rel="prev" href="kit-UIStackView.html" />
+    
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">UI</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="kit-UIStackView.html">
+            
+                <a href="kit-UIStackView.html">
+            
+                    
+                    UIStackView
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Github库</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="tools-masonry.html">
+            
+                <a href="tools-masonry.html">
+            
+                    
+                    Masonry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="tools-Reactivecocoa.html">
+            
+                <a href="tools-Reactivecocoa.html">
+            
+                    
+                    Reactivecocoa
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="objc-dev-notes-section-1.html">
+            
+                <a href="objc-dev-notes-section-1.html">
+            
+                    
+                    开发记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Masonry</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;"><b>1. </b>&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;</a></li><li><span class="title-icon "></span><a href="#&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;"><b>2. </b>&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;</a></li><ul><li><span class="title-icon "></span><a href="#activate&#x3001;deactivate"><b>2.1. </b>activate&#x3001;deactivate</a></li><li><span class="title-icon "></span><a href="#nsarray"><b>2.2. </b>NSArray</a></li><li><span class="title-icon "></span><a href="#greaterthanorequalto&#x3001;lessthanorequalto"><b>2.3. </b>greaterThanOrEqualTo&#x3001;lessThanOrEqualTo</a></li><li><span class="title-icon "></span><a href="#inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset"><b>2.4. </b>inset&#x3001;sizeOffset&#x3001;offset&#x3001;centerOffset</a></li><li><span class="title-icon "></span><a href="#insets"><b>2.5. </b>insets</a></li><li><span class="title-icon "></span><a href="#firstbaseline&#x3001;lastbaseline"><b>2.6. </b>firstBaseline&#x3001;lastBaseline</a></li><li><span class="title-icon "></span><a href="#leading&#x3001;trailing&#x3001;left&#x3001;right"><b>2.7. </b>leading&#x3001;trailing&#x3001;left&#x3001;right</a></li><li><span class="title-icon "></span><a href="#animator"><b>2.8. </b>animator</a></li><ul><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;"><b>2.8.1. </b>&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;</a></li></ul></ul><li><span class="title-icon "></span><a href="#&#x4F18;&#x5148;&#x7EA7;"><b>3. </b>&#x4F18;&#x5148;&#x7EA7;</a></li><li><span class="title-icon "></span><a href="#layoutmarginsguide"><b>4. </b>layoutMarginsGuide</a></li><li><span class="title-icon "></span><a href="#safearealayoutguide"><b>5. </b>safeAreaLayoutGuide</a></li><li><span class="title-icon "></span><a href="#&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;"><b>6. </b>&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;</a></li><ul><li><span class="title-icon "></span><a href="#uiview"><b>6.1. </b>UIView</a></li></ul><li><span class="title-icon "></span><a href="#&#x52A8;&#x753B;"><b>7. </b>&#x52A8;&#x753B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;"><b>7.1. </b>&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x66F4;&#x65B0;&#x52A8;&#x753B;"><b>7.2. </b>&#x66F4;&#x65B0;&#x52A8;&#x753B;</a></li><li><span class="title-icon "></span><a href="#&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;"><b>7.3. </b>&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;</a></li><li><span class="title-icon "></span><a href="#&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;"><b>7.4. </b>&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;</a></li></ul><li><span class="title-icon "></span><a href="#masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><b>8. </b>Masonry &#x4EE3;&#x7801;&#x793A;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;"><b>8.1. </b>&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;</a></li><ul><li><span class="title-icon "></span><a href="#insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;"><b>8.1.1. </b>insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;</a></li></ul><li><span class="title-icon "></span><a href="#&#x7EA6;&#x675F;"><b>8.2. </b>&#x7EA6;&#x675F;</a></li><li><span class="title-icon "></span><a href="#&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;"><b>8.3. </b>&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;</a></li><li><span class="title-icon "></span><a href="#&#x6DF7;&#x5408;&#x5E03;&#x5C40;"><b>8.4. </b>&#x6DF7;&#x5408;&#x5E03;&#x5C40;</a></li><li><span class="title-icon "></span><a href="#masonry-aspect"><b>8.5. </b>Masonry Aspect</a></li><li><span class="title-icon "></span><a href="#&#x7ED9;masonry&#x6DFB;&#x52A0;debug"><b>8.6. </b>&#x7ED9;Masonry&#x6DFB;&#x52A0;Debug</a></li><li><span class="title-icon "></span><a href="#uilabel&#x5E03;&#x5C40;"><b>8.7. </b>UILabel&#x5E03;&#x5C40;</a></li><ul><li><span class="title-icon "></span><a href="#&#x591A;&#x884C;uilabel"><b>8.7.1. </b>&#x591A;&#x884C;UILabel</a></li></ul><li><span class="title-icon "></span><a href="#uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;"><b>8.8. </b>UILabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;</a></li><li><span class="title-icon "></span><a href="#uiscrollview&#x5E03;&#x5C40;"><b>8.9. </b>UIScrollView&#x5E03;&#x5C40;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5782;&#x76F4;&#x65B9;&#x5411;"><b>8.9.1. </b>&#x5782;&#x76F4;&#x65B9;&#x5411;</a></li><li><span class="title-icon "></span><a href="#&#x6C34;&#x5E73;&#x65B9;&#x5411;"><b>8.9.2. </b>&#x6C34;&#x5E73;&#x65B9;&#x5411;</a></li></ul><li><span class="title-icon "></span><a href="#array&#x7684;button&#x6570;&#x7EC4;"><b>8.10. </b>Array&#x7684;Button&#x6570;&#x7EC4;</a></li><li><span class="title-icon "></span><a href="#layoutmargins"><b>8.11. </b>layoutMargins</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;"><b>8.12. </b>&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;?</a></li><li><span class="title-icon "></span><a href="#multipler&#x3001;dividedby"><b>8.13. </b>multipler&#x3001;dividedBy</a></li><li><span class="title-icon "></span><a href="#uitableview"><b>8.14. </b>UITableView</a></li><ul><li><span class="title-icon "></span><a href="#uitableviewdatasource"><b>8.14.1. </b>UITableViewDataSource</a></li><li><span class="title-icon "></span><a href="#mastableviewnormalcell"><b>8.14.2. </b>MASTableViewNormalCell</a></li><li><span class="title-icon "></span><a href="#uitableview_1"><b>8.14.3. </b>UITableView</a></li></ul><li><span class="title-icon "></span><a href="#&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;"><b>8.15. </b>&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;</a></li><li><span class="title-icon "></span><a href="#uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;"><b>8.16. </b>UIButton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;</a></li><li><span class="title-icon "></span><a href="#uitableview&#x4E5D;&#x5BAB;&#x683C;"><b>8.17. </b>UITableView&#x4E5D;&#x5BAB;&#x683C;</a></li><li><span class="title-icon "></span><a href="#uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;"><b>8.18. </b>UITableView &#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8D44;&#x6599;"><b>9. </b>&#x8D44;&#x6599;</a></li></ul></div><a href="#&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="https://gitee.com/samcoding/MasonryExample.git" target="_blank">&#x4ED3;&#x5E93;&#x5730;&#x5740;</a></p>
+<h1 id="&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;"><a name="&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;" class="plugin-anchor" href="#&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5E03;&#x5C40;&#x7684;&#x4F4D;&#x7F6E;</h1>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">DIYCustomView</span></span>
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+    <span class="hljs-comment">// --- Create your views here ---</span>
+    <span class="hljs-keyword">self</span>.button = [[<span class="hljs-built_in">UIButton</span> alloc] init];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+<span class="hljs-comment">// tell UIKit that you are using AutoLayout</span>
++ (<span class="hljs-built_in">BOOL</span>)requiresConstraintBasedLayout {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+<span class="hljs-comment">// this is Apple&apos;s recommended place for adding/updating constraints</span>
+- (<span class="hljs-keyword">void</span>)updateConstraints {
+    <span class="hljs-comment">// --- remake/update constraints here</span>
+    [<span class="hljs-keyword">self</span>.button remakeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(<span class="hljs-keyword">self</span>.buttonSize.width));
+        make.height.equalTo(@(<span class="hljs-keyword">self</span>.buttonSize.height));
+    }];
+    <span class="hljs-comment">//according to apple super should be called at end of method</span>
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+- (<span class="hljs-keyword">void</span>)didTapButton:(<span class="hljs-built_in">UIButton</span> *)button {
+    <span class="hljs-comment">// --- Do your changes ie change variables that affect your layout etc ---</span>
+    <span class="hljs-keyword">self</span>.buttonSize = <span class="hljs-built_in">CGSize</span>(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>);
+    <span class="hljs-comment">// tell constraints they need updating</span>
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+}
+-(<span class="hljs-keyword">void</span>)layoutSubviews{
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;"><a name="&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;" class="plugin-anchor" href="#&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7684;&#x8BB2;&#x89E3;</h1>
+<h2 id="activate&#x3001;deactivate"><a name="activate&#x3001;deactivate" class="plugin-anchor" href="#activate&#x3001;deactivate"><i class="fa fa-link" aria-hidden="true"></i></a><a name="activate&#x3001;deactivate" class="anchor-navigation-ex-anchor" href="#activate&#x3001;deactivate"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. activate&#x3001;deactivate</h2>
+<h2 id="nsarray"><a name="nsarray" class="plugin-anchor" href="#nsarray"><i class="fa fa-link" aria-hidden="true"></i></a><a name="nsarray" class="anchor-navigation-ex-anchor" href="#nsarray"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. NSArray</h2>
+<pre><code class="lang-objc">make.height.equalTo(@[view1.mas_height, view2.mas_height]);
+make.height.equalTo(@[view1, view2]);
+make.left.equalTo(@[view1, @<span class="hljs-number">100</span>, view3.right]);
+</code></pre>
+<h2 id="greaterthanorequalto&#x3001;lessthanorequalto"><a name="greaterthanorequalto&#x3001;lessthanorequalto" class="plugin-anchor" href="#greaterthanorequalto&#x3001;lessthanorequalto"><i class="fa fa-link" aria-hidden="true"></i></a><a name="greaterthanorequalto&#x3001;lessthanorequalto" class="anchor-navigation-ex-anchor" href="#greaterthanorequalto&#x3001;lessthanorequalto"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. greaterThanOrEqualTo&#x3001;lessThanOrEqualTo</h2>
+<ul>
+<li><code>greaterThanOrEqualTo</code> : &#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x3002;</li>
+<li><code>lessThanOrEqualTo</code> : &#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x3002;</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">//width &gt;= 200 &amp;&amp; width &lt;= 400</span>
+make.width.greaterThanOrEqualTo(@<span class="hljs-number">200</span>);
+make.width.lessThanOrEqualTo(@<span class="hljs-number">400</span>);
+
+<span class="hljs-comment">//creates view.left = view.superview.left + 10</span>
+make.left.lessThanOrEqualTo(@<span class="hljs-number">10</span>)
+</code></pre>
+<h2 id="inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset"><a name="inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset" class="plugin-anchor" href="#inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset"><i class="fa fa-link" aria-hidden="true"></i></a><a name="inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset" class="anchor-navigation-ex-anchor" href="#inset&#x3001;sizeoffset&#x3001;offset&#x3001;centeroffset"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. inset&#x3001;sizeOffset&#x3001;offset&#x3001;centerOffset</h2>
+<ul>
+<li>inset&#x548C;insets&#x7684;&#x7528;&#x6CD5;&#x5DEE;&#x4E0D;&#x591A;,&#x503C;&#x4E3A;&#x6B63;&#x6570;&#x65F6;&#x5F80;&#x89C6;&#x56FE;&#x5185;&#x90E8;&#x504F;&#x79FB;&#xFF0C;&#x8D1F;&#x6570;&#x5219;&#x5F80;&#x8FDC;&#x79BB;&#x89C6;&#x56FE;&#x7684;&#x65B9;&#x5411;&#x504F;&#x79FB;&#x3002;</li>
+</ul>
+<pre><code class="lang-objc">make.size.equalTo(view2).sizeOffset(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">-20</span>));
+make.center.equalTo(view2).centerOffset(<span class="hljs-built_in">CGPointMake</span>(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>));
+</code></pre>
+<h2 id="insets"><a name="insets" class="plugin-anchor" href="#insets"><i class="fa fa-link" aria-hidden="true"></i></a><a name="insets" class="anchor-navigation-ex-anchor" href="#insets"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. insets</h2>
+<pre><code class="lang-objc">[<span class="hljs-keyword">self</span>.yellowView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view).with.offset(<span class="hljs-number">10</span>);
+    make.top.equalTo(<span class="hljs-keyword">self</span>.view).with.offset(<span class="hljs-number">10</span>);
+    make.right.equalTo(<span class="hljs-keyword">self</span>.view).with.offset(<span class="hljs-number">-10</span>);
+    make.bottom.equalTo(<span class="hljs-keyword">self</span>.view).with.offset(<span class="hljs-number">-10</span>);
+}];
+
+<span class="hljs-comment">// &#x901A;&#x8FC7;insets&#x7B80;&#x5316;&#x8BBE;&#x7F6E;&#x5185;&#x8FB9;&#x8DDD;&#x7684;&#x65B9;&#x5F0F;</span>
+[<span class="hljs-keyword">self</span>.blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+    <span class="hljs-comment">// &#x4E0B;&#x3001;&#x53F3;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x8D1F;&#x53F7;&#xFF0C;insets&#x65B9;&#x6CD5;&#x4E2D;&#x5DF2;&#x7ECF;&#x4E3A;&#x6211;&#x4EEC;&#x505A;&#x4E86;&#x53D6;&#x53CD;&#x7684;&#x64CD;&#x4F5C;&#x4E86;&#x3002;</span>
+    make.edges.equalTo(<span class="hljs-keyword">self</span>.view).with.insets(<span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>));
+}];
+</code></pre>
+<h2 id="firstbaseline&#x3001;lastbaseline"><a name="firstbaseline&#x3001;lastbaseline" class="plugin-anchor" href="#firstbaseline&#x3001;lastbaseline"><i class="fa fa-link" aria-hidden="true"></i></a><a name="firstbaseline&#x3001;lastbaseline" class="anchor-navigation-ex-anchor" href="#firstbaseline&#x3001;lastbaseline"><i class="fa fa-link" aria-hidden="true"></i></a>2.6. firstBaseline&#x3001;lastBaseline</h2>
+<ul>
+<li><code>firstBaseline</code>&#x3001;<code>lastBaseline</code>&#x5C31;&#x662F;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50;&#x5219;&#x3002;</li>
+</ul>
+<p><img src="../assets/images/masonry/18.png"></p>
+<h2 id="leading&#x3001;trailing&#x3001;left&#x3001;right"><a name="leading&#x3001;trailing&#x3001;left&#x3001;right" class="plugin-anchor" href="#leading&#x3001;trailing&#x3001;left&#x3001;right"><i class="fa fa-link" aria-hidden="true"></i></a><a name="leading&#x3001;trailing&#x3001;left&#x3001;right" class="anchor-navigation-ex-anchor" href="#leading&#x3001;trailing&#x3001;left&#x3001;right"><i class="fa fa-link" aria-hidden="true"></i></a>2.7. leading&#x3001;trailing&#x3001;left&#x3001;right</h2>
+<ul>
+<li><code>leading</code>&#x4E0E;<code>left</code>&#xFF0C;<code>trailing</code>&#x4E0E;<code>right</code> &#x5728;&#x6B63;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x7B49;&#x4EF7;&#x7684;&#x3002;</li>
+</ul>
+<h2 id="animator"><a name="animator" class="plugin-anchor" href="#animator"><i class="fa fa-link" aria-hidden="true"></i></a><a name="animator" class="anchor-navigation-ex-anchor" href="#animator"><i class="fa fa-link" aria-hidden="true"></i></a>2.8. animator</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x662F;&#x5426;&#x5728;&#x4FEE;&#x6539;&#x7EA6;&#x675F;&#x65F6;&#x901A;&#x8FC7;&#x52A8;&#x753B;&#x4EE3;&#x7406;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">copy</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *animator;
+
+<span class="hljs-comment">// &#x5982;&#x679C;OS&#x652F;&#x6301;&#x5C31;&#x6FC0;&#x6D3B;&#x4E00;&#x4E2A;NSLayoutConstraint&#xFF0C;&#x5426;&#x5219;&#x5C31;&#x8C03;&#x7528;install</span>
+- (<span class="hljs-keyword">void</span>)activate;
+<span class="hljs-comment">// &#x9500;&#x6BC1;&#x524D;&#x9762;&#x5B89;&#x88C5;&#x6216;&#x8005;&#x6FC0;&#x6D3B;&#x7684;NSLayoutConstraint</span>
+- (<span class="hljs-keyword">void</span>)deactivate;
+<span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;NSLayoutConstraint&#x5E76;&#x5C06;&#x5B83;&#x6DFB;&#x52A0;&#x5230;&#x5408;&#x9002;&#x7684;view&#x4E0A;</span>
+- (<span class="hljs-keyword">void</span>)install;
+<span class="hljs-comment">//&#x79FB;&#x9664;&#x4EE5;&#x524D;&#x5B89;&#x88C5;&#x7684;NSLayoutConstraint</span>
+- (<span class="hljs-keyword">void</span>)uninstall;
+</code></pre>
+<h3 id="&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;"><a name="&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;" class="plugin-anchor" href="#&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>2.8.1. &#x793A;&#x4F8B;&#xFF1A;&#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x63A7;&#x4EF6;</h3>
+<p><img src="../assets/images/masonry/20.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-keyword">static</span> <span class="hljs-built_in">UIEdgeInsets</span> padding;
+<span class="hljs-keyword">static</span> <span class="hljs-built_in">CGFloat</span> height = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">0</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASExampleAutoAddView</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIView</span> *superView;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIView</span> *bottomView;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) MASConstraint *bottomConstraint;
+<span class="hljs-keyword">@end</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleAutoAddView</span></span>
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+    padding = <span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+
+    <span class="hljs-keyword">self</span>.superView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.superView];
+    [<span class="hljs-keyword">self</span>.superView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(padding);
+    }];
+
+    <span class="hljs-built_in">UIButton</span> *tapButton = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;Add&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(clickButton:)];
+    [<span class="hljs-keyword">self</span>.superView addSubview:tapButton];
+    [tapButton makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.mas_equalTo(padding);
+        <span class="hljs-keyword">self</span>.bottomConstraint = make.bottom.mas_equalTo(padding);<span class="hljs-comment">//&#x8BB0;&#x5F55;&#x4E0B;&#x8FD9;&#x4E2A;&#x7EA6;&#x675F;&#x5BF9;&#x8C61;</span>
+        make.height.equalTo(@(height));
+    }];
+    <span class="hljs-keyword">self</span>.bottomView = tapButton;
+
+    <span class="hljs-built_in">UIView</span> *bottomView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span>.superView addSubview:bottomView];
+    [bottomView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(padding);
+        make.top.mas_equalTo(<span class="hljs-keyword">self</span>.superView.mas_bottom).mas_equalTo(padding);
+        make.height.mas_equalTo(@(height));
+    }];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)clickButton:(<span class="hljs-built_in">UIButton</span>*)sender{
+    [<span class="hljs-keyword">self</span>.bottomConstraint uninstall];<span class="hljs-comment">//&#x5378;&#x8F7D;&#x65E7;&#x7684;&#x5E95;&#x90E8;&#x7EA6;&#x675F;</span>
+    num += <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">UILabel</span> *label = [LayoutUtils fixedLabelWithText:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;&#x63A7;&#x4EF6;%d&quot;</span>, num]];
+    [<span class="hljs-keyword">self</span>.superView addSubview:label];
+    [label makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(padding);
+        make.top.equalTo(<span class="hljs-keyword">self</span>.bottomView.mas_bottom).mas_equalTo(padding);
+        <span class="hljs-keyword">self</span>.bottomConstraint = make.bottom.equalTo(<span class="hljs-keyword">self</span>.superView.mas_bottom).mas_equalTo(padding);<span class="hljs-comment">//&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x5E95;&#x90E8;&#x7EA6;&#x675F;</span>
+        make.height.equalTo(@(height));
+    }];
+    <span class="hljs-keyword">self</span>.bottomView = label;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x4F18;&#x5148;&#x7EA7;"><a name="&#x4F18;&#x5148;&#x7EA7;" class="plugin-anchor" href="#&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F18;&#x5148;&#x7EA7;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x5148;&#x7EA7;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x4F18;&#x5148;&#x7EA7;</h1>
+<ul>
+<li><code>priority(value)</code> : &#x624B;&#x52A8;&#x8BBE;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x5927;&#x6570;&#x503C;&#x662F;<code>1000</code>&#x3002;<code>priority(200)</code></li>
+<li><code>priorityLow()</code> : &#x7EA6;&#x675F;&#x4F18;&#x5148;&#x7EA7;-&#x4F4E;&#x3002;</li>
+<li><code>priorityMedium()</code> : &#x7EA6;&#x675F;&#x4F18;&#x5148;&#x7EA7;-&#x4E2D;&#x3002;<code>priorityMedium()=500</code></li>
+<li><code>priorityHigh()</code> : &#x7EA6;&#x675F;&#x4F18;&#x5148;&#x7EA7;-&#x9AD8;&#x3002;</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x522B;&#x6324;&#x6211;</span>
+- (<span class="hljs-keyword">void</span>)setContentCompressionResistancePriority:(<span class="hljs-built_in">UILayoutPriority</span>)priority forAxis:(<span class="hljs-built_in">UILayoutConstraintAxis</span>)axis;
+<span class="hljs-comment">// &#x62B1;&#x7D27;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;sizefit&#xFF0C;&#x4E0D;&#x4F1A;&#x6839;&#x636E;&#x7236;view&#x957F;&#x5EA6;&#x53D8;&#x5316;</span>
+- (<span class="hljs-keyword">void</span>)setContentHuggingPriority:(<span class="hljs-built_in">UILayoutPriority</span>)priority forAxis:(<span class="hljs-built_in">UILayoutConstraintAxis</span>)axis;
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewPriorityCell</span> : <span class="hljs-title">MASTableViewBasicCell</span></span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UILabel</span> *leftLabel; <span class="hljs-comment">// &#x5FC5;&#x987B;&#x663E;&#x793A;&#x5B8C;&#x6574;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UILabel</span> *middleLabel; <span class="hljs-comment">// &#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5168;&#x5C31;&#x663E;&#x793A;&#xFF0C;&#x663E;&#x793A;&#x4E0D;&#x5168;&#x5C55;&#x793A;(XXXX...)</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIButton</span> *rightButton; <span class="hljs-comment">// rightView &#x5728; middleLabel &#x7684;&#x53F3;&#x8FB9;&#xFF0C;&#x5B8C;&#x5168;&#x663E;&#x793A;&#xFF0C;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;&#x53F3;&#x8FB9;&#x5C4F;&#x5E55;</span>
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewPriorityCell</span></span>
+-(instancetype)initWithStyle:(<span class="hljs-built_in">UITableViewCellStyle</span>)style reuseIdentifier:(<span class="hljs-built_in">NSString</span> *)reuseIdentifier{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        <span class="hljs-keyword">self</span>.selectionStyle = <span class="hljs-built_in">UITableViewCellSelectionStyleNone</span>;
+
+        <span class="hljs-keyword">self</span>.leftLabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;0&#x4E07;&quot;</span>];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.leftLabel];
+        [<span class="hljs-keyword">self</span>.leftLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.bottom.equalTo(kPadding);
+        }];
+
+        <span class="hljs-keyword">self</span>.middleLabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&quot;</span>];
+        <span class="hljs-keyword">self</span>.middleLabel.numberOfLines = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">self</span>.middleLabel.textAlignment = <span class="hljs-built_in">NSTextAlignmentLeft</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.middleLabel];
+        [<span class="hljs-keyword">self</span>.middleLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(kPadding);
+            make.left.equalTo(<span class="hljs-keyword">self</span>.leftLabel.mas_right).inset(kPadding.right);
+        }];
+        <span class="hljs-keyword">self</span>.rightButton = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;&#x7F6E;&#x9876;&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(buttonClick:)];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.rightButton];
+        [<span class="hljs-keyword">self</span>.rightButton makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.equalTo(kPadding);
+            make.left.equalTo(<span class="hljs-keyword">self</span>.middleLabel.mas_right).inset(kPadding.right);
+            make.right.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.contentView).inset(kPadding.right);
+        }];
+
+        <span class="hljs-comment">//&#x5BBD;&#x5EA6;&#x4E0D;&#x591F;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x538B;&#x7F29;</span>
+        [<span class="hljs-keyword">self</span>.middleLabel setContentCompressionResistancePriority:<span class="hljs-built_in">UILayoutPriorityFittingSizeLevel</span> forAxis:<span class="hljs-built_in">UILayoutConstraintAxisHorizontal</span>];
+        <span class="hljs-comment">// &#x62B1;&#x7D27;</span>
+        [<span class="hljs-keyword">self</span>.middleLabel setContentHuggingPriority:<span class="hljs-built_in">UILayoutPriorityRequired</span> forAxis:<span class="hljs-built_in">UILayoutConstraintAxisHorizontal</span>];
+        <span class="hljs-comment">//&#x4E0D;&#x53EF;&#x4EE5;&#x88AB;&#x538B;&#x7F29;&#xFF0C;&#x5C3D;&#x91CF;&#x663E;&#x793A;&#x5B8C;&#x6574;</span>
+        [<span class="hljs-keyword">self</span>.leftLabel setContentCompressionResistancePriority:<span class="hljs-built_in">UILayoutPriorityRequired</span> forAxis:<span class="hljs-built_in">UILayoutConstraintAxisHorizontal</span>];
+
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-keyword">void</span>)updateData{
+    <span class="hljs-keyword">self</span>.leftLabel.text = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;%@&#x4E07;&quot;</span>,<span class="hljs-keyword">self</span>.cellData.playCount];
+    <span class="hljs-keyword">self</span>.middleLabel.text = <span class="hljs-keyword">self</span>.cellData.content;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p><img src="../assets/images/masonry/26.png"></p>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="layoutmarginsguide"><a name="layoutmarginsguide" class="plugin-anchor" href="#layoutmarginsguide"><i class="fa fa-link" aria-hidden="true"></i></a><a name="layoutmarginsguide" class="anchor-navigation-ex-anchor" href="#layoutmarginsguide"><i class="fa fa-link" aria-hidden="true"></i></a>4. layoutMarginsGuide</h1>
+<p><code>UIView</code> &#x6709;&#x4E00;&#x4E2A;<code>UIEdgeInsets</code> &#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027; <code>layoutMargins</code>&#x3002;&#x5B83;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x7684;&#x5185;&#x5BB9;&#x548C;&#x5B83;&#x56DB;&#x4E2A;&#x8FB9;&#x754C;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x9699;&#x3002;</p>
+<p><code>UIView</code> &#x7684; <code>layoutMarginsGuide</code> &#x5C5E;&#x6027;&#x5176;&#x5B9E;&#x662F; <code>layoutMargins</code> &#x7684;&#x53E6;&#x4E00;&#x79CD;&#x8868;&#x73B0;&#x5F62;&#x5F0F;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5E03;&#x5C40;&#x7EA6;&#x675F;&#x3002;<code>layoutMarginsGuide</code> &#x662F;&#x4E00;&#x4E2A; <strong>&#x53EA;&#x8BFB;</strong> &#x5C5E;&#x6027;&#x3002;</p>
+<p><img src="../assets/images/masonry/15.png"></p>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="safearealayoutguide"><a name="safearealayoutguide" class="plugin-anchor" href="#safearealayoutguide"><i class="fa fa-link" aria-hidden="true"></i></a><a name="safearealayoutguide" class="anchor-navigation-ex-anchor" href="#safearealayoutguide"><i class="fa fa-link" aria-hidden="true"></i></a>5. safeAreaLayoutGuide</h1>
+<p>&#x5728; iOS 11 &#x65F6;&#xFF0C;&#x82F9;&#x679C;&#x63D0;&#x51FA;&#x4E86; Safe Area &#x7684;&#x6982;&#x5FF5;&#x3002;&#x56E0;&#x4E3A; iOS 11 &#x642D;&#x8F7D;&#x7684; iPhone X &#x53D6;&#x6D88;&#x4E86; Home &#x952E;&#xFF0C;&#x8981;&#x4E3A;&#x64CD;&#x4F5C;&#x4FDD;&#x7559;&#x4E00;&#x4E9B;&#x7A7A;&#x95F4;&#xFF0C;&#x8FD9;&#x6B63;&#x597D;&#x628A;&#x539F;&#x6765;&#x7684; Navigation Bar, Status Bar, Tab Bar &#x5305;&#x542B;&#x5728;&#x91CC;&#x9762;&#x3002;<code>safeAreaLayoutGuide</code> &#x5C5E;&#x6027;&#x6B63;&#x662F;&#x4F34;&#x968F; Safe Area &#x51FA;&#x73B0;&#x7684;&#x3002;<code>safeAreaLayoutGuide</code> &#x662F;&#x4E00;&#x4E2A; <strong>&#x53EA;&#x8BFB;</strong> &#x5C5E;&#x6027;&#x3002;</p>
+<p><img src="../assets/images/masonry/16.png"></p>
+<blockquote>
+<p><code>Masonry 1.1.0</code> &#x6700;&#x65B0;&#x7248;&#x672C;&#x5BF9;<code>safeAreaLayoutGuide</code>&#x662F;&#x4F1A;crach&#x7684;&#x3002;</p>
+</blockquote>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;"><a name="&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;" class="plugin-anchor" href="#&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;" class="anchor-navigation-ex-anchor" href="#&#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x7CFB;&#x7EDF;&#x5E03;&#x5C40;&#x76F8;&#x5173;</h1>
+<h2 id="uiview"><a name="uiview" class="plugin-anchor" href="#uiview"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uiview" class="anchor-navigation-ex-anchor" href="#uiview"><i class="fa fa-link" aria-hidden="true"></i></a>6.1. UIView</h2>
+<pre><code class="lang-objc">+ (<span class="hljs-built_in">BOOL</span>)requiresConstraintBasedLayout{
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+
+<span class="hljs-keyword">@property</span>(class, <span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">readonly</span>) <span class="hljs-built_in">BOOL</span> requiresConstraintBasedLayout;
+<span class="hljs-comment">/// update constraints now so we can animate the change</span>
+- (<span class="hljs-keyword">void</span>)updateConstraintsIfNeeded; 
+<span class="hljs-comment">/// this is Apple&apos;s recommended place for adding/updating constraints</span>
+- (<span class="hljs-keyword">void</span>)updateConstraints;
+- (<span class="hljs-built_in">BOOL</span>)needsUpdateConstraints;
+<span class="hljs-comment">/// tell constraints they need updating</span>
+- (<span class="hljs-keyword">void</span>)setNeedsUpdateConstraints;
+
+<span class="hljs-comment">/// &#x544A;&#x77E5;&#x9875;&#x9762;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4F1A;&#x7ACB;&#x523B;&#x5F00;&#x59CB;&#x66F4;&#x65B0;&#x3002;&#x6267;&#x884C;&#x540E;&#x4F1A;&#x7ACB;&#x523B;&#x8C03;&#x7528; layoutSubviews </span>
+- (<span class="hljs-keyword">void</span>)setNeedsLayout;
+<span class="hljs-comment">/// &#x544A;&#x77E5;&#x9875;&#x9762;&#x5E03;&#x5C40;&#x7ACB;&#x523B;&#x66F4;&#x65B0;&#x3002;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x90FD;&#x4F1A;&#x548C; setNeedsLayout &#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x7ACB;&#x523B;&#x751F;&#x6210;&#x65B0;&#x7684; frame &#x9700;&#x8981;&#x8C03;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#xFF0C;&#x5229;&#x7528;&#x8FD9;&#x70B9;&#x4E00;&#x822C;&#x5E03;&#x5C40;&#x52A8;&#x753B;&#x53EF;&#x4EE5;&#x5728;&#x66F4;&#x65B0;&#x5E03;&#x5C40;&#x540E;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x8BA9;&#x52A8;&#x753B;&#x751F;&#x6548;&#x3002;</span>
+- (<span class="hljs-keyword">void</span>)layoutIfNeeded;
+<span class="hljs-comment">/// &#x7CFB;&#x7EDF;&#x91CD;&#x5199;&#x5E03;&#x5C40;</span>
+- (<span class="hljs-keyword">void</span>)layoutSubviews;
+</code></pre>
+<p>&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">void</span>)updateConstraints {
+    <span class="hljs-comment">// Layout code here...</span>
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+
+-(<span class="hljs-keyword">void</span>)tap{
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded];
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.4</span> animations:^{
+        [<span class="hljs-keyword">self</span> layoutIfNeeded];
+    }];
+}
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-comment">// iOS&#x7CFB;&#x7EDF;&#x6700;&#x4F4E;&#x914D;&#x4E3A;iOS8.0</span>
+__IPHONE_OS_VERSION_MIN_REQ<span class="hljs-built_in">UIRED</span> &gt;= <span class="hljs-number">80000</span>
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x52A8;&#x753B;"><a name="&#x52A8;&#x753B;" class="plugin-anchor" href="#&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x52A8;&#x753B;</h1>
+<h2 id="&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;"><a name="&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;" class="plugin-anchor" href="#&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>7.1. &#x5B89;&#x5168;&#x8303;&#x56F4;&#x5185;&#x79FB;&#x52A8;&#x63A7;&#x4EF6;</h2>
+<p><img src="../assets/images/masonry/31.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASExampleTouchMoveView</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) MASConstraint *leftConstraint; <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x5DE6;&#x8FB9;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x79FB;&#x52A8;&#x65F6;&#x8C03;&#x6574;&#x4F4D;&#x7F6E;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) MASConstraint *topConstraint; <span class="hljs-comment">// &#x4FDD;&#x5B58;&#x9876;&#x90E8;&#x7684;&#x7EA6;&#x675F;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x79FB;&#x52A8;&#x65F6;&#x8C03;&#x6574;&#x4F4D;&#x7F6E;</span>
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleTouchMoveView</span></span>
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+    <span class="hljs-built_in">UILabel</span> *label = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;Move Me&quot;</span>];
+    [<span class="hljs-keyword">self</span> addSubview:label];
+    [label makeConstraints:^(MASConstraintMaker *make) {
+        <span class="hljs-keyword">self</span>.leftConstraint = make.centerX.equalTo(<span class="hljs-keyword">self</span>.mas_left).with.offset(<span class="hljs-number">50</span>).priorityHigh();
+        <span class="hljs-keyword">self</span>.topConstraint = make.centerY.equalTo(<span class="hljs-keyword">self</span>.mas_top).with.offset(<span class="hljs-number">50</span>).priorityHigh();
+
+        <span class="hljs-comment">// &#x8FB9;&#x754C;&#x6761;&#x4EF6;&#x7EA6;&#x675F;&#xFF0C;&#x4FDD;&#x8BC1;&#x5185;&#x5BB9;&#x53EF;&#x89C1;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;1000</span>
+        make.left.greaterThanOrEqualTo(kPadding);
+        make.right.lessThanOrEqualTo(kPadding);
+        make.top.greaterThanOrEqualTo(kPadding);
+        make.bottom.lessThanOrEqualTo(kPadding);
+    }];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)touchesMoved:(<span class="hljs-built_in">NSSet</span>&lt;<span class="hljs-built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="hljs-built_in">UIEvent</span> *)event{
+    <span class="hljs-built_in">UITouch</span> *touch = [[event allTouches] anyObject];
+    <span class="hljs-built_in">CGPoint</span> touchLocation = [touch locationInView:<span class="hljs-keyword">self</span>];
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@&quot;</span>,<span class="hljs-built_in">NSStringFromCGPoint</span>(touchLocation));
+    <span class="hljs-keyword">self</span>.leftConstraint.offset = touchLocation.x;
+        <span class="hljs-keyword">self</span>.topConstraint.offset = touchLocation.y;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="&#x66F4;&#x65B0;&#x52A8;&#x753B;"><a name="&#x66F4;&#x65B0;&#x52A8;&#x753B;" class="plugin-anchor" href="#&#x66F4;&#x65B0;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x66F4;&#x65B0;&#x52A8;&#x753B;" class="anchor-navigation-ex-anchor" href="#&#x66F4;&#x65B0;&#x52A8;&#x753B;"><i class="fa fa-link" aria-hidden="true"></i></a>7.2. &#x66F4;&#x65B0;&#x52A8;&#x753B;</h2>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleTotalUpdateAnimateView</span></span>
+
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-keyword">self</span>.superView = [LayoutUtils createView];
+    <span class="hljs-built_in">UITapGestureRecognizer</span> *tap = [[<span class="hljs-built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(onTap)];
+    [<span class="hljs-keyword">self</span>.superView addGestureRecognizer:tap];
+    [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.superView];
+
+    <span class="hljs-keyword">self</span>.sonView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.sonView];
+
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)updateConstraints{
+    [<span class="hljs-keyword">self</span>.superView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.top.equalTo(kPadding);
+        make.right.equalTo(kPadding);
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.isExpanded) {
+            make.bottom.equalTo(kPadding);
+        } <span class="hljs-keyword">else</span> {
+            make.bottom.mas_equalTo(<span class="hljs-number">-300</span>);
+        }
+    }];
+
+    [<span class="hljs-keyword">self</span>.sonView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(<span class="hljs-keyword">self</span>.superView);
+        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4F18;&#x5148;&#x7EA7;&#x5904;&#x7406;</span>
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5176;&#x6700;&#x5927;&#x503C;&#x4E3A;250&#xFF0C;&#x6700;&#x5C0F;&#x503C;&#x4E3A;90</span>
+        <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>.isExpanded) {
+            make.width.height.mas_equalTo(<span class="hljs-number">100</span> * <span class="hljs-number">0.5</span>).priorityLow();
+        } <span class="hljs-keyword">else</span> {
+            make.width.height.mas_equalTo(<span class="hljs-number">100</span> * <span class="hljs-number">3</span>).priorityLow();
+        }
+        make.width.height.lessThanOrEqualTo(@<span class="hljs-number">250</span>);<span class="hljs-comment">// &#x6700;&#x5927;&#x503C;&#x4E3A;250</span>
+        make.width.height.greaterThanOrEqualTo(@<span class="hljs-number">90</span>);<span class="hljs-comment">// &#x6700;&#x5C0F;&#x503C;&#x4E3A;90</span>
+    }];
+
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+
+-(<span class="hljs-keyword">void</span>)onTap{
+    <span class="hljs-keyword">self</span>.isExpanded = !<span class="hljs-keyword">self</span>.isExpanded;
+
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded];
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.4</span> animations:^{
+        [<span class="hljs-keyword">self</span> layoutIfNeeded];
+    }];
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p><img src="../assets/images/masonry/27.gif"></p>
+<h2 id="&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;"><a name="&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;" class="plugin-anchor" href="#&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;" class="anchor-navigation-ex-anchor" href="#&#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;"><i class="fa fa-link" aria-hidden="true"></i></a>7.3. &#x7EA6;&#x675F;&#x653E;&#x5230;&#x6570;&#x7EC4;&#x4E2D;</h2>
+<p><img src="../assets/images/masonry/05.gif"></p>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    [blueView addGestureRecognizer:[[<span class="hljs-built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(update)]];
+    [blueView setUserInteractionEnabled:<span class="hljs-literal">YES</span>];
+
+    <span class="hljs-built_in">UIView</span> *superview = <span class="hljs-keyword">self</span>;
+    <span class="hljs-keyword">int</span> padding = <span class="hljs-keyword">self</span>.padding = <span class="hljs-number">10</span>;
+    <span class="hljs-built_in">UIEdgeInsets</span> paddingInsets = <span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding);
+
+    <span class="hljs-keyword">self</span>.animatableConstraints = <span class="hljs-built_in">NSMutableArray</span>.new;
+
+    [greenView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [<span class="hljs-keyword">self</span>.animatableConstraints addObjectsFromArray:@[
+            make.edges.equalTo(superview).insets(paddingInsets).priorityLow(),
+            make.bottom.equalTo(blueView.mas_top).offset(-padding),
+        ]];
+
+        make.size.equalTo(redView);
+        make.height.equalTo(blueView.mas_height);
+    }];
+
+    [redView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [<span class="hljs-keyword">self</span>.animatableConstraints addObjectsFromArray:@[
+            make.edges.equalTo(superview).insets(paddingInsets).priorityLow(),
+            make.left.equalTo(greenView.mas_right).offset(padding),
+            make.bottom.equalTo(blueView.mas_top).offset(-padding),
+        ]];
+
+        make.size.equalTo(greenView);
+        make.height.equalTo(blueView.mas_height);
+    }];
+
+    [blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [<span class="hljs-keyword">self</span>.animatableConstraints addObjectsFromArray:@[
+            make.edges.equalTo(superview).insets(paddingInsets).priorityLow(),
+        ]];
+
+        make.height.equalTo(greenView.mas_height);
+        make.height.equalTo(redView.mas_height);
+    }];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)update{
+    <span class="hljs-keyword">int</span> padding = <span class="hljs-keyword">self</span>.isChangePadding ? <span class="hljs-number">100</span> : <span class="hljs-keyword">self</span>.padding;
+    <span class="hljs-built_in">UIEdgeInsets</span> paddingInsets = <span class="hljs-built_in">UIEdgeInsetsMake</span>(padding, padding, padding, padding);
+    <span class="hljs-keyword">for</span> (MASConstraint *constraint <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>.animatableConstraints) {
+        constraint.insets = paddingInsets;
+    }
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">1</span> animations:^{
+        [<span class="hljs-keyword">self</span> layoutIfNeeded];
+    } completion:^(<span class="hljs-built_in">BOOL</span> finished) {
+        <span class="hljs-keyword">self</span>.isChangePadding = !<span class="hljs-keyword">self</span>.isChangePadding;
+    }];
+}
+</code></pre>
+<h2 id="&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;"><a name="&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;" class="plugin-anchor" href="#&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#&#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>7.4. &#x79FB;&#x9664;-&#x66F4;&#x65B0;&#x7EA6;&#x675F;</h2>
+<p><img src="../assets/images/masonry/02.gif"></p>
+<pre><code class="lang-objc">+ (<span class="hljs-built_in">BOOL</span>)requiresConstraintBasedLayout{
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+- (<span class="hljs-keyword">void</span>)updateConstraints {
+    [<span class="hljs-keyword">self</span>.movingButton remakeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(<span class="hljs-number">100</span>));
+        make.height.equalTo(@(<span class="hljs-number">100</span>));
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.topLeft) {
+            make.left.equalTo(<span class="hljs-keyword">self</span>.left).with.offset(<span class="hljs-number">10</span>);
+            make.top.equalTo(<span class="hljs-keyword">self</span>.top).with.offset(<span class="hljs-number">10</span>);
+        }
+        <span class="hljs-keyword">else</span> {
+            make.bottom.equalTo(<span class="hljs-keyword">self</span>.bottom).with.offset(<span class="hljs-number">-10</span>);
+            make.right.equalTo(<span class="hljs-keyword">self</span>.right).with.offset(<span class="hljs-number">-10</span>);
+        }
+    }];
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+
+- (<span class="hljs-keyword">void</span>)toggleButtonPosition {
+    <span class="hljs-keyword">self</span>.topLeft = !<span class="hljs-keyword">self</span>.topLeft;
+
+    <span class="hljs-comment">// tell constraints they need updating</span>
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+
+    <span class="hljs-comment">// update constraints now so we can animate the change</span>
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded];
+
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.4</span> animations:^{
+        [<span class="hljs-keyword">self</span> layoutIfNeeded];
+    }];
+}
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><a name="masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;" class="plugin-anchor" href="#masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#masonry-&#x4EE3;&#x7801;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>8. Masonry &#x4EE3;&#x7801;&#x793A;&#x4F8B;</h1>
+<ul>
+<li><code>makeConstraints:</code> : &#x6DFB;&#x52A0;&#x7EA6;&#x675F;&#x3002;</li>
+<li><code>updateConstraints:</code> : &#x66F4;&#x65B0;&#x7EA6;&#x675F;&#x3001;&#x4EA6;&#x53EF;&#x6DFB;&#x52A0;&#x65B0;&#x7EA6;&#x675F;&#x3002;</li>
+<li><code>remakeConstraints:</code> : &#x91CD;&#x7F6E;&#x4E4B;&#x524D;&#x7684;&#x7EA6;&#x675F;&#x3002;</li>
+<li><code>mas_distributeViewsAlongAxis:withFixedSpacing:leadSpacing:tailSpacing:</code></li>
+<li><p><code>mas_distributeViewsAlongAxis:withFixedItemLength:leadSpacing:tailSpacing:</code></p>
+</li>
+<li><p><code>multipler</code> : &#x8868;&#x793A;&#x7EA6;&#x675F;&#x503C;&#x4E3A;&#x7EA6;&#x675F;&#x5BF9;&#x8C61;&#x7684;&#x4E58;&#x56E0;&#x6570;&#x3002;</p>
+</li>
+<li><code>dividedBy</code> : &#x8868;&#x793A;&#x7EA6;&#x675F;&#x503C;&#x4E3A;&#x7EA6;&#x675F;&#x5BF9;&#x8C61;&#x7684;&#x9664;&#x56E0;&#x6570;&#x3002;</li>
+</ul>
+<h2 id="&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;"><a name="&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;" class="plugin-anchor" href="#&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;" class="anchor-navigation-ex-anchor" href="#&#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;"><i class="fa fa-link" aria-hidden="true"></i></a>8.1. &#x5E03;&#x5C40;&#x4F7F;&#x7528;&#x7ED3;&#x6784;&#x4F53;</h2>
+<pre><code class="lang-objc">make.center.equalTo(<span class="hljs-built_in">CGPointMake</span>(<span class="hljs-number">0</span>, <span class="hljs-number">50</span>));
+make.size.equalTo(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>));
+make.edges.equalTo(superview).insets(<span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding, <span class="hljs-keyword">self</span>.padding));
+make.edges.mas_equalTo(<span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>));
+make.left.mas_equalTo(view).mas_offset(<span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">0</span>));
+</code></pre>
+<h3 id="insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;"><a name="insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;" class="plugin-anchor" href="#insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>8.1.1. insets&#x7684;&#x94FE;&#x5F0F;&#x4F7F;&#x7528;</h3>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIEdgeInsets</span> padding = <span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">15</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">10</span>);
+[greenView mas_makeConstraints:^(MASConstraintMaker *make) {
+    <span class="hljs-comment">// chain attributes</span>
+    make.top.and.left.equalTo(superview).insets(padding);
+
+    <span class="hljs-comment">// which is the equivalent of</span>
+    <span class="hljs-comment">// make.top.greaterThanOrEqualTo(superview).insets(padding);</span>
+    <span class="hljs-comment">// make.left.greaterThanOrEqualTo(superview).insets(padding);</span>
+
+    make.bottom.equalTo(blueView.mas_top).insets(padding);
+    make.right.equalTo(redView.mas_left).insets(padding);
+    make.width.equalTo(redView.mas_width);
+
+    make.height.equalTo(@[redView, blueView]);
+}];
+
+[redView mas_makeConstraints:^(MASConstraintMaker *make) {
+    <span class="hljs-comment">// chain attributes</span>
+    make.top.and.right.equalTo(superview).insets(padding);
+
+    make.left.equalTo(greenView.mas_right).insets(padding);
+    make.bottom.equalTo(blueView.mas_top).insets(padding);
+    make.width.equalTo(greenView.mas_width);
+
+    make.height.equalTo(@[greenView, blueView]);
+}];
+
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(greenView.mas_bottom).insets(padding);
+    <span class="hljs-comment">// chain attributes</span>
+    make.left.right.and.bottom.equalTo(superview).insets(padding);
+    make.height.equalTo(@[greenView, redView]);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/08.png"></p>
+<h2 id="&#x7EA6;&#x675F;"><a name="&#x7EA6;&#x675F;" class="plugin-anchor" href="#&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7EA6;&#x675F;" class="anchor-navigation-ex-anchor" href="#&#x7EA6;&#x675F;"><i class="fa fa-link" aria-hidden="true"></i></a>8.2. &#x7EA6;&#x675F;</h2>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *left;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *top;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *right;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *bottom;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *leading;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *trailing;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *width;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *height;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *centerX;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *centerY;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *baseline;
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *firstBaseline;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *lastBaseline;
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *leftMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *rightMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *topMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *bottomMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *leadingMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *trailingMargin;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *centerXWithinMargins;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *centerYWithinMargins;
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *edges;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *size;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>, <span class="hljs-keyword">readonly</span>) MASConstraint *center;
+</code></pre>
+<h2 id="&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;"><a name="&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>8.3. &#x7B49;&#x5BBD;&#x9AD8;&#x5E03;&#x5C40;</h2>
+<ul>
+<li>&#x4E0D;&#x7BA1;&#x7236;&#x89C6;&#x56FE;&#x5982;&#x4F55;&#x5E03;&#x5C40;&#xFF0C;&#x5B50;&#x89C6;&#x56FE;&#x5185;&#x90E8;&#x90FD;&#x662F;&#x7B49;&#x5BBD;&#x9AD8;&#x7684;&#x5E03;&#x5C40;&#x3002;</li>
+</ul>
+<p><img src="../assets/images/masonry/01.png"></p>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIView</span> *superview = <span class="hljs-keyword">self</span>;
+<span class="hljs-keyword">int</span> padding = <span class="hljs-number">10</span>;
+[greenView makeConstraints:^(MASConstraintMaker *make) {
+    make.top.greaterThanOrEqualTo(superview.top).offset(padding);
+    make.left.equalTo(superview.left).offset(padding);
+    make.bottom.equalTo(blueView.top).offset(-padding);
+    make.right.equalTo(redView.left).offset(-padding);
+    make.width.equalTo(redView.width);
+
+    make.height.equalTo(redView.height);
+    make.height.equalTo(blueView.height);
+
+}];
+
+<span class="hljs-comment">//with is semantic and option</span>
+[redView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(superview.mas_top).with.offset(padding); <span class="hljs-comment">//with with</span>
+    make.left.equalTo(greenView.mas_right).offset(padding); <span class="hljs-comment">//without with</span>
+    make.bottom.equalTo(blueView.mas_top).offset(-padding);
+    make.right.equalTo(superview.mas_right).offset(-padding);
+    make.width.equalTo(greenView.mas_width);
+
+    make.height.equalTo(@[greenView, blueView]); <span class="hljs-comment">//can pass array of views</span>
+}];
+
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(greenView.mas_bottom).offset(padding);
+    make.left.equalTo(superview.mas_left).offset(padding);
+    make.bottom.equalTo(superview.mas_bottom).offset(-padding);
+    make.right.equalTo(superview.mas_right).offset(-padding);
+    make.height.equalTo(@[greenView.mas_height, redView.mas_height]); <span class="hljs-comment">//can pass array of attributes</span>
+}];
+</code></pre>
+<h2 id="&#x6DF7;&#x5408;&#x5E03;&#x5C40;"><a name="&#x6DF7;&#x5408;&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x6DF7;&#x5408;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6DF7;&#x5408;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x6DF7;&#x5408;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>8.4. &#x6DF7;&#x5408;&#x5E03;&#x5C40;</h2>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIView</span> *lastView = <span class="hljs-keyword">self</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-built_in">UIView</span> *view = <span class="hljs-built_in">UIView</span>.new;
+    view.backgroundColor = [<span class="hljs-keyword">self</span> randomColor];
+    view.layer.borderColor = <span class="hljs-built_in">UIColor</span>.blackColor.CGColor;
+    view.layer.borderWidth = <span class="hljs-number">2</span>;
+    [<span class="hljs-keyword">self</span> addSubview:view];
+
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(lastView).insets(<span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>));
+    }];
+
+    lastView = view;
+}
+</code></pre>
+<p><img src="../assets/images/masonry/03.png"></p>
+<h2 id="masonry-aspect"><a name="masonry-aspect" class="plugin-anchor" href="#masonry-aspect"><i class="fa fa-link" aria-hidden="true"></i></a><a name="masonry-aspect" class="anchor-navigation-ex-anchor" href="#masonry-aspect"><i class="fa fa-link" aria-hidden="true"></i></a>8.5. Masonry Aspect</h2>
+<p><img src="../assets/images/masonry/04.gif"></p>
+<pre><code class="lang-objc">- (instancetype)initWithFrame:(<span class="hljs-built_in">CGRect</span>)frame
+{
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> initWithFrame:<span class="hljs-built_in">CGRectZero</span>];
+    multipliedBy = <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+
+        <span class="hljs-comment">// Create views</span>
+        <span class="hljs-keyword">self</span>.topView = [[<span class="hljs-built_in">UIView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectZero</span>];
+        <span class="hljs-keyword">self</span>.topInnerView = [[<span class="hljs-built_in">UIView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectZero</span>];
+        <span class="hljs-keyword">self</span>.bottomView = [[<span class="hljs-built_in">UIView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectZero</span>];
+        <span class="hljs-keyword">self</span>.bottomInnerView = [[<span class="hljs-built_in">UIView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectZero</span>];
+
+        [<span class="hljs-keyword">self</span>.topInnerView addGestureRecognizer:[[<span class="hljs-built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(update)]];
+        [<span class="hljs-keyword">self</span>.topInnerView setUserInteractionEnabled:<span class="hljs-literal">YES</span>];
+
+
+        <span class="hljs-comment">// Set background colors</span>
+        <span class="hljs-built_in">UIColor</span> *blueColor = [<span class="hljs-built_in">UIColor</span> colorWithRed:<span class="hljs-number">0.663</span> green:<span class="hljs-number">0.796</span> blue:<span class="hljs-number">0.996</span> alpha:<span class="hljs-number">1</span>];
+        [<span class="hljs-keyword">self</span>.topView setBackgroundColor:blueColor];
+
+        <span class="hljs-built_in">UIColor</span> *lightGreenColor = [<span class="hljs-built_in">UIColor</span> colorWithRed:<span class="hljs-number">0.784</span> green:<span class="hljs-number">0.992</span> blue:<span class="hljs-number">0.851</span> alpha:<span class="hljs-number">1</span>];
+        [<span class="hljs-keyword">self</span>.topInnerView setBackgroundColor:lightGreenColor];
+
+        <span class="hljs-built_in">UIColor</span> *pinkColor = [<span class="hljs-built_in">UIColor</span> colorWithRed:<span class="hljs-number">0.992</span> green:<span class="hljs-number">0.804</span> blue:<span class="hljs-number">0.941</span> alpha:<span class="hljs-number">1</span>];
+        [<span class="hljs-keyword">self</span>.bottomView setBackgroundColor:pinkColor];
+
+        <span class="hljs-built_in">UIColor</span> *darkGreenColor = [<span class="hljs-built_in">UIColor</span> colorWithRed:<span class="hljs-number">0.443</span> green:<span class="hljs-number">0.780</span> blue:<span class="hljs-number">0.337</span> alpha:<span class="hljs-number">1</span>];
+        [<span class="hljs-keyword">self</span>.bottomInnerView setBackgroundColor:darkGreenColor];
+
+        <span class="hljs-comment">// &#x9876;&#x90E8;(topView)&#x3001;&#x5E95;&#x90E8;(bottomView) View &#x9AD8;&#x5EA6;&#x5747;&#x5206;&#x3002;</span>
+        [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.topView];
+        [<span class="hljs-keyword">self</span>.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.and.top.equalTo(<span class="hljs-keyword">self</span>);
+        }];
+
+        [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.bottomView];
+        [<span class="hljs-keyword">self</span>.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.and.bottom.equalTo(<span class="hljs-keyword">self</span>);
+            make.top.equalTo(<span class="hljs-keyword">self</span>.topView.mas_bottom);
+            make.height.equalTo(<span class="hljs-keyword">self</span>.topView);
+        }];
+
+        <span class="hljs-comment">// Inner views are configured for aspect fit with ratio of 3:1</span>
+        [<span class="hljs-keyword">self</span>.topView addSubview:<span class="hljs-keyword">self</span>.topInnerView];
+        [<span class="hljs-keyword">self</span>.topInnerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            <span class="hljs-comment">// &#x5BBD;&#x5EA6;&#x662F;&#x5176;&#x81EA;&#x8EAB;&#x9AD8;&#x5EA6;&#x7684;&#x4E09;&#x500D;</span>
+            make.width.equalTo(<span class="hljs-keyword">self</span>.topInnerView.mas_height).multipliedBy(multipliedBy);
+
+            <span class="hljs-comment">// &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x90FD;&#x4E0D;&#x8D85;&#x8FC7;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;</span>
+            make.width.and.height.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.topView);
+            <span class="hljs-comment">// &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7B49;&#x4E8E;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6; &#x4F18;&#x5148;&#x7EA7;&#x4F4E;</span>
+            make.width.and.height.equalTo(<span class="hljs-keyword">self</span>.topView).with.priorityLow();
+
+            make.center.equalTo(<span class="hljs-keyword">self</span>.topView);
+        }];
+
+        [<span class="hljs-keyword">self</span>.bottomView addSubview:<span class="hljs-keyword">self</span>.bottomInnerView];
+        [<span class="hljs-keyword">self</span>.bottomInnerView mas_makeConstraints:^(MASConstraintMaker *make) {
+            <span class="hljs-comment">//&#x9AD8;&#x5EA6;&#x7B49;&#x4E8E;&#x5176;&#x81EA;&#x8EAB;&#x5BBD;&#x5EA6;&#x7684;3&#x500D;</span>
+            make.height.equalTo(<span class="hljs-keyword">self</span>.bottomInnerView.mas_width).multipliedBy(<span class="hljs-number">3</span>);
+
+            <span class="hljs-comment">// &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x90FD;&#x4E0D;&#x8D85;&#x8FC7;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;</span>
+            make.width.and.height.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.bottomView);
+            <span class="hljs-comment">// &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7B49;&#x4E8E;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6; &#x4F18;&#x5148;&#x7EA7;&#x4F4E;</span>
+            make.width.and.height.equalTo(<span class="hljs-keyword">self</span>.bottomView).with.priorityLow();
+
+            make.center.equalTo(<span class="hljs-keyword">self</span>.bottomView);
+        }];
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
++(<span class="hljs-built_in">BOOL</span>)requiresConstraintBasedLayout{
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)updateConstraints{
+    [<span class="hljs-keyword">self</span>.topInnerView remakeConstraints:^(MASConstraintMaker *make) {
+        <span class="hljs-comment">//1. &#x786E;&#x5B9A;&#x5750;&#x6807;</span>
+        make.center.equalTo(<span class="hljs-keyword">self</span>.topView);
+        <span class="hljs-comment">//2. &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x7B49;&#x4E8E;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6; &#x4F18;&#x5148;&#x7EA7;&#x4F4E;</span>
+        make.width.and.height.equalTo(<span class="hljs-keyword">self</span>.topView).with.priorityLow();
+        <span class="hljs-comment">//3. &#x5BBD;&#x5EA6;&#x662F;&#x5176;&#x81EA;&#x8EAB;&#x9AD8;&#x5EA6;&#x7684;&#x4E09;&#x500D;</span>
+        make.width.equalTo(<span class="hljs-keyword">self</span>.topInnerView.mas_height).multipliedBy(<span class="hljs-keyword">self</span>-&gt;multipliedBy);<span class="hljs-comment">// width=height*4 ==&gt; width/height=4/1</span>
+        <span class="hljs-comment">//4. &#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;&#x90FD;&#x4E0D;&#x8D85;&#x8FC7;&#x5176;&#x7236;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x9AD8;&#x5EA6;</span>
+        make.width.and.height.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.topView);
+    }];
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+
+-(<span class="hljs-keyword">void</span>)update{
+    multipliedBy += <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%f&quot;</span>,multipliedBy);
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded];
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.4</span> animations:^{
+        [<span class="hljs-keyword">self</span> layoutIfNeeded];
+    }];
+}
+</code></pre>
+<h2 id="&#x7ED9;masonry&#x6DFB;&#x52A0;debug"><a name="&#x7ED9;masonry&#x6DFB;&#x52A0;debug" class="plugin-anchor" href="#&#x7ED9;masonry&#x6DFB;&#x52A0;debug"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7ED9;masonry&#x6DFB;&#x52A0;debug" class="anchor-navigation-ex-anchor" href="#&#x7ED9;masonry&#x6DFB;&#x52A0;debug"><i class="fa fa-link" aria-hidden="true"></i></a>8.6. &#x7ED9;Masonry&#x6DFB;&#x52A0;Debug</h2>
+<ul>
+<li>&#x5F53;&#x7EA6;&#x675F;&#x51B2;&#x7A81;&#x65F6;&#xFF0C;&#x6253;&#x5370;&#x7684;&#x65E5;&#x5FD7;&#x6BD4;&#x8F83;&#x96BE;&#x5B9A;&#x4F4D;&#x662F;&#x54EA;&#x4E9B;&#x63A7;&#x4EF6;&#x7684;&#x7EA6;&#x675F;&#x6216;&#x8005;&#x8BF4;&#x662F;&#x54EA;&#x6761;&#x7EA6;&#x675F;&#xFF0C;Masonry&#x5DF2;&#x7ECF;&#x7ED9;&#x6211;&#x4EEC;&#x63D0;&#x4F9B;&#x4E86;&#x76F8;&#x5173;&#x7684;&#x65B9;&#x6CD5;:<code>MASAttachKeys()</code>&#x3001;&#x7ED9;&#x7EA6;&#x675F;&#x8BBE;&#x7F6E;<code>key</code>&#x3002;</li>
+</ul>
+<pre><code class="lang-objc">greenView.mas_key = <span class="hljs-string">@&quot;greenView&quot;</span>;
+</code></pre>
+<pre><code class="lang-objc">MASAttachKeys(greenView, redView, blueView, superview);
+[blueView mas_makeConstraints:^(MASConstraintMaker *make) {
+    <span class="hljs-comment">//you can also attach debug keys to constaints</span>
+    make.edges.equalTo(@<span class="hljs-number">1</span>).key(<span class="hljs-string">@&quot;ConflictingConstraint&quot;</span>); <span class="hljs-comment">//composite constraint keys will be indexed</span>
+    make.height.greaterThanOrEqualTo(@<span class="hljs-number">5000</span>).key(<span class="hljs-string">@&quot;ConstantConstraint&quot;</span>);
+
+    make.top.equalTo(greenView.mas_bottom).offset(padding);
+    make.left.equalTo(superview.mas_left).offset(padding);
+    make.bottom.equalTo(superview.mas_bottom).offset(-padding).key(<span class="hljs-string">@&quot;BottomConstraint&quot;</span>);
+    make.right.equalTo(superview.mas_right).offset(-padding);
+    make.height.equalTo(greenView.mas_height);
+    make.height.equalTo(redView.mas_height).key(@<span class="hljs-number">340954</span>); <span class="hljs-comment">//anything can be a key</span>
+}];
+</code></pre>
+<pre><code>// &#x6DFB;&#x52A0;Debug&#x524D;
+&quot;&lt;MASLayoutConstraint:ConstantConstraint UILabel:0x7f82ef709550.height &gt;= 5000&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:ConflictingConstraint[2] UILabel:0x7f82ef709550.top == MASExampleDebuggingView:0x7f82ef422490.top + 1&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x600003756f40 UILabel:0x7f82ef709550.top == UIView:0x7f82ef717f10.bottom + 10&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x60000375e1c0 UILabel:0x7f82ef709550.height == UIView:0x7f82ef717f10.height&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x60000375e520 UIView:0x7f82ef717f10.top &gt;= MASExampleDebuggingView:0x7f82ef422490.top + 10&gt;&quot;
+
+// &#x6DFB;&#x52A0;Debug&#x540E;
+&quot;&lt;MASLayoutConstraint:ConstantConstraint UILabel:blueView.height &gt;= 5000&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:ConflictingConstraint[2] UILabel:blueView.top == MASExampleDebuggingView:superview.top + 1&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x600003b2d800 UILabel:blueView.top == UIView:greenView.bottom + 10&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x600003b2d6e0 UILabel:blueView.height == UIView:greenView.height&gt;&quot;,
+&quot;&lt;MASLayoutConstraint:0x600003b2d9e0 UIView:greenView.top &gt;= MASExampleDebuggingView:superview.top + 10&gt;&quot;
+</code></pre><h2 id="uilabel&#x5E03;&#x5C40;"><a name="uilabel&#x5E03;&#x5C40;" class="plugin-anchor" href="#uilabel&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uilabel&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#uilabel&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>8.7. UILabel&#x5E03;&#x5C40;</h2>
+<h3 id="&#x591A;&#x884C;uilabel"><a name="&#x591A;&#x884C;uilabel" class="plugin-anchor" href="#&#x591A;&#x884C;uilabel"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x884C;uilabel" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x884C;uilabel"><i class="fa fa-link" aria-hidden="true"></i></a>8.7.1. &#x591A;&#x884C;UILabel</h3>
+<pre><code class="lang-objc"><span class="hljs-keyword">static</span> <span class="hljs-built_in">UIEdgeInsets</span> <span class="hljs-keyword">const</span> kPadding = {<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>};
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-keyword">self</span>.longLabel.lineBreakMode = <span class="hljs-built_in">NSLineBreakByTruncatingTail</span>;
+    <span class="hljs-keyword">self</span>.longLabel.text = <span class="hljs-string">@&quot;Bacon ipsum dolor sit amet spare ribs fatback kielbasa salami, tri-tip jowl pastrami flank short loin rump sirloin. Tenderloin frankfurter chicken biltong rump chuck filet mignon pork t-bone flank ham hock.&quot;</span>;
+
+    [<span class="hljs-keyword">self</span>.longLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(<span class="hljs-keyword">self</span>.left).insets(kPadding);
+        make.top.equalTo(<span class="hljs-keyword">self</span>.top).insets(kPadding);
+    }];
+    [<span class="hljs-keyword">self</span>.shortLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(<span class="hljs-keyword">self</span>.longLabel.lastBaseline);
+        make.right.equalTo(<span class="hljs-keyword">self</span>.right).insets(kPadding);
+    }];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+- (<span class="hljs-keyword">void</span>)layoutSubviews {
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+
+    <span class="hljs-comment">// for multiline UILabel&apos;s you need set the preferredMaxLayoutWidth</span>
+    <span class="hljs-comment">// you need to do this after [super layoutSubviews] as the frames will have a value from Auto Layout at this point</span>
+
+    <span class="hljs-comment">// stay tuned for new easier way todo this coming soon to Masonry</span>
+
+    <span class="hljs-built_in">CGFloat</span> width = <span class="hljs-built_in">CGRectGetMinX</span>(<span class="hljs-keyword">self</span>.shortLabel.frame) - kPadding.left;
+    width -= <span class="hljs-built_in">CGRectGetMinX</span>(<span class="hljs-keyword">self</span>.longLabel.frame);
+    <span class="hljs-keyword">self</span>.longLabel.preferredMaxLayoutWidth = width;
+
+    <span class="hljs-comment">// need to layoutSubviews again as frames need to recalculated with preferredLayoutWidth</span>
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+}
+</code></pre>
+<p><img src="../assets/images/masonry/06.png"></p>
+<h2 id="uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;"><a name="uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;" class="plugin-anchor" href="#uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;" class="anchor-navigation-ex-anchor" href="#uilabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;&#x9AD8;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a>8.8. UILabel&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;/&#x9AD8;&#x5EA6;</h2>
+<p><img src="../assets/images/masonry/23.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASExampleMulLabelAutoSizeView</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UILabel</span> *label;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleMulLabelAutoSizeView</span></span>
+
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-keyword">self</span>.label = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&#x6700;&#x8FD1;&#x662F;&#x7528;Masonry&#x81EA;&#x52A8;&#x5E03;&#x5C40;UILabel&#x7684;&#x65F6;&#x5019;&#xFF0C;;&#x8FD9;&#x4E9B;&#x4E1C;&#x897F;&#x4E4B;&#x540E;&#xFF0C;label&#x8FD8;&#x662F;&#x6CA1;&#x6709;&#x6362;&#x884C;&#x3002;&#x6700;&#x8FD1;&#x662F;&#x7528;Masonry&#x81EA;&#x52A8;&#x5E03;&#x5C40;UILabel&#x7684;&#x65F6;&#x5019;&#xFF0C;&quot;</span>];
+    <span class="hljs-keyword">self</span>.label.textAlignment = <span class="hljs-built_in">NSTextAlignmentLeft</span>;
+    [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.label];
+    [<span class="hljs-keyword">self</span>.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(<span class="hljs-number">100</span>);
+        make.left.mas_equalTo(<span class="hljs-number">15</span>);
+    }];
+
+    <span class="hljs-built_in">UIButton</span> *button = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;&#x6DFB;&#x52A0;&#x6587;&#x5B57;&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(clickButton:)];
+    [<span class="hljs-keyword">self</span> addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(<span class="hljs-keyword">self</span>.label.mas_bottom).mas_offset(<span class="hljs-number">20</span>);
+        make.centerX.mas_equalTo(<span class="hljs-keyword">self</span>);
+        make.height.mas_equalTo(<span class="hljs-number">50</span>);
+        make.width.mas_lessThanOrEqualTo(<span class="hljs-number">300</span>);
+    }];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)clickButton:(<span class="hljs-built_in">UIButton</span>*)sender{
+    <span class="hljs-keyword">self</span>.label.text = [<span class="hljs-keyword">self</span>.label.text stringByAppendingString:<span class="hljs-string">@&quot;Masonry&#x81EA;&#x52A8;&#x5E03;&#x5C40;YYLabel&quot;</span>];
+}
+
+-(<span class="hljs-keyword">void</span>)layoutSubviews{
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+    <span class="hljs-keyword">self</span>.label.preferredMaxLayoutWidth = <span class="hljs-built_in">CGRectGetWidth</span>(<span class="hljs-keyword">self</span>.frame) - <span class="hljs-number">30</span>;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="uiscrollview&#x5E03;&#x5C40;"><a name="uiscrollview&#x5E03;&#x5C40;" class="plugin-anchor" href="#uiscrollview&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uiscrollview&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#uiscrollview&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>8.9. UIScrollView&#x5E03;&#x5C40;</h2>
+<blockquote>
+<p>&#x5728;&#x4F7F;&#x7528;<code>Masonry</code>&#x5BF9;<code>UIScrollView</code>&#x8BBE;&#x7F6E;&#x7EA6;&#x675F;&#x540E;&#xFF0C;<code>contentSize</code>&#x5C5E;&#x6027;&#x5C31;&#x4E0D;&#x7BA1;&#x7528;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x901A;&#x8FC7;<code>Masonry</code>&#x7684;&#x89C4;&#x5219;&#x5728;<code>scrollView</code>&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;<code>contentView</code>,&#x5176;&#x5B83;&#x7684;&#x5B50;&#x89C6;&#x56FE;&#x5168;&#x90E8;&#x6DFB;&#x52A0;&#x5230; <code>contentView</code> &#x4E0A;&#xFF0C;&#x8BA9;<code>contentView</code>&#x6765;&#x6491;&#x8D77;<code>UIScrollview</code>&#x7684;<code>contentSize</code>&#x3002;</p>
+</blockquote>
+<h3 id="&#x5782;&#x76F4;&#x65B9;&#x5411;"><a name="&#x5782;&#x76F4;&#x65B9;&#x5411;" class="plugin-anchor" href="#&#x5782;&#x76F4;&#x65B9;&#x5411;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5782;&#x76F4;&#x65B9;&#x5411;" class="anchor-navigation-ex-anchor" href="#&#x5782;&#x76F4;&#x65B9;&#x5411;"><i class="fa fa-link" aria-hidden="true"></i></a>8.9.1. &#x5782;&#x76F4;&#x65B9;&#x5411;</h3>
+<p><img src="../assets/images/masonry/07.png"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASExampleScrollView</span> ()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIScrollView</span>* scrollView;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleScrollView</span></span>
+
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-built_in">UIScrollView</span> *scrollView = <span class="hljs-built_in">UIScrollView</span>.new;
+    <span class="hljs-keyword">self</span>.scrollView = scrollView;
+    scrollView.backgroundColor = [<span class="hljs-built_in">UIColor</span> grayColor];
+    [<span class="hljs-keyword">self</span> addSubview:scrollView];
+    [<span class="hljs-keyword">self</span>.scrollView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(<span class="hljs-keyword">self</span>);
+    }];
+
+    [<span class="hljs-keyword">self</span> generateContent];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+- (<span class="hljs-keyword">void</span>)generateContent {
+    <span class="hljs-built_in">UIView</span>* contentView = <span class="hljs-built_in">UIView</span>.new;
+    [<span class="hljs-keyword">self</span>.scrollView addSubview:contentView];
+
+    [contentView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(<span class="hljs-keyword">self</span>.scrollView);
+        make.width.equalTo(<span class="hljs-keyword">self</span>.scrollView);
+    }];
+
+    <span class="hljs-built_in">UIView</span> *lastView;
+    <span class="hljs-built_in">CGFloat</span> height = <span class="hljs-number">25</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+        <span class="hljs-built_in">UIView</span> *view = <span class="hljs-built_in">UIView</span>.new;
+        view.backgroundColor = [<span class="hljs-keyword">self</span> randomColor];
+        [contentView addSubview:view];
+
+        <span class="hljs-built_in">UITapGestureRecognizer</span> *singleTap = [[<span class="hljs-built_in">UITapGestureRecognizer</span> alloc] initWithTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(singleTap:)];
+        [view addGestureRecognizer:singleTap];
+
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(lastView ? lastView.bottom : @<span class="hljs-number">0</span>);
+            make.left.equalTo(@<span class="hljs-number">0</span>);
+            make.width.equalTo(contentView.width);
+            make.height.equalTo(@(height));
+        }];
+
+        height += <span class="hljs-number">25</span>;
+        lastView = view;
+    }
+
+    [contentView makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(lastView.bottom);
+    }];
+}
+
+- (<span class="hljs-built_in">UIColor</span> *)randomColor {
+    <span class="hljs-built_in">CGFloat</span> hue = ( arc4random() % <span class="hljs-number">256</span> / <span class="hljs-number">256.0</span> );  <span class="hljs-comment">//  0.0 to 1.0</span>
+    <span class="hljs-built_in">CGFloat</span> saturation = ( arc4random() % <span class="hljs-number">128</span> / <span class="hljs-number">256.0</span> ) + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">//  0.5 to 1.0, away from white</span>
+    <span class="hljs-built_in">CGFloat</span> brightness = ( arc4random() % <span class="hljs-number">128</span> / <span class="hljs-number">256.0</span> ) + <span class="hljs-number">0.5</span>;  <span class="hljs-comment">//  0.5 to 1.0, away from black</span>
+    <span class="hljs-keyword">return</span> [<span class="hljs-built_in">UIColor</span> colorWithHue:hue saturation:saturation brightness:brightness alpha:<span class="hljs-number">1</span>];
+}
+
+- (<span class="hljs-keyword">void</span>)singleTap:(<span class="hljs-built_in">UITapGestureRecognizer</span>*)sender {
+    [sender.view setAlpha:sender.view.alpha / <span class="hljs-number">1.20</span>]; <span class="hljs-comment">// To see something happen on screen when you tap :O</span>
+    [<span class="hljs-keyword">self</span>.scrollView scrollRectToVisible:sender.view.frame animated:<span class="hljs-literal">YES</span>];
+};
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h3 id="&#x6C34;&#x5E73;&#x65B9;&#x5411;"><a name="&#x6C34;&#x5E73;&#x65B9;&#x5411;" class="plugin-anchor" href="#&#x6C34;&#x5E73;&#x65B9;&#x5411;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6C34;&#x5E73;&#x65B9;&#x5411;" class="anchor-navigation-ex-anchor" href="#&#x6C34;&#x5E73;&#x65B9;&#x5411;"><i class="fa fa-link" aria-hidden="true"></i></a>8.9.2. &#x6C34;&#x5E73;&#x65B9;&#x5411;</h3>
+<p><img src="../assets/images/masonry/21.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-keyword">static</span> <span class="hljs-built_in">UIEdgeInsets</span> padding;
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleScrollHorView</span></span>
+
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+    padding = <span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+
+    <span class="hljs-built_in">UIScrollView</span> *scrollView = [LayoutUtils creat<span class="hljs-built_in">UIScrollView</span>];
+    [<span class="hljs-keyword">self</span> addSubview:scrollView];
+    [scrollView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(padding); <span class="hljs-comment">// make.edges.equalTo(self).mas_equalTo(padding);</span>
+    }];
+
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;scrollView&#x7684;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x5373;&#x8FC7;&#x6E21;&#x89C6;&#x56FE;contentSize</span>
+    <span class="hljs-built_in">UIView</span>* contentView = [LayoutUtils createView];
+    [scrollView addSubview:contentView];
+    [contentView makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(scrollView);
+        make.height.equalTo(scrollView);
+    }];
+
+    <span class="hljs-comment">// &#x52A8;&#x6001;&#x6DFB;&#x52A0;&#x5B50;&#x89C6;&#x56FE;&#x5230; contentView &#x4E0A;</span>
+    <span class="hljs-built_in">UIView</span> *lastView = <span class="hljs-literal">nil</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+        <span class="hljs-built_in">UILabel</span> *label = [LayoutUtils fixedLabelWithText:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;&#x6C34;&#x5E73;&#x65B9;&#x5411;\n&#x7B2C; %d &#x4E2A;&#x89C6;&#x56FE;&quot;</span>, (i + <span class="hljs-number">1</span>)]];
+        [contentView addSubview:label];
+        [label makeConstraints:^(MASConstraintMaker *make) {
+            make.top.bottom.mas_equalTo(padding);
+            make.width.equalTo(scrollView).offset(-(padding.left+padding.right));
+            <span class="hljs-keyword">if</span> (lastView) {
+                make.left.mas_equalTo(lastView.mas_right).offset(padding.left+padding.right);
+            } <span class="hljs-keyword">else</span> {
+                make.left.mas_equalTo(padding);
+            }
+        }];
+        lastView = label;
+    }
+
+    [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(lastView.mas_right).offset(padding.left+padding.right);
+    }];
+
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="array&#x7684;button&#x6570;&#x7EC4;"><a name="array&#x7684;button&#x6570;&#x7EC4;" class="plugin-anchor" href="#array&#x7684;button&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="array&#x7684;button&#x6570;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#array&#x7684;button&#x6570;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>8.10. Array&#x7684;Button&#x6570;&#x7EC4;</h2>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+    [lowerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(<span class="hljs-keyword">self</span>).with.offset(<span class="hljs-number">10.0</span>);
+    }];
+    [centerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(<span class="hljs-keyword">self</span>);
+    }];
+    [raiseButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(<span class="hljs-keyword">self</span>).with.offset(<span class="hljs-number">-10</span>);
+    }];
+    <span class="hljs-keyword">self</span>.buttonViews = @[ raiseButton, lowerButton, centerButton ];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+- (<span class="hljs-keyword">void</span>)centerAction {
+    <span class="hljs-keyword">self</span>.offset = <span class="hljs-number">0.0</span>;
+}
+- (<span class="hljs-keyword">void</span>)raiseAction {
+    <span class="hljs-keyword">self</span>.offset -= kArrayExampleIncrement;
+}
+- (<span class="hljs-keyword">void</span>)lowerAction {
+    <span class="hljs-keyword">self</span>.offset += kArrayExampleIncrement;
+}
+- (<span class="hljs-keyword">void</span>)setOffset:(<span class="hljs-built_in">CGFloat</span>)offset {
+    _offset = offset;
+    [<span class="hljs-keyword">self</span> setNeedsUpdateConstraints];
+}
+- (<span class="hljs-keyword">void</span>)updateConstraints {
+    [<span class="hljs-keyword">self</span>.buttonViews updateConstraints:^(MASConstraintMaker *make) {
+        make.baseline.equalTo(<span class="hljs-keyword">self</span>.mas_centerY).with.offset(<span class="hljs-keyword">self</span>.offset);
+    }];
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+</code></pre>
+<h2 id="layoutmargins"><a name="layoutmargins" class="plugin-anchor" href="#layoutmargins"><i class="fa fa-link" aria-hidden="true"></i></a><a name="layoutmargins" class="anchor-navigation-ex-anchor" href="#layoutmargins"><i class="fa fa-link" aria-hidden="true"></i></a>8.11. layoutMargins</h2>
+<pre><code class="lang-objc">```
+
+<span class="hljs-meta">## mas_distributeViewsAlongAxis</span>
+
+```objc
+[arr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:<span class="hljs-number">20</span> leadSpacing:<span class="hljs-number">5</span> tailSpacing:<span class="hljs-number">5</span>];
+[arr makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(@<span class="hljs-number">60</span>);
+    make.height.equalTo(@<span class="hljs-number">60</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/09.png"></p>
+<pre><code class="lang-objc">[arr mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:<span class="hljs-number">20</span> leadSpacing:<span class="hljs-number">5</span> tailSpacing:<span class="hljs-number">5</span>];
+[arr makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(@<span class="hljs-number">0</span>);
+    make.width.equalTo(@<span class="hljs-number">60</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/10.png"></p>
+<pre><code class="lang-objc">[arr mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:<span class="hljs-number">30</span> leadSpacing:<span class="hljs-number">200</span> tailSpacing:<span class="hljs-number">30</span>];
+[arr makeConstraints:^(MASConstraintMaker *make) {
+    make.top.equalTo(@<span class="hljs-number">60</span>);
+    make.height.equalTo(@<span class="hljs-number">60</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/11.png"></p>
+<pre><code class="lang-objc">[arr mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedItemLength:<span class="hljs-number">30</span> leadSpacing:<span class="hljs-number">30</span> tailSpacing:<span class="hljs-number">200</span>];
+[arr makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(@<span class="hljs-number">0</span>);
+    make.width.equalTo(@<span class="hljs-number">60</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/12.png"></p>
+<pre><code class="lang-objc">+ (<span class="hljs-built_in">BOOL</span>)requiresConstraintBasedLayout {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%s:%@&quot;</span>,__FUNCTION__,<span class="hljs-built_in">NSStringFromCGRect</span>(<span class="hljs-keyword">self</span>.frame));
+
+    <span class="hljs-built_in">UIView</span> *contentView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span> addSubview:contentView];
+    [contentView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(<span class="hljs-keyword">self</span>).offset(@(<span class="hljs-number">20</span>));
+        make.left.right.equalTo(<span class="hljs-keyword">self</span>);
+    }];
+
+    <span class="hljs-built_in">UIView</span> *lastView = <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-built_in">NSInteger</span> itemsCount = <span class="hljs-number">11</span>;
+    <span class="hljs-built_in">NSInteger</span> rowCount = <span class="hljs-number">3</span>;<span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x6BCF;&#x884C;&#x6709;4&#x4E2A;Item</span>
+    <span class="hljs-built_in">NSInteger</span> rowNum = (itemsCount/rowCount) + ((<span class="hljs-built_in">NSInteger</span>)(itemsCount%rowCount&gt;<span class="hljs-number">0</span>));<span class="hljs-comment">//&#x663E;&#x793A;&#x7684;&#x603B;&#x884C;&#x6570;</span>
+    <span class="hljs-built_in">NSInteger</span> itemHeight = <span class="hljs-number">80</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; rowNum; j++) {
+
+        <span class="hljs-built_in">NSMutableArray</span>&lt;<span class="hljs-built_in">UILabel</span>*&gt; *rowArray = [<span class="hljs-built_in">NSMutableArray</span> array];
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rowCount; i++) {
+            <span class="hljs-built_in">NSInteger</span> index = j*rowCount+i;
+            <span class="hljs-built_in">UILabel</span> *label = [LayoutUtils fixedLabelWithText:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;content:%zd&quot;</span>,index]];
+            [contentView addSubview:label];
+            [rowArray addObject:label];
+            lastView = label;
+
+            <span class="hljs-keyword">if</span> (index &gt; itemsCount - <span class="hljs-number">1</span>) {
+                label.text = <span class="hljs-string">@&quot;&quot;</span>;
+                [label setBackgroundColor:<span class="hljs-built_in">UIColor</span>.clearColor];
+            }
+        }
+        <span class="hljs-keyword">if</span> (rowArray.count &gt; <span class="hljs-number">0</span>) {
+            [rowArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:<span class="hljs-number">15</span> leadSpacing:<span class="hljs-number">10</span> tailSpacing:<span class="hljs-number">10</span>];
+            [rowArray makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(@((itemHeight+<span class="hljs-number">20</span>)*j));
+                make.height.equalTo(@(itemHeight));
+            }];
+        }
+    }
+
+    <span class="hljs-keyword">if</span> (lastView) {
+        [contentView makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(lastView.mas_bottom);
+        }];
+    }
+
+    <span class="hljs-built_in">UIView</span> *bottomView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span> addSubview:bottomView];
+    [bottomView makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(contentView.mas_bottom).offset(@(<span class="hljs-number">20</span>));
+        make.left.right.equalTo(<span class="hljs-keyword">self</span>);
+        make.height.equalTo(@(<span class="hljs-number">40</span>));
+    }];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+</code></pre>
+<p><img src="../assets/images/masonry/24.png"></p>
+<h2 id="&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;"><a name="&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;" class="plugin-anchor" href="#&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>8.12. &#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;?</h2>
+<ul>
+<li><code>preferredMaxLayoutWidth</code>: &#x591A;&#x884C;label&#x7684;&#x7EA6;&#x675F;&#x95EE;&#x9898;&#x3002;</li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x5DF2;&#x7ECF;&#x786E;&#x8BA4;&#x597D;&#x4E86;&#x4F4D;&#x7F6E;</span>
+<span class="hljs-comment">// &#x5728;layoutSubviews&#x4E2D;&#x786E;&#x8BA4;label&#x7684;preferredMaxLayoutWidth&#x503C;</span>
+- (<span class="hljs-keyword">void</span>)layoutSubviews {
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+    <span class="hljs-comment">// &#x4F60;&#x5FC5;&#x987B;&#x5728; [super layoutSubviews] &#x8C03;&#x7528;&#x4E4B;&#x540E;&#xFF0C;longLabel&#x7684;frame&#x6709;&#x503C;&#x4E4B;&#x540E;&#x8BBE;&#x7F6E;preferredMaxLayoutWidth</span>
+    <span class="hljs-keyword">self</span>.longLabel.preferredMaxLayoutWidth = <span class="hljs-keyword">self</span>.frame.size.width<span class="hljs-number">-100</span>;
+    <span class="hljs-comment">// &#x8BBE;&#x7F6E;preferredLayoutWidth&#x540E;&#xFF0C;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x5E03;&#x5C40;</span>
+    [<span class="hljs-keyword">super</span> layoutSubviews];
+}
+</code></pre>
+<h2 id="multipler&#x3001;dividedby"><a name="multipler&#x3001;dividedby" class="plugin-anchor" href="#multipler&#x3001;dividedby"><i class="fa fa-link" aria-hidden="true"></i></a><a name="multipler&#x3001;dividedby" class="anchor-navigation-ex-anchor" href="#multipler&#x3001;dividedby"><i class="fa fa-link" aria-hidden="true"></i></a>8.13. multipler&#x3001;dividedBy</h2>
+<p><img src="../assets/images/masonry/13.png"></p>
+<pre><code class="lang-objc">[view makeConstraints:^(MASConstraintMaker *make) {
+    make.center.equalTo(<span class="hljs-keyword">self</span>);
+    make.width.equalTo(view.mas_height).multipliedBy(<span class="hljs-number">2</span>); <span class="hljs-comment">// width = height*2 ==&gt; height = width/2</span>
+    <span class="hljs-comment">//make.height.equalTo(view.mas_width).dividedBy(2);// height = width/2</span>
+    make.width.and.height.equalTo(<span class="hljs-keyword">self</span>).width.priorityLow();
+}];
+</code></pre>
+<h2 id="uitableview"><a name="uitableview" class="plugin-anchor" href="#uitableview"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uitableview" class="anchor-navigation-ex-anchor" href="#uitableview"><i class="fa fa-link" aria-hidden="true"></i></a>8.14. UITableView</h2>
+<p><img src="../assets/images/masonry/14.png"></p>
+<h3 id="uitableviewdatasource"><a name="uitableviewdatasource" class="plugin-anchor" href="#uitableviewdatasource"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uitableviewdatasource" class="anchor-navigation-ex-anchor" href="#uitableviewdatasource"><i class="fa fa-link" aria-hidden="true"></i></a>8.14.1. UITableViewDataSource</h3>
+<pre><code class="lang-objc"><span class="hljs-comment">// ================= MASTableViewDataSorceImpl ====================</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewDataSorceImpl</span> : <span class="hljs-title">NSObject</span>&lt;<span class="hljs-title">UITableViewDataSource</span>&gt;</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">NSArray</span> *dataSource;
+<span class="hljs-keyword">@end</span>
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewDataSorceImpl</span></span>
+- (<span class="hljs-built_in">NSInteger</span>)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView numberOfRowsInSection:(<span class="hljs-built_in">NSInteger</span>)section{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>.dataSource.count;
+}
+-(<span class="hljs-built_in">UITableViewCell</span> *)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath{
+    <span class="hljs-keyword">return</span> [MASTableViewNormalCell cellWithTableView:tableView indexPath:indexPath];
+}
+<span class="hljs-keyword">@end</span>
+<span class="hljs-comment">// ================= MASTableViewDataSorceSubImpl ====================</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewDataSorceSubImpl</span> : <span class="hljs-title">MASTableViewDataSorceImpl</span></span>
+<span class="hljs-keyword">@end</span>
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewDataSorceSubImpl</span></span>
+-(<span class="hljs-built_in">UITableViewCell</span> *)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath{
+    MASTableViewNormalCell *cell = [MASTableViewNormalCell cellWithTableView:tableView indexPath:indexPath];
+    cell.titleLabel.text = <span class="hljs-keyword">self</span>.dataSource[indexPath.row];
+    <span class="hljs-keyword">return</span> cell;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h3 id="mastableviewnormalcell"><a name="mastableviewnormalcell" class="plugin-anchor" href="#mastableviewnormalcell"><i class="fa fa-link" aria-hidden="true"></i></a><a name="mastableviewnormalcell" class="anchor-navigation-ex-anchor" href="#mastableviewnormalcell"><i class="fa fa-link" aria-hidden="true"></i></a>8.14.2. MASTableViewNormalCell</h3>
+<pre><code class="lang-objc"><span class="hljs-comment">// ================= .h ====================</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewNormalCell</span> : <span class="hljs-title">UITableViewCell</span></span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">NSIndexPath</span> *indexPath;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UILabel</span> *titleLabel;
++(<span class="hljs-built_in">NSString</span>*)reuseIdentifier;
++(MASTableViewNormalCell*)cellWithTableView:(<span class="hljs-built_in">UITableView</span>*)tableView indexPath:(<span class="hljs-built_in">NSIndexPath</span>*)indexPath;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-comment">// ================= .m ====================</span>
+
+<span class="hljs-keyword">static</span> <span class="hljs-built_in">UIEdgeInsets</span> <span class="hljs-keyword">const</span> kPadding = {<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>};
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewNormalCell</span></span>
+<span class="hljs-meta">#pragma mark - Init Views</span>
++(<span class="hljs-built_in">NSString</span>*)reuseIdentifier{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">NSStringFromClass</span>([<span class="hljs-keyword">self</span> class]);
+}
+
++(MASTableViewNormalCell*)cellWithTableView:(<span class="hljs-built_in">UITableView</span>*)tableView indexPath:(<span class="hljs-built_in">NSIndexPath</span>*)indexPath{
+    MASTableViewNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:[<span class="hljs-keyword">self</span> reuseIdentifier]];
+    <span class="hljs-keyword">if</span> (!cell) {
+        cell = [[MASTableViewNormalCell alloc] initWithStyle:<span class="hljs-built_in">UITableViewCellStyleDefault</span> reuseIdentifier:[<span class="hljs-keyword">self</span> reuseIdentifier]];
+    }
+    <span class="hljs-keyword">return</span> cell;
+}
+
+-(instancetype)initWithStyle:(<span class="hljs-built_in">UITableViewCellStyle</span>)style reuseIdentifier:(<span class="hljs-built_in">NSString</span> *)reuseIdentifier{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        <span class="hljs-keyword">self</span>.selectionStyle =<span class="hljs-built_in">UITableViewCellSelectionStyleNone</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.titleLabel];
+
+        [<span class="hljs-keyword">self</span>.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.bottom.equalTo(<span class="hljs-keyword">self</span>.contentView).insets(kPadding); <span class="hljs-comment">// &#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+        }];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-built_in">UILabel</span> *)titleLabel{
+    <span class="hljs-keyword">if</span> (!_titleLabel) {
+        _titleLabel = [[<span class="hljs-built_in">UILabel</span> alloc] init];
+        [_titleLabel setLineBreakMode:<span class="hljs-built_in">NSLineBreakByWordWrapping</span>];
+        [_titleLabel setTextAlignment:<span class="hljs-built_in">NSTextAlignmentLeft</span>];
+        [_titleLabel setNumberOfLines:<span class="hljs-number">0</span>];
+        [_titleLabel setTextColor:<span class="hljs-built_in">UIColor</span>.blackColor];
+    }
+    <span class="hljs-keyword">return</span> _titleLabel;
+}
+<span class="hljs-meta">#pragma mark setter</span>
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h3 id="uitableview_1"><a name="uitableview_1" class="plugin-anchor" href="#uitableview_1"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uitableview_1" class="anchor-navigation-ex-anchor" href="#uitableview_1"><i class="fa fa-link" aria-hidden="true"></i></a>8.14.3. UITableView</h3>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASExampleTableView</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UITableView</span> *tableView;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) MASTableViewDataSorceSubImpl *dataSource;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">NSArray</span> *data;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASExampleTableView</span></span>
+
+- (instancetype)init {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> init]) {
+        <span class="hljs-keyword">self</span>.dataSource = [MASTableViewDataSorceSubImpl new];
+        <span class="hljs-keyword">self</span>.dataSource.dataSource = <span class="hljs-keyword">self</span>.data;
+
+        [<span class="hljs-keyword">self</span> addSubview:<span class="hljs-keyword">self</span>.tableView];
+        <span class="hljs-keyword">self</span>.tableView.dataSource = <span class="hljs-keyword">self</span>.dataSource;
+        <span class="hljs-keyword">self</span>.tableView.delegate = <span class="hljs-keyword">self</span>.delegate;
+        [<span class="hljs-keyword">self</span>.tableView reloadData];
+
+        [<span class="hljs-keyword">self</span>.tableView makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(<span class="hljs-keyword">self</span>);
+        }];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-built_in">UITableView</span> *)tableView{
+    <span class="hljs-keyword">if</span> (!_tableView) {
+        _tableView = [[<span class="hljs-built_in">UITableView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectZero</span> style:<span class="hljs-built_in">UITableViewStylePlain</span>];
+        _tableView.estimatedRowHeight = <span class="hljs-number">44</span>;
+        _tableView.rowHeight = <span class="hljs-built_in">UITableViewAutomaticDimension</span>;<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x503C;&#x53EF;&#x7701;&#x7565;&#x3002;</span>
+    }
+    <span class="hljs-keyword">return</span> _tableView;
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;"><a name="&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;" class="plugin-anchor" href="#&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;" class="anchor-navigation-ex-anchor" href="#&#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;"><i class="fa fa-link" aria-hidden="true"></i></a>8.15. &#x5916;&#x90E8;&#x7684;&#x90E8;&#x5206;&#x9760;&#x5185;&#x90E8;&#x652F;&#x6491;</h2>
+<p><img src="../assets/images/masonry/19.png"></p>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIView</span> *superView = [LayoutUtils createView];
+<span class="hljs-built_in">UIButton</span> *tapButton = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;Add&quot;</span> selector:<span class="hljs-keyword">@selector</span>(add)];
+
+<span class="hljs-built_in">UIEdgeInsets</span> padding = <span class="hljs-built_in">UIEdgeInsetsMake</span>(<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+[superView addSubview:tapButton];
+
+[superView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.top.mas_equalTo(padding); <span class="hljs-comment">// &#x7236;&#x63A7;&#x4EF6;&#x53EA;&#x9002;&#x914D;&#x4E86;left.right.top&#x7684;&#x8FB9;&#x8DDD;&#xFF0C;bottom&#x7684;&#x7684;&#x8DDD;&#x79BB;&#x6839;&#x636E;&#x5176;&#x5185;&#x5B50;&#x63A7;&#x4EF6;&#x7684; bottom</span>
+}];
+
+[tapButton makeConstraints:^(MASConstraintMaker *make) {
+    make.left.right.top.mas_equalTo(padding);
+    make.bottom.mas_equalTo(padding);<span class="hljs-comment">// </span>
+    make.height.equalTo(@(<span class="hljs-number">100</span>));
+}];
+</code></pre>
+<h2 id="uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;"><a name="uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;" class="plugin-anchor" href="#uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;" class="anchor-navigation-ex-anchor" href="#uibutton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;"><i class="fa fa-link" aria-hidden="true"></i></a>8.16. UIButton&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;</h2>
+<p><img src="../assets/images/masonry/20.gif"></p>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">id</span>)init {
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">self</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>;
+
+    <span class="hljs-built_in">UIButton</span> *button = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;UIButton&#x5BBD;&#x5EA6;&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(clickButton:)];
+    [<span class="hljs-keyword">self</span> addSubview:button];
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(<span class="hljs-keyword">self</span>);
+        <span class="hljs-comment">//make.height.mas_equalTo(@[button.titleLabel.mas_height,button.imageView.mas_height]);</span>
+        make.height.mas_equalTo(@[button.titleLabel.mas_height]);
+        make.width.mas_lessThanOrEqualTo(<span class="hljs-number">300</span>);
+    }];
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-keyword">void</span>)clickButton:(<span class="hljs-built_in">UIButton</span>*)sender{
+    [sender setTitle:[sender.currentTitle stringByAppendingString:<span class="hljs-string">@&quot;&#x81EA;&#x9002;&#x5E94;&quot;</span>] forState:<span class="hljs-built_in">UIControlStateNormal</span>];
+}
+</code></pre>
+<h2 id="uitableview&#x4E5D;&#x5BAB;&#x683C;"><a name="uitableview&#x4E5D;&#x5BAB;&#x683C;" class="plugin-anchor" href="#uitableview&#x4E5D;&#x5BAB;&#x683C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uitableview&#x4E5D;&#x5BAB;&#x683C;" class="anchor-navigation-ex-anchor" href="#uitableview&#x4E5D;&#x5BAB;&#x683C;"><i class="fa fa-link" aria-hidden="true"></i></a>8.17. UITableView&#x4E5D;&#x5BAB;&#x683C;</h2>
+<p><img src="../assets/images/masonry/25.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewImagesCell</span></span>
+-(instancetype)initWithStyle:(<span class="hljs-built_in">UITableViewCellStyle</span>)style reuseIdentifier:(<span class="hljs-built_in">NSString</span> *)reuseIdentifier{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        <span class="hljs-keyword">self</span>.selectionStyle = <span class="hljs-built_in">UITableViewCellSelectionStyleNone</span>;
+
+        _imagesArr = [<span class="hljs-built_in">NSArray</span> array];
+
+        <span class="hljs-keyword">self</span>.picContentView = [LayoutUtils createView];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.picContentView];
+        [<span class="hljs-keyword">self</span>.picContentView makeConstraints:^(MASConstraintMaker *make) {
+            make.left.top.right.equalTo(<span class="hljs-keyword">self</span>.contentView);
+        }];
+
+        <span class="hljs-keyword">self</span>.bottomView = [LayoutUtils createView];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.bottomView];
+        [<span class="hljs-keyword">self</span>.bottomView makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(<span class="hljs-keyword">self</span>.picContentView.mas_bottom).insets(kPadding);
+            make.height.equalTo(@<span class="hljs-number">100</span>);
+            make.left.bottom.right.equalTo(kPadding);
+        }];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+
+-(<span class="hljs-keyword">void</span>)updateData{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%s&quot;</span>,__func__);
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.cellData.imgs &amp;&amp; <span class="hljs-keyword">self</span>.cellData.imgs.length &gt; <span class="hljs-number">0</span>) {
+        <span class="hljs-built_in">NSString</span> *temptString = <span class="hljs-keyword">self</span>.cellData.imgs;
+        <span class="hljs-keyword">if</span> ([[temptString substringFromIndex:temptString.length<span class="hljs-number">-1</span>] isEqualToString:<span class="hljs-string">@&quot;,&quot;</span>]) {
+            temptString = [temptString substringToIndex:[temptString length]<span class="hljs-number">-1</span>];
+        }
+        <span class="hljs-keyword">self</span>.imagesArr = [temptString componentsSeparatedByString:<span class="hljs-string">@&quot;,&quot;</span>];
+        [<span class="hljs-keyword">self</span> createPicView:<span class="hljs-keyword">self</span>.imagesArr.count];
+    }
+}
+- (<span class="hljs-keyword">void</span>)createPicView:(<span class="hljs-built_in">NSInteger</span>)itemNum {
+    <span class="hljs-keyword">if</span> (itemNum &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">UIView</span> *object <span class="hljs-keyword">in</span> <span class="hljs-keyword">self</span>.picContentView.subviews) {
+        [object removeFromSuperview];
+    }
+
+    <span class="hljs-comment">//&#x5047;&#x8BBE;&#x8981;&#x663E;&#x793A; num &#x4E2A;item</span>
+    <span class="hljs-built_in">NSInteger</span> num = itemNum;
+    <span class="hljs-comment">//&#x6BCF;&#x884C;&#x663E;&#x793A;&#x7684;&#x4E2A;&#x6570;</span>
+    <span class="hljs-built_in">NSInteger</span> count = <span class="hljs-number">3</span>;
+    <span class="hljs-comment">//&#x663E;&#x793A;&#x7684;&#x603B;&#x884C;&#x6570;</span>
+    <span class="hljs-built_in">NSInteger</span> rowNum = (num/count) + ((<span class="hljs-built_in">NSInteger</span>)(num%count&gt;<span class="hljs-number">0</span>));
+
+    <span class="hljs-built_in">UIView</span> *lastView = <span class="hljs-literal">nil</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rowNum; i ++) {
+        <span class="hljs-built_in">NSMutableArray</span> *masonryViewArray = [<span class="hljs-built_in">NSMutableArray</span> array];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; count; j ++) {
+            <span class="hljs-built_in">NSInteger</span> currentIndex = i * count + j;
+
+            <span class="hljs-built_in">UIView</span> *view = [LayoutUtils createView];
+            <span class="hljs-keyword">if</span> (currentIndex &gt; num<span class="hljs-number">-1</span>) {
+                view.backgroundColor = [<span class="hljs-built_in">UIColor</span> clearColor];
+                view.layer.borderColor = [<span class="hljs-built_in">UIColor</span> clearColor].CGColor;
+            }
+            [<span class="hljs-keyword">self</span>.picContentView addSubview:view];
+
+            [masonryViewArray addObject:view];
+            lastView = view;
+        }
+        <span class="hljs-comment">// &#x56FA;&#x5B9A; item &#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#xFF0C;item &#x7684;&#x5BBD;&#x6216;&#x8005;&#x9AD8;&#x81EA;&#x52A8;&#x7F29;&#x653E;</span>
+        [masonryViewArray mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:<span class="hljs-number">15</span> leadSpacing:kPadding.left tailSpacing:kPadding.right];
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;array&#x7684;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x7684;&#x7EA6;&#x675F;</span>
+        [masonryViewArray makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@((<span class="hljs-number">100</span> * i) + kPadding.top));
+            make.height.equalTo(@<span class="hljs-number">80</span>).priorityLow();
+        }];
+    }
+    [<span class="hljs-keyword">self</span>.picContentView makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(lastView.mas_bottom).priorityLow();
+    }];
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;"><a name="uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;" class="plugin-anchor" href="#uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;" class="anchor-navigation-ex-anchor" href="#uitableview-&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;"><i class="fa fa-link" aria-hidden="true"></i></a>8.18. UITableView &#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;</h2>
+<p><img src="../assets/images/masonry/28.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewProfieCell</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) MASConstraint* masHeight;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewProfieCell</span></span>
+-(instancetype)initWithStyle:(<span class="hljs-built_in">UITableViewCellStyle</span>)style reuseIdentifier:(<span class="hljs-built_in">NSString</span> *)reuseIdentifier{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        <span class="hljs-keyword">self</span>.selectionStyle = <span class="hljs-built_in">UITableViewCellSelectionStyleNone</span>;
+
+        <span class="hljs-keyword">self</span>.headImageView = [LayoutUtils createView];
+        <span class="hljs-keyword">self</span>.headImageView.layer.cornerRadius = <span class="hljs-number">30</span>;
+        <span class="hljs-keyword">self</span>.headImageView.layer.masksToBounds = <span class="hljs-literal">YES</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.headImageView];
+        [<span class="hljs-keyword">self</span>.headImageView makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@<span class="hljs-number">60</span>);
+            make.height.equalTo(@<span class="hljs-number">60</span>).priorityLow();
+            make.left.top.equalTo(kPadding);
+        }];
+        [<span class="hljs-keyword">self</span>.headImageView setContentCompressionResistancePriority:<span class="hljs-built_in">UILayoutPriorityRequired</span> forAxis:<span class="hljs-built_in">UILayoutConstraintAxisVertical</span>];
+
+        <span class="hljs-keyword">self</span>.titleLabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&quot;</span>];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.titleLabel];
+        <span class="hljs-keyword">self</span>.titleLabel.numberOfLines = <span class="hljs-number">1</span>;
+        [<span class="hljs-keyword">self</span>.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(kPadding);
+            make.left.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_right).insets(kPadding);
+            make.right.lessThanOrEqualTo(kPadding);
+        }];
+
+
+        <span class="hljs-keyword">self</span>.descabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&quot;</span>];
+        <span class="hljs-keyword">self</span>.descabel.textAlignment = <span class="hljs-built_in">NSTextAlignmentLeft</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.descabel];
+        [<span class="hljs-keyword">self</span>.descabel makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_right).insets(kPadding);
+            make.top.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_centerY);
+            make.right.lessThanOrEqualTo(kPadding);
+
+            make.bottom.equalTo(kPadding);
+            make.bottom.greaterThanOrEqualTo(<span class="hljs-keyword">self</span>.headImageView);
+            <span class="hljs-comment">//self.masHeight = make.height.lessThanOrEqualTo(@100);</span>
+        }];
+
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-keyword">void</span>)updateData{
+    <span class="hljs-keyword">self</span>.titleLabel.text = <span class="hljs-keyword">self</span>.cellData.content;
+    <span class="hljs-keyword">self</span>.descabel.text = <span class="hljs-keyword">self</span>.cellData.content;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.cellData.isExpended) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;==1==&quot;</span>);
+        <span class="hljs-comment">//[self.masHeight uninstall];</span>
+        <span class="hljs-keyword">self</span>.descabel.numberOfLines = <span class="hljs-number">0</span>;
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;==2==&quot;</span>);
+        <span class="hljs-comment">//[self.masHeight install];</span>
+        <span class="hljs-keyword">self</span>.descabel.numberOfLines = <span class="hljs-number">3</span>;
+    }
+
+    [<span class="hljs-keyword">super</span> updateData];
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p>&#x53E6;&#x5916;&#x4E00;&#x79CD;&#x5E03;&#x5C40;&#x7EA6;&#x675F;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;<code>headImageView.bottom&lt;-cell.bottom</code> cell&#x7684;&#x5E95;&#x90E8;&#x5FC5;&#x987B;&#x8D85;&#x8FC7;<code>heaImageView</code>&#xFF0C;&#x540C;&#x65F6;&#x5982;&#x679C;<code>descLabel.bottom&lt;-cell.bottom</code> cell&#x7684;&#x5E95;&#x90E8;&#x5FC5;&#x987B;&#x8D85;&#x8FC7;<code>descLabel</code>&#xFF1B;&#x4E5F;&#x652F;&#x6301;&#x6298;&#x53E0;&#x3001;&#x5C55;&#x5F00;&#x3002;</p>
+<p><img src="../assets/images/masonry/29.png"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MASTableViewProfieCell</span>()</span>
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">strong</span>, <span class="hljs-keyword">nonatomic</span>) MASConstraint* masHeight;
+<span class="hljs-keyword">@end</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">MASTableViewProfieCell</span></span>
+-(instancetype)initWithStyle:(<span class="hljs-built_in">UITableViewCellStyle</span>)style reuseIdentifier:(<span class="hljs-built_in">NSString</span> *)reuseIdentifier{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span> == [<span class="hljs-keyword">super</span> initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        <span class="hljs-keyword">self</span>.selectionStyle = <span class="hljs-built_in">UITableViewCellSelectionStyleNone</span>;
+
+        <span class="hljs-keyword">self</span>.headImageView = [LayoutUtils createView];
+        <span class="hljs-keyword">self</span>.headImageView.layer.cornerRadius = <span class="hljs-number">30</span>;
+        <span class="hljs-keyword">self</span>.headImageView.layer.masksToBounds = <span class="hljs-literal">YES</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.headImageView];
+        [<span class="hljs-keyword">self</span>.headImageView makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@<span class="hljs-number">60</span>);
+            make.height.equalTo(@<span class="hljs-number">60</span>).priorityLow();
+            make.left.top.equalTo(kPadding);
+            make.bottom.lessThanOrEqualTo(kPadding); <span class="hljs-comment">//&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+        }];
+        [<span class="hljs-keyword">self</span>.headImageView setContentCompressionResistancePriority:<span class="hljs-built_in">UILayoutPriorityRequired</span> forAxis:<span class="hljs-built_in">UILayoutConstraintAxisVertical</span>];
+
+        <span class="hljs-keyword">self</span>.titleLabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&quot;</span>];
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.titleLabel];
+        <span class="hljs-keyword">self</span>.titleLabel.numberOfLines = <span class="hljs-number">1</span>;
+        [<span class="hljs-keyword">self</span>.titleLabel makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(kPadding);
+            make.left.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_right).insets(kPadding);
+            make.right.lessThanOrEqualTo(kPadding);
+        }];
+
+
+        <span class="hljs-keyword">self</span>.descabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&quot;</span>];
+        <span class="hljs-keyword">self</span>.descabel.textAlignment = <span class="hljs-built_in">NSTextAlignmentLeft</span>;
+        [<span class="hljs-keyword">self</span>.contentView addSubview:<span class="hljs-keyword">self</span>.descabel];
+        [<span class="hljs-keyword">self</span>.descabel makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_right).insets(kPadding);
+            make.top.equalTo(<span class="hljs-keyword">self</span>.headImageView.mas_centerY);
+            make.right.lessThanOrEqualTo(kPadding);
+
+            <span class="hljs-comment">//make.bottom.equalTo(kPadding);</span>
+            <span class="hljs-keyword">self</span>.masHeight = make.height.lessThanOrEqualTo(@<span class="hljs-number">100</span>); <span class="hljs-comment">//&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+            <span class="hljs-comment">//make.bottom.greaterThanOrEqualTo(self.headImageView);</span>
+            make.bottom.lessThanOrEqualTo(kPadding); <span class="hljs-comment">//&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+        }];
+
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+-(<span class="hljs-keyword">void</span>)updateData{
+    <span class="hljs-keyword">self</span>.titleLabel.text = <span class="hljs-keyword">self</span>.cellData.content;
+    <span class="hljs-keyword">self</span>.descabel.text = <span class="hljs-keyword">self</span>.cellData.content;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.cellData.isExpended) {
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;==1==&quot;</span>);
+        [<span class="hljs-keyword">self</span>.masHeight uninstall]; <span class="hljs-comment">//&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+        <span class="hljs-keyword">self</span>.descabel.numberOfLines = <span class="hljs-number">0</span>;
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;==2==&quot;</span>);
+        [<span class="hljs-keyword">self</span>.masHeight install]; <span class="hljs-comment">//&#x5173;&#x952E;&#x4EE3;&#x7801;</span>
+        <span class="hljs-keyword">self</span>.descabel.numberOfLines = <span class="hljs-number">3</span>;
+    }
+
+    [<span class="hljs-keyword">super</span> updateData];
+}
+
+-(<span class="hljs-keyword">void</span>)updateConstraints{
+    [<span class="hljs-keyword">super</span> updateConstraints];
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<p><img src="../assets/images/masonry/30.png"></p>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="plugin-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>9. &#x8D44;&#x6599;</h1>
+<ul>
+<li><a href="http://chuquan.me/2019/09/25/systematic-understand-ios-autolayout/" target="_blank">&#x7CFB;&#x7EDF;&#x7406;&#x89E3; iOS &#x81EA;&#x52A8;&#x5E03;&#x5C40;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="kit-UIStackView.html" class="navigation navigation-prev " aria-label="Previous page: UIStackView">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tools-Reactivecocoa.html" class="navigation navigation-next " aria-label="Next page: Reactivecocoa">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Masonry","level":"3.1","depth":1,"next":{"title":"Reactivecocoa","level":"3.2","depth":1,"path":"_posts/tools-Reactivecocoa.md","ref":"_posts/tools-Reactivecocoa.md","articles":[]},"previous":{"title":"UIStackView","level":"2.1","depth":1,"path":"_posts/kit-UIStackView.md","ref":"_posts/kit-UIStackView.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"_posts/tools-masonry.md","mtime":"2020-06-18T05:41:08.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-18T07:29:03.041Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
