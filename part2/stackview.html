@@ -1,0 +1,926 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>We love feedback · Objective-C</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Sam Lau">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../part1/">
+            
+                <a href="../part1/">
+            
+                    
+                    Part I
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../part1/reactivecocoa.html">
+            
+                <a href="../part1/reactivecocoa.html">
+            
+                    
+                    Writing is nice
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Part II
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="stackview.html">
+            
+                <a href="stackview.html">
+            
+                    
+                    We love feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >We love feedback</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;"><b>1. </b>&#x521B;&#x5EFA;</a></li><li><span class="title-icon "></span><a href="#&#x5E03;&#x5C40;"><b>2. </b>&#x5E03;&#x5C40;</a></li><ul><li><span class="title-icon "></span><a href="#axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;"><b>2.1. </b>axis &#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;"><b>2.2. </b>distribution &#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;</a></li><ul><li><span class="title-icon "></span><a href="#uistackviewdistributionfill"><b>2.2.1. </b>UIStackViewDistributionFill</a></li><li><span class="title-icon "></span><a href="#uistackviewdistributionfillequally"><b>2.2.2. </b>UIStackViewDistributionFillEqually</a></li><li><span class="title-icon "></span><a href="#uistackviewdistributionfillproportionally"><b>2.2.3. </b>UIStackViewDistributionFillProportionally</a></li><li><span class="title-icon "></span><a href="#uistackviewdistributionequalspacing"><b>2.2.4. </b>UIStackViewDistributionEqualSpacing</a></li><li><span class="title-icon "></span><a href="#uistackviewdistributionequalcentering"><b>2.2.5. </b>UIStackViewDistributionEqualCentering</a></li></ul><li><span class="title-icon "></span><a href="#alignment"><b>2.3. </b>alignment</a></li><ul><li><span class="title-icon "></span><a href="#uistackviewalignmentfill"><b>2.3.1. </b>UIStackViewAlignmentFill</a></li><li><span class="title-icon "></span><a href="#uistackviewalignmentleading&#x3001;uistackviewalignmenttop"><b>2.3.2. </b>UIStackViewAlignmentLeading&#x3001;UIStackViewAlignmentTop</a></li><li><span class="title-icon "></span><a href="#uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom"><b>2.3.3. </b>UIStackViewAlignmentTrailing&#x3001;UIStackViewAlignmentBottom</a></li><li><span class="title-icon "></span><a href="#uistackviewalignmentcenter"><b>2.3.4. </b>UIStackViewAlignmentCenter</a></li><li><span class="title-icon "></span><a href="#uistackviewalignmentfirstbaseline"><b>2.3.5. </b>UIStackViewAlignmentFirstBaseline</a></li><li><span class="title-icon "></span><a href="#uistackviewalignmentlastbaseline"><b>2.3.6. </b>UIStackViewAlignmentLastBaseline</a></li></ul><li><span class="title-icon "></span><a href="#spacing"><b>2.4. </b>spacing</a></li><li><span class="title-icon "></span><a href="#baselinerelativearrangement"><b>2.5. </b>baselineRelativeArrangement</a></li><li><span class="title-icon "></span><a href="#layoutmarginsrelativearrangement"><b>2.6. </b>layoutMarginsRelativeArrangement</a></li><li><span class="title-icon "></span><a href="#&#x5237;&#x65B0;&#x5E03;&#x5C40;"><b>2.7. </b>&#x5237;&#x65B0;&#x5E03;&#x5C40;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"><b>3. </b>&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;</a></li><li><span class="title-icon "></span><a href="#&#x793A;&#x4F8B;"><b>4. </b>&#x793A;&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#&#x70B9;&#x8D5E;"><b>4.1. </b>&#x70B9;&#x8D5E;</a></li><li><span class="title-icon "></span><a href="#&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;"><b>4.2. </b>&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;</a></li><li><span class="title-icon "></span><a href="#&#x7FFB;&#x8BD1;"><b>4.3. </b>&#x7FFB;&#x8BD1;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8D44;&#x6599;"><b>5. </b>&#x8D44;&#x6599;</a></li></ul></div><a href="#&#x521B;&#x5EFA;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><blockquote>
+<p>&#x7CFB;&#x7EDF;&#xFF1A;9.0&#x4EE5;&#x4E0A;&#x3002;</p>
+</blockquote>
+<p><code>UIStackView</code>&#x50CF;&#x4E00;&#x4E2A;&#x5BB9;&#x5668;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;<code>UITableView</code>&#xFF0C;<code>UICollectionView</code>&#x3002;</p>
+<h1 id="&#x521B;&#x5EFA;"><a name="&#x521B;&#x5EFA;" class="plugin-anchor" href="#&#x521B;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x521B;&#x5EFA;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x521B;&#x5EFA;</h1>
+<p>&#x521D;&#x59CB;&#x5316;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-objc">- (instancetype)initWithFrame:(<span class="hljs-built_in">CGRect</span>)frame <span class="hljs-built_in">NS_DESIGNATED_INITIALIZER</span>;
+- (instancetype)initWithCoder:(<span class="hljs-built_in">NSCoder</span> *)coder <span class="hljs-built_in">NS_DESIGNATED_INITIALIZER</span>;
+
+- (instancetype)initWithArrangedSubviews:(<span class="hljs-built_in">NSArray</span>&lt;__kindof <span class="hljs-built_in">UIView</span> *&gt; *)views;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,<span class="hljs-keyword">readonly</span>,<span class="hljs-keyword">copy</span>) <span class="hljs-built_in">NSArray</span>&lt;__kindof <span class="hljs-built_in">UIView</span> *&gt; *arrangedSubviews;
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIStackView</span> *sv = [LayoutUtils creatStackView];
+[<span class="hljs-keyword">self</span> addSubview:sv];
+
+<span class="hljs-built_in">UIView</span> *subView1 = [LayoutUtils createView];
+<span class="hljs-built_in">UIView</span> *subView2 = [LayoutUtils createView];
+
+<span class="hljs-comment">// &#x5B50;View &#x5B9E;&#x4F8B;&#x52A0;&#x5230; UIStackView &#x91CC;</span>
+[sv addArrangedSubview:subView1];
+[sv addArrangedSubview:subView2];
+
+<span class="hljs-built_in">NSArray</span>&lt;<span class="hljs-built_in">UIView</span> *&gt; *arrangedSubviews = sv.arrangedSubviews;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@&quot;</span>,arrangedSubviews);
+<span class="hljs-comment">/*
+2020-06-12 09:39:59.898694+0800 MasonryExample[65963:3203047] (
+    &quot;&lt;UIView: 0x7fcb28c40940; frame = (0 0; 0 0); layer = &lt;CALayer: 0x6000039cfd60&gt;&gt;&quot;,
+    &quot;&lt;UIView: 0x7fcb28c40ab0; frame = (0 0; 0 0); layer = &lt;CALayer: 0x6000039cfda0&gt;&gt;&quot;
+)
+*/</span>
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-built_in">UILabel</span> *subLabel1 = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;Sub1&quot;</span>];
+<span class="hljs-built_in">UILabel</span> *subLabel2 = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;Sub2&quot;</span>];
+
+<span class="hljs-built_in">UIStackView</span> *sv = [[<span class="hljs-built_in">UIStackView</span> alloc] initWithArrangedSubviews:@[subLabel1,subLabel2]];
+[<span class="hljs-keyword">self</span> addSubview:sv];
+
+<span class="hljs-built_in">NSArray</span>&lt;<span class="hljs-built_in">UIView</span> *&gt; *arrangedSubviews = sv.arrangedSubviews;
+<span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%@&quot;</span>,arrangedSubviews);
+<span class="hljs-comment">/*
+2020-06-12 09:42:19.734773+0800 MasonryExample[66066:3204972] (
+    &quot;&lt;UILabel: 0x7f909d73d010; frame = (0 0; 0 0); text = &apos;Sub1&apos;; userInteractionEnabled = NO; layer = &lt;_UILabelLayer: 0x600000803200&gt;&gt;&quot;,
+    &quot;&lt;UILabel: 0x7f909d7430b0; frame = (0 0; 0 0); text = &apos;Sub2&apos;; userInteractionEnabled = NO; layer = &lt;_UILabelLayer: 0x6000008032f0&gt;&gt;&quot;
+)
+*/</span>
+</code></pre>
+<p>&#x4ECE;&#x7ED3;&#x6784;&#x4E0A;&#x770B;<code>@interface UIStackView : UIView</code>&#xFF0C;<code>UIStackView</code>&#x662F;&#x7EE7;&#x627F;&#x81EA;<code>UIView</code>&#xFF0C;&#x5BF9;&#x6BD4;&#x4E0B;&#x4ED6;&#x4EEC;&#x7684;&#x5173;&#x7CFB;&#xFF1A;</p>
+<ul>
+<li><code>subviews</code>&#xFF1A;&#x5B83;&#x7684;&#x987A;&#x5E8F;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x56FE;&#x5C42;&#x8986;&#x76D6;&#x987A;&#x5E8F;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x89C6;&#x56FE;&#x5143;&#x7D20;&#x7684;<code>z</code>&#x8F74;&#x3002;</li>
+<li><code>arrangedSubviews</code>&#xFF1A;&#x5B83;&#x7684;&#x987A;&#x5E8F;&#x4EE3;&#x8868;&#x4E86; <code>stack</code> &#x5806;&#x53E0;&#x7684;&#x4F4D;&#x7F6E;&#x987A;&#x5E8F;&#xFF0C;&#x5373;&#x89C6;&#x56FE;&#x5143;&#x7D20;&#x7684;<code>x</code>&#x8F74;&#x548C;<code>y</code>&#x8F74;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x6CA1;&#x6709;&#x88AB; <code>addSubview</code>&#xFF0C;&#x8C03;&#x7528; <code>arrangedSubviews</code> &#x4F1A;&#x81EA;&#x52A8; <code>addSubview</code>&#x3002;</li>
+<li>&#x5F53;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x88AB; <code>removeFromSuperview</code> &#xFF0C;&#x5219; <code>arrangedSubviews</code>&#x4E5F;&#x4F1A;&#x540C;&#x6B65;&#x79FB;&#x9664;&#x3002;</li>
+<li>&#x5F53;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x88AB; <code>removeArrangedSubview</code>&#xFF0C; &#x4E0D;&#x4F1A;&#x89E6;&#x53D1; <code>removeFromSuperview</code>&#xFF0C;&#x5B83;&#x4F9D;&#x7136;&#x5728;&#x89C6;&#x56FE;&#x7ED3;&#x6784;&#x4E2D;&#x3002;</li>
+</ul>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x5E03;&#x5C40;"><a name="&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5E03;&#x5C40;</h1>
+<p>&#x53EF;&#x4EE5;&#x63A7;&#x5236;&#x5E03;&#x5C40;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UILayoutConstraintAxis</span> axis;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIStackViewDistribution</span> distribution;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIStackViewAlignment</span> alignment;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">CGFloat</span> spacing;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,getter=isBaselineRelativeArrangement) <span class="hljs-built_in">BOOL</span> baselineRelativeArrangement;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,getter=isLayoutMarginsRelativeArrangement) <span class="hljs-built_in">BOOL</span> layoutMarginsRelativeArrangement;
+</code></pre>
+<p><img src="../assets/images/masonry/40.png"></p>
+<h2 id="axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;"><a name="axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;" class="plugin-anchor" href="#axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;" class="anchor-navigation-ex-anchor" href="#axis-&#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. axis &#x5E03;&#x5C40;&#x65B9;&#x5411;&#xFF08;&#x8F74;&#xFF09;</h2>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UILayoutConstraintAxis</span> axis;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-built_in">NS_ENUM</span>(<span class="hljs-built_in">NSInteger</span>, <span class="hljs-built_in">UILayoutConstraintAxis</span>) {
+    <span class="hljs-built_in">UILayoutConstraintAxisHorizontal</span> = <span class="hljs-number">0</span>, <span class="hljs-comment">// &#x6C34;&#x5E73;&#x65B9;&#x5411;</span>
+    <span class="hljs-built_in">UILayoutConstraintAxisVertical</span> = <span class="hljs-number">1</span> <span class="hljs-comment">// &#x5782;&#x76F4;&#x65B9;&#x5411;</span>
+};
+</code></pre>
+<h2 id="distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;"><a name="distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;" class="plugin-anchor" href="#distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#distribution-&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. distribution &#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5206;&#x5E03;</h2>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIStackViewDistribution</span> distribution;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-built_in">NS_ENUM</span>(<span class="hljs-built_in">NSInteger</span>, <span class="hljs-built_in">UIStackViewDistribution</span>) {
+    <span class="hljs-built_in">UIStackViewDistributionFill</span> = <span class="hljs-number">0</span>,<span class="hljs-comment">// &#x9ED8;&#x8BA4;&#xFF0C;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x586B;&#x5145;</span>
+    <span class="hljs-built_in">UIStackViewDistributionFillEqually</span>, <span class="hljs-comment">//&#x8F74;&#x65B9;&#x5411;&#x7B49;&#x5BBD;&#x6216;&#x767B;&#x9AD8;</span>
+    <span class="hljs-built_in">UIStackViewDistributionFillProportionally</span>,<span class="hljs-comment">// &#x8F74;&#x65B9;&#x5411;&#xFF0C;&#x6BD4;&#x4F8B;&#x5206;&#x5E03;</span>
+    <span class="hljs-built_in">UIStackViewDistributionEqualSpacing</span>,<span class="hljs-comment">// &#x5B50;&#x89C6;&#x56FE;&#x95F4;&#x9694;&#x4E00;&#x81F4;</span>
+    <span class="hljs-built_in">UIStackViewDistributionEqualCentering</span>, <span class="hljs-comment">// &#x5B50;&#x89C6;&#x56FE;&#x4E2D;&#x5FC3;&#x8DDD;&#x79BB;&#x4E00;&#x81F4;</span>
+}
+</code></pre>
+<h3 id="uistackviewdistributionfill"><a name="uistackviewdistributionfill" class="plugin-anchor" href="#uistackviewdistributionfill"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewdistributionfill" class="anchor-navigation-ex-anchor" href="#uistackviewdistributionfill"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.1. UIStackViewDistributionFill</h3>
+<ul>
+<li><code>UILayoutConstraintAxisHorizontal</code>:<ul>
+<li><code>UIStackView</code>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;<code>UIStackView</code>&#x7684;&#x5BBD;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;1&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x5219;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x5C31;&#x7B49;&#x4E8E;UIStackView&#x7684;&#x5BBD;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;2&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E00;&#x6837;&#xFF0C;&#x5219;&#x4F1A;&#x62C9;&#x4F38;&#x6216;&#x538B;&#x7F29;&#x67D0;&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4F7F;&#x4E24;&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x4E4B;&#x548C;&#x7B49;&#x4E8E;UIStackView&#x7684;&#x5BBD;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;2&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5219;&#x4F1A;&#x6309;&#x4F18;&#x5148;&#x7EA7;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x8BBE;&#x7F6E;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x4F4E;&#x7684;&#x5B50;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x62C9;&#x4F38;&#x6216;&#x538B;&#x7F29;&#x3002;</li>
+</ul>
+</li>
+<li><code>UILayoutConstraintAxisVertical</code>:<ul>
+<li><code>UIStackView</code>&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;<code>UIStackView</code>&#x7684;&#x9AD8;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;1&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x5219;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x9AD8;&#x5EA6;&#x5C31;&#x7B49;&#x4E8E;UIStackView&#x7684;&#x9AD8;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;2&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E00;&#x6837;&#xFF0C;&#x5219;&#x4F1A;&#x62C9;&#x4F38;&#x6216;&#x538B;&#x7F29;&#x67D0;&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4F7F;&#x4E24;&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x9AD8;&#x5EA6;&#x4E4B;&#x548C;&#x7B49;&#x4E8E;UIStackView&#x7684;&#x9AD8;&#x3002;</li>
+<li>&#x5F53;<code>UIStackView</code>&#x4E2D;&#x6709;2&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#xFF0C;&#x4E14;&#x4F18;&#x5148;&#x7EA7;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x5219;&#x4F1A;&#x6309;&#x4F18;&#x5148;&#x7EA7;&#x4ECE;&#x9AD8;&#x5230;&#x4F4E;&#x8BBE;&#x7F6E;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5BF9;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x4F4E;&#x7684;&#x5B50;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x5FC5;&#x8981;&#x7684;&#x62C9;&#x4F38;&#x6216;&#x538B;&#x7F29;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p><code>UIStackViewDistributionFill</code>&#x57FA;&#x672C;&#x5C31;&#x662F;&#x5728;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x5BF9;&#x5B50;&#x89C6;&#x56FE;&#x8FDB;&#x884C;&#x586B;&#x5145;&#xFF0C;&#x7C7B;&#x4F3C;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x5B50;&#x89C6;&#x56FE;&#x6267;&#x884C;&#x4E86;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x522B;&#x6324;&#x6211;</span>
+- (<span class="hljs-keyword">void</span>)setContentCompressionResistancePriority:(<span class="hljs-built_in">UILayoutPriority</span>)priority forAxis:(<span class="hljs-built_in">UILayoutConstraintAxis</span>)axis;
+<span class="hljs-comment">// &#x62B1;&#x7D27;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;sizefit&#xFF0C;&#x4E0D;&#x4F1A;&#x6839;&#x636E;&#x7236;view&#x957F;&#x5EA6;&#x53D8;&#x5316;</span>
+- (<span class="hljs-keyword">void</span>)setContentHuggingPriority:(<span class="hljs-built_in">UILayoutPriority</span>)priority forAxis:(<span class="hljs-built_in">UILayoutConstraintAxis</span>)axis;
+</code></pre>
+<p><img src="../assets/images/masonry/37.png"></p>
+<h3 id="uistackviewdistributionfillequally"><a name="uistackviewdistributionfillequally" class="plugin-anchor" href="#uistackviewdistributionfillequally"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewdistributionfillequally" class="anchor-navigation-ex-anchor" href="#uistackviewdistributionfillequally"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.2. UIStackViewDistributionFillEqually</h3>
+<ul>
+<li><code>UILayoutConstraintAxisHorizontal</code>:<ul>
+<li>&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x5728;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x7B49;&#x5BBD;&#x3002;</li>
+</ul>
+</li>
+<li><code>UILayoutConstraintAxisVertical</code>:<ul>
+<li>&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x5728;&#x8F74;&#x65B9;&#x5411;&#x4E0A;&#x7B49;&#x9AD8;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../assets/images/masonry/38.png"></p>
+<pre><code class="lang-objc">[subView1 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">40</span>, <span class="hljs-number">100</span>))).priorityLow();
+}];
+[subView2 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">100</span>, <span class="hljs-number">80</span>))).priorityLow();
+}];
+[subView3 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">70</span>, <span class="hljs-number">120</span>))).priorityLow();
+}];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    make.right.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.view);
+    make.height.equalTo(@<span class="hljs-number">200</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/41.png"></p>
+<h3 id="uistackviewdistributionfillproportionally"><a name="uistackviewdistributionfillproportionally" class="plugin-anchor" href="#uistackviewdistributionfillproportionally"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewdistributionfillproportionally" class="anchor-navigation-ex-anchor" href="#uistackviewdistributionfillproportionally"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.3. UIStackViewDistributionFillProportionally</h3>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x540E;&#x4F1A;&#x6839;&#x636E;&#x539F;&#x5148;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x6BD4;&#x4F8B;&#x6765;&#x62C9;&#x4F38;&#x6216;&#x538B;&#x7F29;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x6216;&#x9AD8;&#xFF0C;&#x5982;&#x679C;&#x4E09;&#x4E2A;&#x5B50;&#x89C6;&#x56FE;&#x539F;&#x5148;&#x8BBE;&#x7F6E;&#x7684;&#x5BBD;&#x5EA6;&#x662F;1&#xFF1A;2&#xFF1A;3&#xFF0C;&#x6240;&#x4EE5;&#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4E0A;&#x663E;&#x793A;&#x65F6;&#xFF0C;&#x4F1A;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C9;&#x4F38;&#x3002;</p>
+<p><img src="../assets/images/masonry/46.png"></p>
+<pre><code class="lang-objc">[subView1 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">1</span>, <span class="hljs-number">200</span>))).priorityLow();
+}];
+[subView2 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">2</span>, <span class="hljs-number">200</span>))).priorityLow();
+}];
+[subView3 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">3</span>, <span class="hljs-number">200</span>))).priorityLow();
+}];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    make.right.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.height.equalTo(@<span class="hljs-number">200</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/43.png"></p>
+<h3 id="uistackviewdistributionequalspacing"><a name="uistackviewdistributionequalspacing" class="plugin-anchor" href="#uistackviewdistributionequalspacing"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewdistributionequalspacing" class="anchor-navigation-ex-anchor" href="#uistackviewdistributionequalspacing"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.4. UIStackViewDistributionEqualSpacing</h3>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x4F1A;&#x4FDD;&#x6301;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x5BBD;&#x9AD8;&#xFF0C;&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x4E2D;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p><img src="../assets/images/masonry/39.png"></p>
+<pre><code class="lang-objc">[subView1 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">40</span>, <span class="hljs-number">100</span>))).priorityLow();
+}];
+[subView2 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">100</span>, <span class="hljs-number">80</span>))).priorityLow();
+}];
+[subView3 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">70</span>, <span class="hljs-number">120</span>))).priorityLow();
+}];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    make.right.lessThanOrEqualTo(<span class="hljs-keyword">self</span>.view);
+    make.height.equalTo(@<span class="hljs-number">200</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/44.png"></p>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+    <span class="hljs-keyword">self</span>.view.backgroundColor = [<span class="hljs-built_in">UIColor</span> whiteColor];
+
+    <span class="hljs-built_in">UIView</span> *subView1 = [LayoutUtils createView];
+    <span class="hljs-built_in">UIView</span> *subView2 = [LayoutUtils createView];
+    <span class="hljs-built_in">UIView</span> *subView3 = [LayoutUtils createView];
+
+    subView1.tag = <span class="hljs-number">0</span>;
+    subView2.tag = <span class="hljs-number">1</span>;
+    subView3.tag = <span class="hljs-number">2</span>;
+
+    subView1.backgroundColor = <span class="hljs-built_in">UIColor</span>.redColor;
+    subView2.backgroundColor = <span class="hljs-built_in">UIColor</span>.greenColor;
+    subView3.backgroundColor = <span class="hljs-built_in">UIColor</span>.blueColor;
+
+    [subView1 makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">130</span>, <span class="hljs-number">100</span>)));
+    }];
+    [subView2 makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">130</span>, <span class="hljs-number">80</span>)));
+    }];
+    [subView3 makeConstraints:^(MASConstraintMaker *make) {
+        <span class="hljs-comment">// priorityLow() &#x662F;&#x4E3A;&#x4E86;&#x9632;&#x6B62;&#x5B50;&#x89C6;&#x56FE;&#x603B;&#x5BBD;&#x5EA6;&#x8D85;&#x8FC7;&#xFF0C;UIStackView &#x9650;&#x5236;&#x7684;&#x5BBD;&#x5EA6;&#x88AB;&#x6324;&#x538B;&#x800C;&#x4EA7;&#x751F;&#x7684;&#x7EA6;&#x675F;&#x4E0D;&#x5408;&#x6CD5;&#x3002;</span>
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">130</span>, <span class="hljs-number">120</span>))).priorityLow();
+    }];
+    <span class="hljs-comment">// 130 * 3 = 390 &gt; 375 &#xFF0C;&#x8D85;&#x8FC7;&#x5C4F;&#x5E55;&#x7684;&#x5BBD;&#x5EA6;&#x4E86;&#xFF0C;subView3 &#x4F18;&#x5148;&#x7EA7;&#x6BD4;&#x8F83;&#x4F4E;&#xFF0C;&#x6240;&#x4EE5;&#x9996;&#x5148;&#x4F1A;&#x88AB;&#x6324;&#x538B;&#x3002;</span>
+
+    sv = [[<span class="hljs-built_in">UIStackView</span> alloc] initWithArrangedSubviews:@[subView1,subView2,subView3]];
+    sv.alignment = <span class="hljs-built_in">UIStackViewAlignmentBottom</span>;
+    sv.distribution = <span class="hljs-built_in">UIStackViewDistributionEqualSpacing</span>;
+    sv.spacing = <span class="hljs-number">30</span>;
+    [<span class="hljs-keyword">self</span>.view addSubview:sv];
+    <span class="hljs-comment">// &#x4E0D;&#x8BBE;&#x7F6E;&#x5BBD;&#x5EA6;&#xFF0C;&#x8BA9;&#x5B83;&#x5BBD;&#x5EA6;&#x81EA;&#x9002;&#x5E94;</span>
+    [sv makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(kPadding);
+        make.top.equalTo(@<span class="hljs-number">100</span>);
+        make.right.lessThanOrEqualTo(kPadding);
+        make.height.equalTo(<span class="hljs-number">200</span>);
+    }];
+}
+
+-(<span class="hljs-keyword">void</span>)touchesBegan:(<span class="hljs-built_in">NSSet</span>&lt;<span class="hljs-built_in">UITouch</span> *&gt; *)touches withEvent:(<span class="hljs-built_in">UIEvent</span> *)event{
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">UIView</span> *object <span class="hljs-keyword">in</span> sv.arrangedSubviews) {
+        <span class="hljs-keyword">if</span> (object.tag == <span class="hljs-number">1</span>) {
+            [object setHidden:<span class="hljs-literal">YES</span>]; <span class="hljs-comment">// [object removeFromSuperview];</span>
+        }
+    }
+}
+</code></pre>
+<p><img src="../assets/images/masonry/42.gif"></p>
+<h3 id="uistackviewdistributionequalcentering"><a name="uistackviewdistributionequalcentering" class="plugin-anchor" href="#uistackviewdistributionequalcentering"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewdistributionequalcentering" class="anchor-navigation-ex-anchor" href="#uistackviewdistributionequalcentering"><i class="fa fa-link" aria-hidden="true"></i></a>2.2.5. UIStackViewDistributionEqualCentering</h3>
+<p>&#x8BE5;&#x5C5E;&#x6027;&#x4F1A;&#x63A7;&#x5236;&#x6240;&#x6709;&#x5B50;&#x89C6;&#x56FE;&#x7684;&#x4E2D;&#x5FC3;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
+<p><img src="../assets/images/masonry/45.png"></p>
+<pre><code class="lang-objc">[subView1 makeConstraints:^(MASConstraintMaker *make) {
+     make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">40</span>, <span class="hljs-number">100</span>))).priorityLow();
+}];
+[subView2 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">100</span>, <span class="hljs-number">80</span>))).priorityLow();
+}];
+[subView3 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">70</span>, <span class="hljs-number">120</span>))).priorityLow();
+}];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    make.right.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.height.equalTo(@<span class="hljs-number">200</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/47.png"></p>
+<h2 id="alignment"><a name="alignment" class="plugin-anchor" href="#alignment"><i class="fa fa-link" aria-hidden="true"></i></a><a name="alignment" class="anchor-navigation-ex-anchor" href="#alignment"><i class="fa fa-link" aria-hidden="true"></i></a>2.3. alignment</h2>
+<p><code>alignment</code> : &#x63A7;&#x5236;&#x5B50;&#x89C6;&#x56FE;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x9694;&#x5927;&#x5C0F;&#x3002;&#x5728;<code>distribution</code>&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x4E3A;<code>UIStackViewDistributionFill</code>&#x3001;<code>UIStackViewDistributionFillEqually</code>&#x3001;<code>UIStackViewDistributionFillProportionally</code>&#x503C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B50;&#x89C6;&#x56FE;&#x662F;&#x6CA1;&#x6709;&#x95F4;&#x9694;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>alignment</code>&#x5C5E;&#x6027;&#x6765;&#x8BBE;&#x7F6E;&#x5B50;&#x89C6;&#x56FE;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;&#x3002;</p>
+<pre><code class="lang-objc"><span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">UIStackViewAlignment</span> alignment;
+
+<span class="hljs-keyword">typedef</span> <span class="hljs-built_in">NS_ENUM</span>(<span class="hljs-built_in">NSInteger</span>, <span class="hljs-built_in">UIStackViewAlignment</span>) {
+    <span class="hljs-built_in">UIStackViewAlignmentFill</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentLeading</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentTop</span> = <span class="hljs-built_in">UIStackViewAlignmentLeading</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentFirstBaseline</span>, 
+    <span class="hljs-built_in">UIStackViewAlignmentCenter</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentTrailing</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentBottom</span> = <span class="hljs-built_in">UIStackViewAlignmentTrailing</span>,
+    <span class="hljs-built_in">UIStackViewAlignmentLastBaseline</span>, 
+}
+</code></pre>
+<p><img src="../assets/images/masonry/51.png"></p>
+<h3 id="uistackviewalignmentfill"><a name="uistackviewalignmentfill" class="plugin-anchor" href="#uistackviewalignmentfill"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmentfill" class="anchor-navigation-ex-anchor" href="#uistackviewalignmentfill"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.1. UIStackViewAlignmentFill</h3>
+<p>&#x5C3D;&#x53EF;&#x80FD;&#x94FA;&#x6EE1;</p>
+<p><img src="../assets/images/masonry/48.png"></p>
+<h3 id="uistackviewalignmentleading&#x3001;uistackviewalignmenttop"><a name="uistackviewalignmentleading&#x3001;uistackviewalignmenttop" class="plugin-anchor" href="#uistackviewalignmentleading&#x3001;uistackviewalignmenttop"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmentleading&#x3001;uistackviewalignmenttop" class="anchor-navigation-ex-anchor" href="#uistackviewalignmentleading&#x3001;uistackviewalignmenttop"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.2. UIStackViewAlignmentLeading&#x3001;UIStackViewAlignmentTop</h3>
+<ul>
+<li><code>UILayoutConstraintAxisVertical</code> :<ul>
+<li><code>UIStackViewAlignmentLeading</code> &#x6309; leading &#x65B9;&#x5411;&#x5BF9;&#x9F50;</li>
+</ul>
+</li>
+<li><code>UILayoutConstraintAxisHorizontal</code> :<ul>
+<li><code>UIStackViewAlignmentTop</code> &#x6309; top &#x65B9;&#x5411;&#x5BF9;&#x9F50;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../assets/images/masonry/32.png"></p>
+<pre><code class="lang-objc">[subView1 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">40</span>, <span class="hljs-number">100</span>))).priorityLow();
+}];
+[subView2 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">100</span>, <span class="hljs-number">80</span>))).priorityLow();
+}];
+[subView3 makeConstraints:^(MASConstraintMaker *make) {
+    make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">70</span>, <span class="hljs-number">120</span>))).priorityLow();
+}];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    make.right.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.height.equalTo(@<span class="hljs-number">200</span>);
+}];
+</code></pre>
+<p><img src="../assets/images/masonry/50.png"></p>
+<h3 id="uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom"><a name="uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom" class="plugin-anchor" href="#uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom" class="anchor-navigation-ex-anchor" href="#uistackviewalignmenttrailing&#x3001;uistackviewalignmentbottom"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.3. UIStackViewAlignmentTrailing&#x3001;UIStackViewAlignmentBottom</h3>
+<ul>
+<li><code>UILayoutConstraintAxisVertical</code> :<ul>
+<li><code>UIStackViewAlignmentTrailing</code> &#x6309; trailing &#x65B9;&#x5411;&#x5BF9;&#x9F50;&#x3002;</li>
+</ul>
+</li>
+<li><code>UILayoutConstraintAxisHorizontal</code> :<ul>
+<li><code>UIStackViewAlignmentBottom</code> &#x6309; bottom &#x65B9;&#x5411;&#x5BF9;&#x9F50;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p><img src="../assets/images/masonry/33.png"></p>
+<h3 id="uistackviewalignmentcenter"><a name="uistackviewalignmentcenter" class="plugin-anchor" href="#uistackviewalignmentcenter"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmentcenter" class="anchor-navigation-ex-anchor" href="#uistackviewalignmentcenter"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.4. UIStackViewAlignmentCenter</h3>
+<p>&#x5C45;&#x4E2D;&#x5BF9;&#x9F50;</p>
+<p><img src="../assets/images/masonry/34.png"></p>
+<h3 id="uistackviewalignmentfirstbaseline"><a name="uistackviewalignmentfirstbaseline" class="plugin-anchor" href="#uistackviewalignmentfirstbaseline"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmentfirstbaseline" class="anchor-navigation-ex-anchor" href="#uistackviewalignmentfirstbaseline"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.5. UIStackViewAlignmentFirstBaseline</h3>
+<ul>
+<li><code>UILayoutConstraintAxisVertical</code> : &#x5782;&#x76F4;&#x65B9;&#x5411;&#x65E0;&#x6548;&#x3002;</li>
+<li><code>UILayoutConstraintAxisHorizontal</code> : &#x6C34;&#x5E73;&#x65B9;&#x5411;<strong>&#x6709;&#x6548;</strong>&#xFF0C;&#x6309;&#x9996;&#x884C;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50;&#x3002;</li>
+</ul>
+<p><img src="../assets/images/masonry/35.png"></p>
+<h3 id="uistackviewalignmentlastbaseline"><a name="uistackviewalignmentlastbaseline" class="plugin-anchor" href="#uistackviewalignmentlastbaseline"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uistackviewalignmentlastbaseline" class="anchor-navigation-ex-anchor" href="#uistackviewalignmentlastbaseline"><i class="fa fa-link" aria-hidden="true"></i></a>2.3.6. UIStackViewAlignmentLastBaseline</h3>
+<ul>
+<li><code>UILayoutConstraintAxisVertical</code> : &#x5782;&#x76F4;&#x65B9;&#x5411;&#x65E0;&#x6548;&#x3002;</li>
+<li><code>UILayoutConstraintAxisHorizontal</code> : &#x6C34;&#x5E73;&#x65B9;&#x5411;<strong>&#x6709;&#x6548;</strong>&#xFF0C;&#x6309;&#x6587;&#x7AE0;&#x5E95;&#x90E8;&#x57FA;&#x7EBF;&#x5BF9;&#x9F50;&#x3002;</li>
+</ul>
+<p><img src="../assets/images/masonry/36.png"></p>
+<h2 id="spacing"><a name="spacing" class="plugin-anchor" href="#spacing"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spacing" class="anchor-navigation-ex-anchor" href="#spacing"><i class="fa fa-link" aria-hidden="true"></i></a>2.4. spacing</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x4E4B;&#x95F4;&#x7684;&#x8FB9;&#x8DDD;&#x503C;</span>
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>) <span class="hljs-built_in">CGFloat</span> spacing;
+</code></pre>
+<h2 id="baselinerelativearrangement"><a name="baselinerelativearrangement" class="plugin-anchor" href="#baselinerelativearrangement"><i class="fa fa-link" aria-hidden="true"></i></a><a name="baselinerelativearrangement" class="anchor-navigation-ex-anchor" href="#baselinerelativearrangement"><i class="fa fa-link" aria-hidden="true"></i></a>2.5. baselineRelativeArrangement</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x51B3;&#x5B9A;&#x4E86;&#x5782;&#x76F4;&#x8F74;&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x7684;&#x8BDD;&#xFF0C;&#x662F;&#x5426;&#x6309;&#x7167; baseline &#x6765;&#x53C2;&#x4E0E;&#x5E03;&#x5C40;&#xFF0C;&#x9ED8;&#x8BA4; false&#x3002;</span>
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,getter=isBaselineRelativeArrangement) <span class="hljs-built_in">BOOL</span> baselineRelativeArrangement;
+</code></pre>
+<h2 id="layoutmarginsrelativearrangement"><a name="layoutmarginsrelativearrangement" class="plugin-anchor" href="#layoutmarginsrelativearrangement"><i class="fa fa-link" aria-hidden="true"></i></a><a name="layoutmarginsrelativearrangement" class="anchor-navigation-ex-anchor" href="#layoutmarginsrelativearrangement"><i class="fa fa-link" aria-hidden="true"></i></a>2.6. layoutMarginsRelativeArrangement</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x5982;&#x679C;&#x6253;&#x5F00;&#x5219;&#x901A;&#x8FC7; layout margins &#x5E03;&#x5C40;&#xFF0C;&#x5173;&#x95ED;&#x5219;&#x901A;&#x8FC7; bounds&#xFF0C;&#x9ED8;&#x8BA4; false&#x3002;</span>
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,getter=isLayoutMarginsRelativeArrangement) <span class="hljs-built_in">BOOL</span> layoutMarginsRelativeArrangement;
+</code></pre>
+<h2 id="&#x5237;&#x65B0;&#x5E03;&#x5C40;"><a name="&#x5237;&#x65B0;&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x5237;&#x65B0;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5237;&#x65B0;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x5237;&#x65B0;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>2.7. &#x5237;&#x65B0;&#x5E03;&#x5C40;</h2>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIView</span> *subView = [LayoutUtils createView];
+[<span class="hljs-keyword">self</span>.topStackView addArrangedSubview:subView];
+[<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.25</span> animations:^{
+    [<span class="hljs-keyword">self</span>.topStackView layoutIfNeeded];
+}];
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"><a name="&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;" class="plugin-anchor" href="#&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x5B50;&#x89C6;&#x56FE;&#x64CD;&#x4F5C;</h1>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x65B0;&#x589E;</span>
+- (<span class="hljs-keyword">void</span>)addArrangedSubview:(<span class="hljs-built_in">UIView</span> *)view;
+<span class="hljs-comment">// &#x79FB;&#x9664;</span>
+- (<span class="hljs-keyword">void</span>)removeArrangedSubview:(<span class="hljs-built_in">UIView</span> *)view;
+<span class="hljs-comment">// &#x63D2;&#x5165;</span>
+- (<span class="hljs-keyword">void</span>)insertArrangedSubview:(<span class="hljs-built_in">UIView</span> *)view atIndex:(<span class="hljs-built_in">NSUInteger</span>)stackIndex;
+</code></pre>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x793A;&#x4F8B;"><a name="&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x793A;&#x4F8B;</h1>
+<h2 id="&#x70B9;&#x8D5E;"><a name="&#x70B9;&#x8D5E;" class="plugin-anchor" href="#&#x70B9;&#x8D5E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x70B9;&#x8D5E;" class="anchor-navigation-ex-anchor" href="#&#x70B9;&#x8D5E;"><i class="fa fa-link" aria-hidden="true"></i></a>4.1. &#x70B9;&#x8D5E;</h2>
+<p><img src="../assets/images/masonry/49.png"></p>
+<pre><code class="lang-objc"><span class="hljs-built_in">NSMutableArray</span>&lt;<span class="hljs-built_in">UIView</span>*&gt; *imageViewArray = [<span class="hljs-built_in">NSMutableArray</span> array];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i ++) {
+    <span class="hljs-built_in">UIView</span> *subView = [LayoutUtils createView];
+    [subView makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>)));
+    }];
+    subView.layer.cornerRadius = <span class="hljs-number">25</span>;
+    subView.layer.masksToBounds = <span class="hljs-literal">YES</span>;
+    subView.clipsToBounds = <span class="hljs-literal">true</span>;
+    [imageViewArray addObject:subView];
+}
+
+<span class="hljs-built_in">UIStackView</span> *stackView = [[<span class="hljs-built_in">UIStackView</span> alloc] initWithArrangedSubviews:imageViewArray];
+stackView.distribution = <span class="hljs-built_in">UIStackViewDistributionFillEqually</span>;
+stackView.alignment = <span class="hljs-built_in">UIStackViewAlignmentCenter</span>;
+stackView.spacing = <span class="hljs-number">-15</span>;
+[<span class="hljs-keyword">self</span>.view addSubview:stackView];
+
+[stackView makeConstraints:^(MASConstraintMaker *make) {
+    make.left.equalTo(<span class="hljs-keyword">self</span>.view);
+    make.top.equalTo(@<span class="hljs-number">100</span>);
+    <span class="hljs-comment">//make.right.equalTo(self.view);</span>
+    make.height.equalTo(@<span class="hljs-number">50</span>);
+}];
+</code></pre>
+<h2 id="&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;"><a name="&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;" class="plugin-anchor" href="#&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;" class="anchor-navigation-ex-anchor" href="#&#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;"><i class="fa fa-link" aria-hidden="true"></i></a>4.2. &#x7ED9;&#x4EBA;&#x6253;&#x661F;&#x8BC4;&#x4EF7;</h2>
+<p><img src="../assets/images/masonry/52.gif"></p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">UIKitExampleStackViewStarController</span> ()</span>
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,<span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIStackView</span> *topStackView;
+<span class="hljs-keyword">@property</span>(<span class="hljs-keyword">nonatomic</span>,<span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIStackView</span> *bottomStackView;
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">UIKitExampleStackViewStarController</span></span>
+- (instancetype)init
+{
+    <span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init];
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>) {
+        <span class="hljs-keyword">self</span>.title = <span class="hljs-string">@&quot;&#x70B9;&#x51FB;&#x661F;&#x661F;&quot;</span>;
+        <span class="hljs-keyword">self</span>.view.backgroundColor = [<span class="hljs-built_in">UIColor</span> whiteColor];
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;
+}
+- (<span class="hljs-keyword">void</span>)viewDidLoad {
+    [<span class="hljs-keyword">super</span> viewDidLoad];
+    _topStackView = [[<span class="hljs-built_in">UIStackView</span> alloc] init];
+    _topStackView.axis = <span class="hljs-built_in">UILayoutConstraintAxisVertical</span>;
+    _topStackView.alignment = <span class="hljs-built_in">UIStackViewAlignmentCenter</span>;
+    _topStackView.distribution = <span class="hljs-built_in">UIStackViewDistributionFillEqually</span>;
+    _topStackView.spacing = <span class="hljs-number">6</span>;
+
+    _bottomStackView = [[<span class="hljs-built_in">UIStackView</span> alloc] init];
+    _bottomStackView.alignment = <span class="hljs-built_in">UIStackViewAlignmentCenter</span>;
+    _bottomStackView.distribution = <span class="hljs-built_in">UIStackViewDistributionFillEqually</span>;
+    _bottomStackView.spacing = <span class="hljs-number">6</span>;
+
+    [<span class="hljs-keyword">self</span>.view addSubview:<span class="hljs-keyword">self</span>.topStackView];
+    [<span class="hljs-keyword">self</span>.view addSubview:<span class="hljs-keyword">self</span>.bottomStackView];
+
+    [<span class="hljs-keyword">self</span>.topStackView makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(<span class="hljs-keyword">self</span>.view);
+        make.top.equalTo(@<span class="hljs-number">100</span>);
+        make.height.equalTo(<span class="hljs-number">400</span>);
+    }];
+
+    [<span class="hljs-keyword">self</span>.bottomStackView makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(<span class="hljs-keyword">self</span>.view);
+        make.centerX.equalTo(<span class="hljs-keyword">self</span>.view);
+        make.top.equalTo(<span class="hljs-keyword">self</span>.topStackView.mas_bottom);
+    }];
+
+    <span class="hljs-built_in">UILabel</span> *titleLabel = [LayoutUtils fixedLabelWithText:<span class="hljs-string">@&quot;&#x7ED9;&#x4E2A;&#x8BC4;&#x4EF7;&#x5427;&#xFF1F;&quot;</span>];
+    <span class="hljs-built_in">UIView</span> *logoView = [LayoutUtils createView];
+    <span class="hljs-built_in">UIButton</span> *addStarButton = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;Star&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(addStar)];
+    <span class="hljs-built_in">UIButton</span> *removeStarButton = [LayoutUtils createButtonWithTitle:<span class="hljs-string">@&quot;Remove Star&quot;</span> target:<span class="hljs-keyword">self</span> selector:<span class="hljs-keyword">@selector</span>(removeStar)];
+    <span class="hljs-built_in">UIStackView</span> *operation = [[<span class="hljs-built_in">UIStackView</span> alloc] initWithArrangedSubviews:@[addStarButton,removeStarButton]];
+    operation.distribution = <span class="hljs-built_in">UIStackViewDistributionFillEqually</span>;
+
+    [<span class="hljs-keyword">self</span>.topStackView addArrangedSubview:titleLabel];
+    [<span class="hljs-keyword">self</span>.topStackView addArrangedSubview:logoView];
+    [<span class="hljs-keyword">self</span>.topStackView addArrangedSubview:operation];
+
+    [logoView makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>))).priorityLow();
+    }];
+
+    [<span class="hljs-keyword">self</span>.topStackView layoutIfNeeded];
+}
+-(<span class="hljs-keyword">void</span>)addStar{
+    <span class="hljs-built_in">UIView</span> *starView = [LayoutUtils createView];
+    [<span class="hljs-keyword">self</span>.bottomStackView addArrangedSubview:starView];
+    [starView makeConstraints:^(MASConstraintMaker *make) {
+        make.size.equalTo(@(<span class="hljs-built_in">CGSizeMake</span>(<span class="hljs-number">50</span>, <span class="hljs-number">50</span>))).priorityHigh();
+    }];
+    starView.layer.cornerRadius = <span class="hljs-number">25</span>;
+    starView.layer.masksToBounds = <span class="hljs-literal">YES</span>;
+    starView.clipsToBounds = <span class="hljs-literal">true</span>;
+    [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.2</span> animations:^{
+        [<span class="hljs-keyword">self</span>.bottomStackView layoutIfNeeded];
+    }];
+}
+-(<span class="hljs-keyword">void</span>)removeStar{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.bottomStackView.arrangedSubviews.count &gt;= <span class="hljs-number">1</span>) {
+        [<span class="hljs-keyword">self</span>.bottomStackView.arrangedSubviews.lastObject removeFromSuperview];
+        [<span class="hljs-built_in">UIView</span> animateWithDuration:<span class="hljs-number">0.2</span> animations:^{
+            [<span class="hljs-keyword">self</span>.bottomStackView layoutIfNeeded];
+        }];
+    }
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="&#x7FFB;&#x8BD1;"><a name="&#x7FFB;&#x8BD1;" class="plugin-anchor" href="#&#x7FFB;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7FFB;&#x8BD1;" class="anchor-navigation-ex-anchor" href="#&#x7FFB;&#x8BD1;"><i class="fa fa-link" aria-hidden="true"></i></a>4.3. &#x7FFB;&#x8BD1;</h2>
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<h1 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="plugin-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x8D44;&#x6599;</h1>
+<ul>
+<li><a href="https://juejin.im/post/5c2ee162e51d4550fc42ac57" target="_blank">&#x6398;&#x91D1;-UIStackView &#x5165;&#x5751;&#x6307;&#x5357;</a></li>
+<li><a href="https://code.tutsplus.com/tutorials/ios-9-getting-started-with-uistackview--cms-24193" target="_blank">iOS 9: Getting Started with UIStackView</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Part II">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"We love feedback","level":"1.3.1","depth":2,"previous":{"title":"Part II","level":"1.3","depth":1,"path":"part2/README.md","ref":"part2/README.md","articles":[{"title":"We love feedback","level":"1.3.1","depth":2,"path":"part2/stackview.md","ref":"part2/stackview.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"part2/stackview.md","mtime":"2020-06-18T05:47:02.571Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-18T10:49:08.416Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
