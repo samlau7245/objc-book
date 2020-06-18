@@ -29,7 +29,7 @@
     ],
     "pluginsConfig":{
         "disqus": {
-        "shortName": "sam lau"
+        "shortName": "samLau-Hua"
     },
         "simple-page-toc":{
             "maxDepth":3,
@@ -59,12 +59,12 @@
                 "template":"ace"
             },
             "favicon":{
-                "shortcut":"assets/images/favicon.ico",
-                "bookmark":"assets/images/favicon.ico",
-                "appleTouch":"assets/images/favicon.ico",
+                "shortcut":"assets/favicon.ico",
+                "bookmark":"assets/favicon.ico",
+                "appleTouch":"assets/favicon.ico",
                 "appleTouchMore":{
-                    "120x120":"assets/images/favicon.ico",
-                    "180x180":"assets/images/favicon.ico"
+                    "120x120":"assets/favicon.ico",
+                    "180x180":"assets/favicon.ico"
                 }
             }
         }
