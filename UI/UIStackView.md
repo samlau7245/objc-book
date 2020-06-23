@@ -127,7 +127,7 @@ typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
 }
 ```
 
-### UIStackViewDistributionFill
+### Fill
 
 * `UILayoutConstraintAxisHorizontal`:
 	* `UIStackView`中的所有子视图的宽度等于`UIStackView`的宽。
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
 
 <img src="/assets/images/masonry/37.png"/>
 
-### UIStackViewDistributionFillEqually
+### FillEqually
 
 * `UILayoutConstraintAxisHorizontal`:
 	* 所有子视图在轴方向上等宽。
@@ -181,7 +181,7 @@ typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
 
 <img src="/assets/images/masonry/41.png"/>
 
-### UIStackViewDistributionFillProportionally
+### FillProportionally
 
 该属性设置后会根据原先子视图的比例来拉伸或压缩子视图的宽或高，如果三个子视图原先设置的宽度是1：2：3，所以水平方向上显示时，会按照这个比例进行拉伸。
 
@@ -208,7 +208,7 @@ typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
 
 <img src="/assets/images/masonry/43.png"/>
 
-### UIStackViewDistributionEqualSpacing
+### EqualSpacing
 
 该属性会保持子视图的宽高，所有子视图中间的间隔保持一致。
 
@@ -289,7 +289,7 @@ typedef NS_ENUM(NSInteger, UIStackViewDistribution) {
 
 <img src="/assets/images/masonry/42.gif"/>
 
-### UIStackViewDistributionEqualCentering
+### EqualCentering
 
 该属性会控制所有子视图的中心之间的距离保持一致。
 
@@ -344,7 +344,7 @@ typedef NS_ENUM(NSInteger, UIStackViewAlignment) {
 <img src="/assets/images/masonry/48.png"/>
 
 
-### UIStackViewAlignmentLeading、UIStackViewAlignmentTop 
+### Leading、Top 
 
 * `UILayoutConstraintAxisVertical` :
 	* `UIStackViewAlignmentLeading` 按 leading 方向对齐
@@ -374,7 +374,7 @@ typedef NS_ENUM(NSInteger, UIStackViewAlignment) {
 
 <img src="/assets/images/masonry/50.png"/>
 
-### UIStackViewAlignmentTrailing、UIStackViewAlignmentBottom
+### Trailing、Bottom
 
 * `UILayoutConstraintAxisVertical` :
 	* `UIStackViewAlignmentTrailing` 按 trailing 方向对齐。
@@ -383,20 +383,20 @@ typedef NS_ENUM(NSInteger, UIStackViewAlignment) {
 
 <img src="/assets/images/masonry/33.png"/>
 
-### UIStackViewAlignmentCenter
+### Center
 
 居中对齐
 
 <img src="/assets/images/masonry/34.png"/>
 
-### UIStackViewAlignmentFirstBaseline
+### FirstBaseline
 
 * `UILayoutConstraintAxisVertical` : 垂直方向无效。
 * `UILayoutConstraintAxisHorizontal` : 水平方向**有效**，按首行基线对齐。
 
 <img src="/assets/images/masonry/35.png"/>
 
-### UIStackViewAlignmentLastBaseline
+### LastBaseline
 
 * `UILayoutConstraintAxisVertical` : 垂直方向无效。
 * `UILayoutConstraintAxisHorizontal` : 水平方向**有效**，按文章底部基线对齐。

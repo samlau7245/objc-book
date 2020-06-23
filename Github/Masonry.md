@@ -1273,9 +1273,6 @@ static UIEdgeInsets padding;
 
 ## layoutMargins
 
-```objc
-```
-
 ## mas_distributeViewsAlongAxis
 
 ```objc
