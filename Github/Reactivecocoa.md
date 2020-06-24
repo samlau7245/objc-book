@@ -3788,6 +3788,109 @@ V层使用：
 
  -->
 
+## 示例：验证码倒计时
+
+VM层：
+
+```objc
+#pragma mark - ====================VM层====================
+@interface RASecondsCountViewModel : NSObject
+@property (nonatomic, strong) RACCommand *requestCommand;
+
+@property (nonatomic, assign) BOOL buttonEnabled;
+@property (nonatomic, copy) NSString *countStirng;
+@property (nonatomic, assign) NSInteger countTotal;
+@end
+
+@implementation RASecondsCountViewModel
+#pragma mark - Init
+-(instancetype)init{
+    if (self = [super init]) {
+        self.countStirng = @"获取验证码";
+        self.buttonEnabled = YES;
+        self.countTotal = 5;
+        [self racInit];
+    }
+    return self;
+}
+
+/// 获取验证码逻辑
+-(void)secondsCount {
+    [[[[[[RACSubject interval:1 onScheduler:[RACScheduler mainThreadScheduler]] startWith:[NSDate date]] scanWithStart:@(self.countTotal) reduce:^id _Nullable(NSNumber*  _Nullable running, NSDate * _Nullable next) {
+        return @( running.integerValue - 1);
+    }] takeUntilBlock:^BOOL(NSNumber*  _Nullable x) {
+        return x.integerValue < 0;
+    }] map:^id _Nullable(id  _Nullable value) {
+        return  [NSString  stringWithFormat:@"%@s可重发",value];
+    }] subscribeNext:^(id  _Nullable x) {
+        self.countStirng = x;
+        self.buttonEnabled = NO;
+    }completed:^{
+        self.countStirng = @"重新发送";
+        self.buttonEnabled = YES;
+    }];
+}
+
+- (void)racInit {
+    @weakify(self);
+    _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            @strongify(self);
+            [self secondsCount];
+            // 其他业务逻辑，网络请求...
+            [subscriber sendCompleted];
+            return [RACDisposable disposableWithBlock:^{
+            }];
+        }];
+    }];
+}
+@end
+```
+
+V层：
+
+```objc
+[[self.countButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+    [self.viewModel.requestCommand execute:nil];
+}];
+[RACObserve(self.viewModel, countStirng) subscribeNext:^(id  _Nullable x) {
+    self.countButton.titleLabel.text = x;
+    [self.countButton setTitle:x forState:UIControlStateNormal];
+}];
+[RACObserve(self.viewModel, buttonEnabled) subscribeNext:^(NSNumber*  _Nullable x) {
+    self.countButton.enabled = [x boolValue];
+}];
+```
+
+<img src="/assets/images/iOS/rac/21.gif"/>
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+<!--====================================================================================================-->
+<!-- 
+
+
+
+
+
+
+
+
+
+
+ -->
+
 # 资料
 
 * [Github-ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa)
