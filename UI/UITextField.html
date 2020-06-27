@@ -1,0 +1,553 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>UITextField · Objective-C</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Sam Lau">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="UIImage.html" />
+    
+    
+    <link rel="prev" href="UIStackView.html" />
+    
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../Grammar/">
+            
+                <a href="../Grammar/">
+            
+                    
+                    语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../Grammar/enum.html">
+            
+                <a href="../Grammar/enum.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../Grammar/String.html">
+            
+                <a href="../Grammar/String.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../Grammar/Block.html">
+            
+                <a href="../Grammar/Block.html">
+            
+                    
+                    Block
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    UI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="UIView.html">
+            
+                <a href="UIView.html">
+            
+                    
+                    UIView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="UIStackView.html">
+            
+                <a href="UIStackView.html">
+            
+                    
+                    UIStackView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.3" data-path="UITextField.html">
+            
+                <a href="UITextField.html">
+            
+                    
+                    UITextField
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="UIImage.html">
+            
+                <a href="UIImage.html">
+            
+                    
+                    UIImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../Github/">
+            
+                <a href="../Github/">
+            
+                    
+                    Github库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../Github/Masonry.html">
+            
+                <a href="../Github/Masonry.html">
+            
+                    
+                    Masonry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../Github/Reactivecocoa.html">
+            
+                <a href="../Github/Reactivecocoa.html">
+            
+                    
+                    Reactivecocoa
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >UITextField</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><b>1. </b>&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6DFB;&#x52A0;&#x76D1;&#x542C;"><b>1.1. </b>&#x6DFB;&#x52A0;&#x76D1;&#x542C;</a></li><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;leftview"><b>1.2. </b>&#x8BBE;&#x7F6E;LeftView</a></li><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;"><b>1.3. </b>&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;</a></li></ul></ul></div><a href="#&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5E38;&#x7528;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h1>
+<h2 id="&#x6DFB;&#x52A0;&#x76D1;&#x542C;"><a name="&#x6DFB;&#x52A0;&#x76D1;&#x542C;" class="plugin-anchor" href="#&#x6DFB;&#x52A0;&#x76D1;&#x542C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6DFB;&#x52A0;&#x76D1;&#x542C;" class="anchor-navigation-ex-anchor" href="#&#x6DFB;&#x52A0;&#x76D1;&#x542C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6DFB;&#x52A0;&#x76D1;&#x542C;</h2>
+<pre><code class="lang-objc">[<span class="hljs-keyword">self</span>.textFiledInput addTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(test:) forControlEvents:<span class="hljs-built_in">UIControlEventAllEditingEvents</span>];
+
+-(<span class="hljs-keyword">void</span>)test:(<span class="hljs-built_in">UITextField</span>*)sender{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;test%@&quot;</span>,sender.text);
+    <span class="hljs-keyword">if</span> (sender &amp;&amp; sender.text &amp;&amp; sender.text.length &gt;= <span class="hljs-number">4</span>) {
+        [sender resignFirstResponder];
+    }
+}
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;leftview"><a name="&#x8BBE;&#x7F6E;leftview" class="plugin-anchor" href="#&#x8BBE;&#x7F6E;leftview"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8BBE;&#x7F6E;leftview" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;leftview"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x8BBE;&#x7F6E;LeftView</h2>
+<pre><code class="lang-objc"><span class="hljs-built_in">UIView</span> *paddingView = [[<span class="hljs-built_in">UIView</span> alloc] initWithFrame:<span class="hljs-built_in">CGRectMake</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">5</span>, <span class="hljs-number">20</span>)];
+textField.leftView = paddingView;
+textField.leftViewMode = <span class="hljs-built_in">UITextFieldViewModeAlways</span>;
+</code></pre>
+<p>&#x6216;&#x8005;&#x91CD;&#x5199;<code>UITextField</code>&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-objc"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SATextField</span> : <span class="hljs-title">UITextField</span></span>
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SATextField</span></span>
+<span class="hljs-comment">// placeholder position</span>
+- (<span class="hljs-built_in">CGRect</span>)textRectForBounds:(<span class="hljs-built_in">CGRect</span>)bounds {
+     <span class="hljs-keyword">return</span> <span class="hljs-built_in">CGRectInset</span>(bounds, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+}
+
+<span class="hljs-comment">// text position</span>
+- (<span class="hljs-built_in">CGRect</span>)editingRectForBounds:(<span class="hljs-built_in">CGRect</span>)bounds {
+     <span class="hljs-keyword">return</span> <span class="hljs-built_in">CGRectInset</span>(bounds, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
+}
+<span class="hljs-keyword">@end</span>
+</code></pre>
+<h2 id="&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;"><a name="&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;" class="plugin-anchor" href="#&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x8BBE;&#x7F6E;&#x8F93;&#x5165;&#x5355;&#x4E2A;&#x5B57;&#x7B26;&#x4E4B;&#x95F4;&#x7684;&#x95F4;&#x8DDD;</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/31877002/how-to-set-letter-spacing-of-uitextfield" target="_blank">Stack Overflow-How to set letter spacing of UITextField</a></li>
+</ul>
+<pre><code class="lang-objc"><span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x76D1;&#x542C;</span>
+
+[<span class="hljs-keyword">self</span>.textFiledInput addTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(editing:) forControlEvents:<span class="hljs-built_in">UIControlEventAllEditingEvents</span>];
+
+<span class="hljs-comment">// &#x64CD;&#x4F5C;&#x76D1;&#x542C;</span>
+-(<span class="hljs-keyword">void</span>)editing:(<span class="hljs-built_in">UITextField</span>*)sender{
+    <span class="hljs-built_in">NSMutableAttributedString</span> *attributedString = [[<span class="hljs-built_in">NSMutableAttributedString</span> alloc] initWithString:sender.text];
+    [attributedString addAttribute:<span class="hljs-built_in">NSFontAttributeName</span> value:[<span class="hljs-built_in">UIFont</span> systemFontOfSize:<span class="hljs-number">16</span>] range:<span class="hljs-built_in">NSMakeRange</span>(<span class="hljs-number">0</span>, sender.text.length)];
+    [attributedString addAttribute:<span class="hljs-built_in">NSKernAttributeName</span> value:@<span class="hljs-number">5</span> range:<span class="hljs-built_in">NSMakeRange</span>(<span class="hljs-number">0</span>, sender.text.length)];
+    <span class="hljs-keyword">if</span> (sender.text.length &gt; <span class="hljs-number">3</span>) {
+        [attributedString addAttribute:<span class="hljs-built_in">NSKernAttributeName</span> value:@<span class="hljs-number">5</span> range:<span class="hljs-built_in">NSMakeRange</span>(<span class="hljs-number">0</span>, <span class="hljs-number">3</span>)];
+        [attributedString addAttribute:<span class="hljs-built_in">NSKernAttributeName</span> value:@<span class="hljs-number">0</span> range:<span class="hljs-built_in">NSMakeRange</span>(<span class="hljs-number">3</span>, sender.text.length<span class="hljs-number">-3</span>)];
+    }<span class="hljs-keyword">else</span>{
+        [attributedString addAttribute:<span class="hljs-built_in">NSKernAttributeName</span> value:@<span class="hljs-number">5</span> range:<span class="hljs-built_in">NSMakeRange</span>(<span class="hljs-number">0</span>, sender.text.length)];
+    }
+    sender.attributedText = attributedString;
+}
+<span class="hljs-comment">// &#x9650;&#x5236;&#x8F93;&#x5165;&#x5B57;&#x6570;</span>
+-(<span class="hljs-built_in">BOOL</span>)textField:(<span class="hljs-built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="hljs-built_in">NSRange</span>)range replacementString:(<span class="hljs-built_in">NSString</span> *)string{
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@&quot;%s&quot;</span>,__FUNCTION__);
+    <span class="hljs-built_in">NSString</span> * str = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    <span class="hljs-keyword">if</span> (str.length &gt; <span class="hljs-number">4</span>) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="UIStackView.html" class="navigation navigation-prev " aria-label="Previous page: UIStackView">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="UIImage.html" class="navigation navigation-next " aria-label="Next page: UIImage">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"UITextField","level":"3.1.3","depth":2,"next":{"title":"UIImage","level":"3.1.4","depth":2,"path":"UI/UIImage.md","ref":"UI/UIImage.md","articles":[]},"previous":{"title":"UIStackView","level":"3.1.2","depth":2,"path":"UI/UIStackView.md","ref":"UI/UIStackView.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"UI/UITextField.md","mtime":"2020-06-23T12:35:14.309Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-27T15:37:16.037Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
