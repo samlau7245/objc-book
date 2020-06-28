@@ -1,7 +1,22 @@
 
 
-# 常用解决方案
+# 方法、属性
 
+```objc
+// 输入、placeholder 位置
+@property(nonatomic) NSTextAlignment textAlignment;
+
+typedef NS_ENUM(NSInteger, NSTextAlignment) {
+    NSTextAlignmentLeft      = 0,    // Visually left aligned
+    NSTextAlignmentCenter    = 1,    // Visually centered
+    NSTextAlignmentRight     = 2,    // Visually right aligned
+    NSTextAlignmentJustified = 3,    // Fully-justified. The last line in a paragraph is natural-aligned.
+    NSTextAlignmentNatural   = 4     // Indicates the default alignment for script
+}
+
+```
+
+# 常用解决方案
 ## 添加监听
 
 ```objc
@@ -75,6 +90,65 @@ textField.leftViewMode = UITextFieldViewModeAlways;
 }
 ```
 
+曾经做过的，短信验证码的逻辑:
+
+```objc
+// 操作监听
+-(void)editing:(UITextField*)sender{
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:sender.text];
+    [attributedString addAttribute:NSFontAttributeName value:TextFieldFont range:NSMakeRange(0, sender.text.length)];
+    
+    if (sender.text.length == 1) {
+        CGFloat padding = (20- [self getSingleCharactorWidth:sender.text])/2;
+        [self.inputTextField setValue:@(padding) forKey:@"paddingLeft"];
+    }
+    
+    for (NSInteger i = 0; i < sender.text.length; i ++) {
+        // 检查当前字符的下一个字符是否存在，如果存在取出来。
+        NSInteger nextStringIndex = i+1;
+        if (nextStringIndex >= sender.text.length) {
+        }else{
+            NSString *firstChar = [sender.text substringWithRange:NSMakeRange(i, 1)];
+            NSString *secondChar = [sender.text substringWithRange:NSMakeRange(nextStringIndex, 1)];
+            CGFloat kern = 5 + (20- [self getSingleCharactorWidth:firstChar])/2 + (20- [self getSingleCharactorWidth:secondChar])/2;
+            [attributedString addAttribute:NSKernAttributeName value:@(kern) range:NSMakeRange(i, 1)];
+        }
+    }
+    sender.attributedText = attributedString;
+}
+```
+
+<img src="/assets/images/UI/03.gif"/>
+
+计算的逻辑图：
+
+<img src="/assets/images/UI/04.png"/>
+
+## 限制输入的字符
+
+```objc
+// 限制输入字数
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    // 监听到 return 收起键盘
+    if ([string isEqualToString:@"\n"]) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    
+    if (!string || string.length <=0) {
+        return YES;
+    }
+    
+    NSString * str = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    if (str.length > 6) {
+        return NO;
+    }
+    if (![@"0123456789Xx" containsString:string]) {
+        return NO;
+    }
+    return YES;
+}
+```
 
 
 
