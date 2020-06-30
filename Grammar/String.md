@@ -9,6 +9,13 @@ NSLog(@"%@",[string substringFromIndex:string.length - 4]);//6789
 NSLog(@"%@",[string substringToIndex:6]);//123456
 ```
 
+# 字符串转字典
+
+```objc
+NSData *jsonData = [query dataUsingEncoding:NSUTF8StringEncoding];
+NSDictionary *queryDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:NULL];
+```
+
 # 富文本
 
 ```objc
