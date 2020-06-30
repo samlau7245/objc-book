@@ -25,7 +25,8 @@
         "favicon",
         "todo",
         "emphasize",
-        "disqus"
+        "disqus",
+        "-chapter-fold"
     ],
     "pluginsConfig":{
         "disqus": {
