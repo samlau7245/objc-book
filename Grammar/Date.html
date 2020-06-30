@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>语法 · Objective-C</title>
+        <title>日期 · Objective-C</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -90,10 +90,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="enum.html" />
+    <link rel="next" href="Block.html" />
     
     
-    <link rel="prev" href="../" />
+    <link rel="prev" href="String.html" />
     
 
     
@@ -147,7 +147,7 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="./">
+        <li class="chapter " data-level="2.1" data-path="./">
             
                 <a href="./">
             
@@ -187,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.3" data-path="Date.html">
+        <li class="chapter active" data-level="2.1.3" data-path="Date.html">
             
                 <a href="Date.html">
             
@@ -430,7 +430,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >语法</a>
+        <a href=".." >日期</a>
     </h1>
 </div>
 
@@ -445,7 +445,34 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;"><b>1. </b>&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;</a></li><li><span class="title-icon "></span><a href="#nsdate-to-nsstring"><b>2. </b>NSDate to NSString</a></li><li><span class="title-icon "></span><a href="#nsstring-to-nsdate"><b>3. </b>NSString to NSDate</a></li></ul></div><a href="#&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;"><a name="&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;" class="plugin-anchor" href="#&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;" class="anchor-navigation-ex-anchor" href="#&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x5BF9;&#x6BD4;</h1>
+<p>&#x4E24;&#x4E2A;&#x65F6;&#x95F4;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-objc">- (<span class="hljs-built_in">NSDate</span> *)earlierDate:(<span class="hljs-built_in">NSDate</span> *)anotherDate;
+- (<span class="hljs-built_in">NSDate</span> *)laterDate:(<span class="hljs-built_in">NSDate</span> *)anotherDate;
+- (<span class="hljs-built_in">BOOL</span>)isEqualToDate:(<span class="hljs-built_in">NSDate</span> *)otherDate;
+
+- (<span class="hljs-built_in">NSComparisonResult</span>)compare:(<span class="hljs-built_in">NSDate</span> *)other;
+<span class="hljs-keyword">typedef</span> <span class="hljs-built_in">NS_CLOSED_ENUM</span>(<span class="hljs-built_in">NSInteger</span>, <span class="hljs-built_in">NSComparisonResult</span>) {
+    <span class="hljs-built_in">NSOrderedAscending</span> = <span class="hljs-number">-1</span>L, <span class="hljs-comment">// a &lt; b</span>
+    <span class="hljs-built_in">NSOrderedSame</span>, <span class="hljs-comment">// a == b </span>
+    <span class="hljs-built_in">NSOrderedDescending</span> <span class="hljs-comment">// a &gt; b</span>
+};
+</code></pre>
+<h1 id="nsdate-to-nsstring"><a name="nsdate-to-nsstring" class="plugin-anchor" href="#nsdate-to-nsstring"><i class="fa fa-link" aria-hidden="true"></i></a><a name="nsdate-to-nsstring" class="anchor-navigation-ex-anchor" href="#nsdate-to-nsstring"><i class="fa fa-link" aria-hidden="true"></i></a>2. NSDate to NSString</h1>
+<pre><code class="lang-objc">-(<span class="hljs-built_in">NSDate</span>*)getDate:(<span class="hljs-built_in">NSString</span>*)dateString{
+    <span class="hljs-built_in">NSDateFormatter</span> *dateFormatter = [[<span class="hljs-built_in">NSDateFormatter</span> alloc] init];
+    [dateFormatter setDateFormat:<span class="hljs-string">@&quot;yyyy-MM-dd&quot;</span>];
+    <span class="hljs-keyword">return</span> [dateFormatter dateFromString:dateString];
+}
+</code></pre>
+<h1 id="nsstring-to-nsdate"><a name="nsstring-to-nsdate" class="plugin-anchor" href="#nsstring-to-nsdate"><i class="fa fa-link" aria-hidden="true"></i></a><a name="nsstring-to-nsdate" class="anchor-navigation-ex-anchor" href="#nsstring-to-nsdate"><i class="fa fa-link" aria-hidden="true"></i></a>3. NSString to NSDate</h1>
+<pre><code class="lang-objc">+ (<span class="hljs-built_in">NSString</span> *)datePicker_formatterWithDate:(<span class="hljs-built_in">NSDate</span> *)date {
+    <span class="hljs-built_in">NSDateFormatter</span> *dateFormatter = [[<span class="hljs-built_in">NSDateFormatter</span> alloc] init];
+    [dateFormatter setDateFormat:<span class="hljs-string">@&quot;yyyy-MM-dd&quot;</span>];
+    <span class="hljs-keyword">return</span> [dateFormatter stringFromDate:date];
+}
+</code></pre>
+
                                 
                                 </section>
                             
@@ -472,12 +499,12 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="String.html" class="navigation navigation-prev " aria-label="Previous page: 字符串">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="enum.html" class="navigation navigation-next " aria-label="Next page: 枚举">
+                <a href="Block.html" class="navigation navigation-next " aria-label="Next page: Block">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -488,7 +515,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"语法","level":"2.1","depth":1,"next":{"title":"枚举","level":"2.1.1","depth":2,"path":"Grammar/enum.md","ref":"Grammar/enum.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"neutral"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"Grammar/README.md","mtime":"2020-06-23T12:35:14.307Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T15:51:46.857Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"日期","level":"2.1.3","depth":2,"next":{"title":"Block","level":"2.1.4","depth":2,"path":"Grammar/Block.md","ref":"Grammar/Block.md","articles":[]},"previous":{"title":"字符串","level":"2.1.2","depth":2,"path":"Grammar/String.md","ref":"Grammar/String.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"Grammar/Date.md","mtime":"2020-06-30T12:23:40.663Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-30T15:51:46.857Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
