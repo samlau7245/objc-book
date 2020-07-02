@@ -13,3 +13,24 @@
 ```
 
 如果想要圆角和阴影一起展示：可以不设置`masksToBounds`。
+
+# 上层View遮盖底层View，设置底层可点击
+
+```objc
+@implementation SEGNaviHeaderView
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    self.backBtn.tag = 1001;
+    self.shareBtn.tag = 1001;
+    self.closeBtn.tag = 1001;
+    return self;
+}
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *hitView = [super hitTest:point withEvent:event];
+    if (hitView && [hitView isKindOfClass:[UIButton class]] && hitView.tag == 1001) {
+        return hitView;
+    }
+    return nil;
+}
+@end
+```
