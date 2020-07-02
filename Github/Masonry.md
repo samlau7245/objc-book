@@ -1558,7 +1558,7 @@ UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
 
 ## UIButton自适应宽度
 
-<img src="/assets/images/masonry/20.gif"/>
+<!-- <img src="/assets/images/masonry/20.gif"/> -->
 
 ```objc
 - (id)init {
@@ -1836,6 +1836,14 @@ UIEdgeInsets padding = UIEdgeInsetsMake(10, 10, 10, 10);
 
 
  -->
+
+# 错误记录
+
+[Detected a case where constraints ambiguously suggest a height of zero](https://stackoverflow.com/questions/25902288/detected-a-case-where-constraints-ambiguously-suggest-a-height-of-zero)
+
+```objc
+self.tableView.rowHeight = 44;
+```
 
 # 资料
 
