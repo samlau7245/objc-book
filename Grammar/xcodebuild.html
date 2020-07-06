@@ -1,0 +1,933 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>xcodebuild · Objective-C</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Sam Lau">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-local-video/video-js.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../UI/" />
+    
+    
+    <link rel="prev" href="Block.html" />
+    
+
+    
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">技能树</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    语法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    枚举
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="String.html">
+            
+                <a href="String.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="Date.html">
+            
+                <a href="Date.html">
+            
+                    
+                    日期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="Block.html">
+            
+                <a href="Block.html">
+            
+                    
+                    Block
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.1.5" data-path="xcodebuild.html">
+            
+                <a href="xcodebuild.html">
+            
+                    
+                    xcodebuild
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../UI/">
+            
+                <a href="../UI/">
+            
+                    
+                    UI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../UI/UIView.html">
+            
+                <a href="../UI/UIView.html">
+            
+                    
+                    UIView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../UI/UIStackView.html">
+            
+                <a href="../UI/UIStackView.html">
+            
+                    
+                    UIStackView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../UI/UITextField.html">
+            
+                <a href="../UI/UITextField.html">
+            
+                    
+                    UITextField
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.4" data-path="../UI/UIImage.html">
+            
+                <a href="../UI/UIImage.html">
+            
+                    
+                    UIImage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.5" data-path="../UI/table.html">
+            
+                <a href="../UI/table.html">
+            
+                    
+                    表格
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../wwdc/">
+            
+                <a href="../wwdc/">
+            
+                    
+                    WWDC记录
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../wwdc/wwdc2020.html">
+            
+                <a href="../wwdc/wwdc2020.html">
+            
+                    
+                    WWDC2020
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../Tools/">
+            
+                <a href="../Tools/">
+            
+                    
+                    工具使用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../Tools/Xcode.html">
+            
+                <a href="../Tools/Xcode.html">
+            
+                    
+                    Xcode 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="../Tools/Masonry.html">
+            
+                <a href="../Tools/Masonry.html">
+            
+                    
+                    Masonry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="../Tools/Reactivecocoa.html">
+            
+                <a href="../Tools/Reactivecocoa.html">
+            
+                    
+                    Reactivecocoa
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >xcodebuild</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;"><b>1. </b>&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;</a></li><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk"><b>2. </b>&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;SDK</a></li><ul><li><span class="title-icon "></span><a href="#&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;"><b>2.1. </b>&#x67E5;&#x770B;&#x5B89;&#x88C5;SDK&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;</a></li></ul><li><span class="title-icon "></span><a href="#&#x8D44;&#x6599;"><b>3. </b>&#x8D44;&#x6599;</a></li><li><span class="title-icon "></span><a href="#options"><b>4. </b>Options</a></li></ul></div><a href="#&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><ul>
+<li><a href="">xcode-select</a></li>
+<li><a href="">xcodebuild</a></li>
+<li><a href="">xcrun</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x547D;&#x4EE4;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-usage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-help</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-verbose</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-license</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-checkFirstLaunchStatus</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-runFirstLaunch</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-project NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-target NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-alltargets</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-workspace NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-scheme NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-configuration NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-xcconfig PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-arch ARCH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-sdk SDK</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-toolchain NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-destination DESTINATIONSPECIFIER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-destination-timeout TIMEOUT</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-parallelizeTargets</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-jobs NUMBER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-maximum-concurrent-test-device-destinations NUMBER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-maximum-concurrent-test-simulator-destinations NUMBER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-parallel-testing-enabled YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-parallel-testing-worker-count NUMBER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-maximum-parallel-testing-workers NUMBER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-dry-run</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-quiet</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-hideShellScriptEnvironment</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showsdks</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showdestinations</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showTestPlans</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showBuildSettings</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showBuildSettingsForIndex</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-list</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-find-executable NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-find-library NAME</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-version</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-enableAddressSanitizer YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-enableThreadSanitizer YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-enableUndefinedBehaviorSanitizer YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-resultBundlePath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-resultStreamPath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-resultBundleVersion 3 [default]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-clonedSourcePackagesDirPath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-derivedDataPath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-archivePath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportArchive</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportNotarizedApp</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportOptionsPlist PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-enableCodeCoverage YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportPath PATH</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-skipUnavailableActions</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportLocalizations</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-importLocalizations</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-localizationPath</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-exportLanguage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-xcroot</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-xctestrun</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-testPlan</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-only-testing</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-only-testing:TEST-IDENTIFIER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-skip-testing</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-skip-testing:TEST-IDENTIFIER</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-test-timeouts-enabled YES/NO</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-default-test-execution-time-allowance</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-maximum-test-execution-time-allowance</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-only-test-configuration</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-skip-test-configuration</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-testLanguage</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-testRegion</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-resolvePackageDependencies</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-disableAutomaticPackageResolution</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-json</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-allowProvisioningUpdates</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-allowProvisioningDeviceRegistration</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-showBuildTimingSummary</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>-create-xcframework</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;"><a name="&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;" class="plugin-anchor" href="#&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;</h1>
+<pre><code class="lang-shell">% xcodebuild -version
+Xcode 11.5
+Build version 11E608c
+</code></pre>
+<h1 id="&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk"><a name="&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk" class="plugin-anchor" href="#&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;sdk"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x67E5;&#x770B;&#x5DF2;&#x5B89;&#x88C5;&#x7684;SDK</h1>
+<pre><code class="lang-shell">% xcodebuild -showsdks
+iOS SDKs:
+    iOS 13.5                          -sdk iphoneos13.5
+
+iOS Simulator SDKs:
+    Simulator - iOS 13.5              -sdk iphonesimulator13.5
+
+macOS SDKs:
+    DriverKit 19.0                    -sdk driverkit.macosx19.0
+    macOS 10.15                       -sdk macosx10.15
+
+tvOS SDKs:
+    tvOS 13.4                         -sdk appletvos13.4
+
+tvOS Simulator SDKs:
+    Simulator - tvOS 13.4             -sdk appletvsimulator13.4
+
+watchOS SDKs:
+    watchOS 6.2                       -sdk watchos6.2
+
+watchOS Simulator SDKs:
+    Simulator - watchOS 6.2           -sdk watchsimulator6.2
+</code></pre>
+<h2 id="&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;"><a name="&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;" class="plugin-anchor" href="#&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;" class="anchor-navigation-ex-anchor" href="#&#x67E5;&#x770B;&#x5B89;&#x88C5;sdk&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x67E5;&#x770B;&#x5B89;&#x88C5;SDK&#x7684;&#x8BE6;&#x7EC6;&#x5730;&#x5740;</h2>
+<pre><code class="lang-shell">% xcodebuild -sdk iphonesimulator13.5
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -sdk iphonesimulator13.5
+
+Build settings from command line:
+    SDKROOT = iphonesimulator13.5
+
+xcodebuild: error: The directory /usr/bin does not contain an Xcode project.
+</code></pre>
+<h1 id="&#x8D44;&#x6599;"><a name="&#x8D44;&#x6599;" class="plugin-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x8D44;&#x6599;</h1>
+<ul>
+<li><a href="https://www.hualong.me/2018/03/14/Xcodebuild/" target="_blank">Xcodebuild&#x4ECE;&#x5165;&#x95E8;&#x5230;&#x7CBE;&#x901A;</a></li>
+</ul>
+<h1 id="options"><a name="options" class="plugin-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a><a name="options" class="anchor-navigation-ex-anchor" href="#options"><i class="fa fa-link" aria-hidden="true"></i></a>4. Options</h1>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Block.html" class="navigation navigation-prev " aria-label="Previous page: Block">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../UI/" class="navigation navigation-next " aria-label="Next page: UI">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"xcodebuild","level":"2.1.5","depth":2,"next":{"title":"UI","level":"2.2","depth":1,"path":"UI/README.md","ref":"UI/README.md","articles":[{"title":"UIView","level":"2.2.1","depth":2,"path":"UI/UIView.md","ref":"UI/UIView.md","articles":[]},{"title":"UIStackView","level":"2.2.2","depth":2,"path":"UI/UIStackView.md","ref":"UI/UIStackView.md","articles":[]},{"title":"UITextField","level":"2.2.3","depth":2,"path":"UI/UITextField.md","ref":"UI/UITextField.md","articles":[]},{"title":"UIImage","level":"2.2.4","depth":2,"path":"UI/UIImage.md","ref":"UI/UIImage.md","articles":[]},{"title":"表格","level":"2.2.5","depth":2,"path":"UI/table.md","ref":"UI/table.md","articles":[]}]},"previous":{"title":"Block","level":"2.1.4","depth":2,"path":"Grammar/Block.md","ref":"Grammar/Block.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"Grammar/xcodebuild.md","mtime":"2020-07-06T02:01:27.034Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-06T11:36:55.057Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-local-video/video.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
