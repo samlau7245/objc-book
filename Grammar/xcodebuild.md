@@ -135,3 +135,189 @@ xcodebuild: error: The directory /usr/bin does not contain an Xcode project.
 
 # Options
 
+## -project
+
+```sh
+-project name.xcodeproj
+# Build the project name.xcodeproj.  Required if there are multiple project files in the same directory.
+```
+
+## -workspace
+
+```sh
+-workspace name.xcworkspace
+# Build the workspace name.xcworkspace.
+```
+
+## -target
+
+```sh
+-target targetname
+# Build the target specified by targetname.
+```
+
+## -alltargets
+
+```sh
+-alltargets
+# Build all the targets in the specified project.
+```
+
+## -scheme
+
+```sh
+-scheme schemename
+# Build the scheme specified by schemename.  Required if building a workspace
+```
+
+## -destination
+
+```sh
+-destination destinationspecifier
+# Use the destination device described by destinationspecifier.  Defaults to a destination that is compatible with the selected scheme.  See the Destinations section below for more details.
+```
+
+## -destination-timeout
+
+```sh
+-destination-timeout timeout
+# Use the specified timeout when searching for a destination device. The default is 30 seconds.
+```
+
+## -configuration
+
+```sh
+-configuration configurationname
+# Use the build configuration specified by configurationname when building each target.
+```
+
+## -arch
+
+```sh
+-arch architecture
+# Use the architecture specified by architecture when building each target.
+```
+
+## -sdk
+
+```sh
+-sdk [sdkfullpath | sdkname]
+# Build an Xcode project or workspace against the specified SDK, using build tools appropriate for that SDK. The argument may be an absolute path to an SDK, or the canonical name of an SDK.
+```
+
+## -showsdks
+
+```sh
+-showsdks
+# Lists all available SDKs that Xcode knows about, including their canonical names suitable for use with -sdk.  Does not initiate a build.
+```
+
+## -showBuildSettings
+
+```sh
+-showBuildSettings
+# Lists the build settings in a project or workspace and scheme. Does not initiate a build. Use with -project or -workspace and -scheme.
+```
+
+## -showdestinations
+
+```sh
+-showdestinations
+# Lists the valid destinations for a project or workspace and scheme. Does not initiate a build. Use with -project or -workspace and -scheme.
+```
+
+## -showBuildTimingSummary
+
+```sh
+-showBuildTimingSummary
+# Display a report of the timings of all the commands invoked during the build.
+```
+
+## -showTestPlans
+
+```sh
+-showTestPlans
+# Lists the test plans (if any) associated with the specified scheme. Does not initiate a build. Use with -scheme.
+```
+
+## -list
+
+```sh
+-list
+# Lists the targets and configurations in a project, or the schemes in a workspace. Does not initiate a build. Use with -project or -workspace.
+```
+
+## -enableAddressSanitizer
+
+```sh
+-enableAddressSanitizer [YES | NO]
+# Turns the address sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
+```
+
+## -enableThreadSanitizer
+
+```sh
+-enableThreadSanitizer [YES | NO]
+# Turns the thread sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
+```
+
+## -enableUndefinedBehaviorSanitizer
+
+```sh
+-enableUndefinedBehaviorSanitizer [YES | NO]
+# Turns the undefined behavior sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
+```
+
+## -enableCodeCoverage
+
+```sh
+-enableCodeCoverage [YES | NO]
+# Turns code coverage on or off during testing. This overrides the setting for the test action of a scheme in a workspace.
+```
+
+## -testLanguage
+
+```sh
+-testLanguage language
+# Specifies ISO 639-1 language during testing. This overrides the setting for the test action of a scheme in a workspace.
+```
+
+## -testRegion
+
+```sh
+-testRegion region
+# Specifies ISO 3166-1 region during testing. This overrides the setting for the test action of a scheme in a workspace.
+```
+
+## -derivedDataPath
+
+```sh
+-derivedDataPath path
+# Overrides the folder that should be used for derived data when performing an action on a scheme in a workspace.
+
+```
+
+# Destinations
+
+当前`xcodebuild`支持的平台为：
+
+* `macOS`
+* `iOS`
+* `iOS Simulator`
+* `watchOS`
+* `watchOS Simulator`
+* `tvOS`
+* `tvOS Simulator`
+
+
+
+
+
+
+
+
+
+
+
+
+

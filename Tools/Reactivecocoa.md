@@ -3843,6 +3843,24 @@ VM层：
             }];
         }];
     }];
+
+        // 获取验证码 按钮是否可以点击
+    RAC(self,buttonEnabled) = [RACSignal combineLatest:@[RACObserve(self, cusNewTel)] reduce:^id (NSString *cusNewTel){
+        
+        BOOL checkCusNewTel = NO;
+        if (cusNewTel && cusNewTel.length == 11) {
+            checkCusNewTel = YES;
+        }
+        // 如果验证码正在倒计时，则 获取验证码 按钮依然不能点击
+        NSRegularExpression *numberRegular = [NSRegularExpression regularExpressionWithPattern:@"[0-9]" options:NSRegularExpressionCaseInsensitive error:nil];
+        NSInteger count = [numberRegular numberOfMatchesInString:self.countStirng options:NSMatchingReportProgress range:NSMakeRange(0, self.countStirng.length)];
+        if (count > 0) return @(NO);
+        
+        if(checkCusNewTel) {
+            return @(YES);
+        }
+        return @(NO);
+    }];
 }
 @end
 ```

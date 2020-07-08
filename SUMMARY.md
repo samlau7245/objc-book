@@ -18,6 +18,8 @@
     * [UIImage](UI/UIImage.md)
     * [表格](UI/table.md)
 
+* [Effective OBJ](/Effective/README.md)
+	* [开发记录](/Effective/dev_rec.md)
 --- 
 
 ## 其他
