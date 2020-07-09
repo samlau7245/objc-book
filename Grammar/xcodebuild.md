@@ -2,6 +2,8 @@
 * [xcodebuild]()
 * [xcrun]()
 
+<img src="/assets/images/02.png"/>
+
 |命令|含义|
 | --- | --- |
 | `-usage` | |
@@ -17,7 +19,7 @@
 | `-scheme NAME` | |
 | `-configuration NAME` | |
 | `-xcconfig PATH` | |
-| `-arch ARCH` | |
+| `-arch ARCH` | 指定 指令集|
 | `-sdk SDK` | |
 | `-toolchain NAME` | |
 | `-destination DESTINATIONSPECIFIER` | |
@@ -90,7 +92,34 @@ Xcode 11.5
 Build version 11E608c
 ```
 
-# 查看已安装的SDK
+# Destinations
+
+`Destinations`用来指定可用设备：
+
+* `platform`:
+	* `macOS` :
+		* `arch` : 指定只用的指令集。`x86_64`、`i386`。
+		* `variant` : `Mac`、`Catalyst`-把iPad应用一键移到Mac。
+	* `iOS` : 
+		* `id` : 需要使用设备的UDID，id和name两者择其一。
+		* `name` : 需要使用设备的NAME，id和name两者择其一。
+	* `iOS Simulator` : 
+		* `id` : 需要使用设备的UDID，id和name两者择其一。
+		* `name` : 虚拟机的名字，id和name两者择其一。	
+		* `OS` : 虚拟机的系统，默认最新`latest`。
+	* `watchOS` : 
+	* `watchOS Simulator` : 
+	* `tvOS` : 
+		* `id` : 需要使用设备的UDID，id和name两者择其一。
+		* `name` : 需要使用设备的NAME，id和name两者择其一。
+	* `tvOS Simulator` : 
+		* `id` : 需要使用设备的UDID，id和name两者择其一。
+		* `name` : 虚拟机的名字，id和name两者择其一。	
+		* `OS` : 虚拟机的系统，默认最新`latest`。
+
+# Options
+
+## 所有Xcode可用SDK
 
 ```shell
 % xcodebuild -showsdks
@@ -130,184 +159,152 @@ Build settings from command line:
 xcodebuild: error: The directory /usr/bin does not contain an Xcode project.
 ```
 
-# 资料
-* [Xcodebuild从入门到精通](https://www.hualong.me/2018/03/14/Xcodebuild/)
-
-# Options
-
-## -project
+## -list 查看项目中的目标和配置
 
 ```sh
--project name.xcodeproj
-# Build the project name.xcodeproj.  Required if there are multiple project files in the same directory.
+% xcodebuild -list                          
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -list
+
+2020-07-09 16:53:31.698 xcodebuild[30453:2382605]  DTDeviceKit: deviceType from b21b54f8a8c80bc625538ce60e405aa060147a09 was NULL
+2020-07-09 16:53:31.760 xcodebuild[30453:2382715]  DTDeviceKit: deviceType from b21b54f8a8c80bc625538ce60e405aa060147a09 was NULL
+Information about project "XcodebuildExample":
+    Targets:
+        XcodebuildExample
+
+    Build Configurations:
+        Debug
+        Release
+
+    If no build configuration is specified and -scheme is not passed then "Release" is used.
+
+    Schemes:
+        XcodebuildExample
 ```
 
-## -workspace
+## -destination 指定目标设备
+
+> * `-destination destinationspecifier`：指定设备。
+> * `-destination-timeout timeout`: 指定设备的超时时间，默认30秒。
 
 ```sh
--workspace name.xcworkspace
-# Build the workspace name.xcworkspace.
+# 指定设备为：系统 iOS11.2 iPhone6s 模拟器。
+-destination 'platform=iOS Simulator,name=iPhone 6s,OS=11.2'
 ```
 
-## -target
+## -configuration 构建方式
+
+> 通过`-list` 可以看到对应项目的`configuration`。
+
+<img src="/assets/images/03.png"/>
 
 ```sh
--target targetname
-# Build the target specified by targetname.
+-configuration Debug
+# 或
+-configuration Release
 ```
 
-## -alltargets
+## 列出Target中所有Build settings
+
+> `xcodebuild -showBuildSettings`
+
+<img src="/assets/images/04.png"/>
 
 ```sh
--alltargets
-# Build all the targets in the specified project.
+% xcodebuild -showBuildSettings
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -showBuildSettings
+
+2020-07-09 17:32:52.576 xcodebuild[33081:2408968]  DTDeviceKit: deviceType from b21b54f8a8c80bc625538ce60e405aa060147a09 was NULL
+2020-07-09 17:32:52.633 xcodebuild[33081:2408964]  DTDeviceKit: deviceType from b21b54f8a8c80bc625538ce60e405aa060147a09 was NULL
+Build settings for action build and target XcodebuildExample:
+    ACTION = build
+    AD_HOC_CODE_SIGNING_ALLOWED = NO
+    ALTERNATE_GROUP = staff
+    ALTERNATE_MODE = u+w,go-w,a+rX
+    ALTERNATE_OWNER = shanliu
+    ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO
+    ALWAYS_SEARCH_USER_PATHS = NO
+    ALWAYS_USE_SEPARATE_HEADERMAPS = NO
+    APPLE_INTERNAL_DEVELOPER_DIR = /AppleInternal/Developer
+    APPLE_INTERNAL_DIR = /AppleInternal
+    省略....
 ```
 
-## -scheme
-
-```sh
--scheme schemename
-# Build the scheme specified by schemename.  Required if building a workspace
-```
-
-## -destination
-
-```sh
--destination destinationspecifier
-# Use the destination device described by destinationspecifier.  Defaults to a destination that is compatible with the selected scheme.  See the Destinations section below for more details.
-```
-
-## -destination-timeout
-
-```sh
--destination-timeout timeout
-# Use the specified timeout when searching for a destination device. The default is 30 seconds.
-```
-
-## -configuration
-
-```sh
--configuration configurationname
-# Use the build configuration specified by configurationname when building each target.
-```
-
-## -arch
-
-```sh
--arch architecture
-# Use the architecture specified by architecture when building each target.
-```
-
-## -sdk
-
-```sh
--sdk [sdkfullpath | sdkname]
-# Build an Xcode project or workspace against the specified SDK, using build tools appropriate for that SDK. The argument may be an absolute path to an SDK, or the canonical name of an SDK.
-```
-
-## -showsdks
-
-```sh
--showsdks
-# Lists all available SDKs that Xcode knows about, including their canonical names suitable for use with -sdk.  Does not initiate a build.
-```
-
-## -showBuildSettings
-
-```sh
--showBuildSettings
-# Lists the build settings in a project or workspace and scheme. Does not initiate a build. Use with -project or -workspace and -scheme.
-```
-
-## -showdestinations
-
-```sh
--showdestinations
-# Lists the valid destinations for a project or workspace and scheme. Does not initiate a build. Use with -project or -workspace and -scheme.
-```
-
-## -showBuildTimingSummary
-
-```sh
--showBuildTimingSummary
-# Display a report of the timings of all the commands invoked during the build.
-```
-
-## -showTestPlans
-
-```sh
--showTestPlans
-# Lists the test plans (if any) associated with the specified scheme. Does not initiate a build. Use with -scheme.
-```
-
-## -list
-
-```sh
--list
-# Lists the targets and configurations in a project, or the schemes in a workspace. Does not initiate a build. Use with -project or -workspace.
-```
-
-## -enableAddressSanitizer
-
-```sh
--enableAddressSanitizer [YES | NO]
-# Turns the address sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
-```
+[Xcode Help-Build Settings](https://help.apple.com/xcode/mac/current/#/itcaec37c2a6)
 
 ## -enableThreadSanitizer
 
-```sh
--enableThreadSanitizer [YES | NO]
-# Turns the thread sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
-```
+> `-enableThreadSanitizer [YES|NO]`
 
-## -enableUndefinedBehaviorSanitizer
+<img src="/assets/images/05.png"/>
 
-```sh
--enableUndefinedBehaviorSanitizer [YES | NO]
-# Turns the undefined behavior sanitizer on or off. This overrides the setting for the launch action of a scheme in a workspace.
-```
+## -enableThreadSanitizer
+
+`-enableThreadSanitizer [YES|NO]`
+
+<img src="/assets/images/06.png"/>
 
 ## -enableCodeCoverage
 
-```sh
--enableCodeCoverage [YES | NO]
-# Turns code coverage on or off during testing. This overrides the setting for the test action of a scheme in a workspace.
-```
+> `-enableCodeCoverage [YES|NO]`
 
-## -testLanguage
+<img src="/assets/images/07.png"/>
 
-```sh
--testLanguage language
-# Specifies ISO 639-1 language during testing. This overrides the setting for the test action of a scheme in a workspace.
-```
+## test使用的语言
 
-## -testRegion
+> `-testLanguage language`：用`ISO 3166-1`语言名称指定APP所用语言。
 
-```sh
--testRegion region
-# Specifies ISO 3166-1 region during testing. This overrides the setting for the test action of a scheme in a workspace.
-```
+<img src="/assets/images/08.png"/>
 
-## -derivedDataPath
+## test的区域
 
-```sh
--derivedDataPath path
-# Overrides the folder that should be used for derived data when performing an action on a scheme in a workspace.
+> `-testRegion region`：用`ISO 3166-1`区域名称指定APP所在区域。
 
-```
+<img src="/assets/images/09.png"/>
 
-# Destinations
+## -allowProvisioningUpdates
 
-当前`xcodebuild`支持的平台为：
+> 允许`xcodebuild`与`Apple Developer`网站进行通信。对于自动签名的目标，`xcodebuild`将创建并更新配置文件，应用程序ID和证书。 对于手动签名的目标，`xcodebuild`将下载缺失或更新的供应配置文件， 需要在Xcode的帐户首选项窗格中添加开发者帐户。
 
-* `macOS`
-* `iOS`
-* `iOS Simulator`
-* `watchOS`
-* `watchOS Simulator`
-* `tvOS`
-* `tvOS Simulator`
+## 导出IPA文件
+
+* `-exportArchive` : 导出IPA文件；需要与`-archivePath`，`-exportPath`和 `-exportOptionsPlist`一起使用。
+* `-archivePath xcarchivepath` : 指定archive操作生成归档的路径。或者在使用`-exportArchive`时指定归档的路径。
+* `-exportPath destinationpath` : 指定导出IPA文件到哪个路径。
+* `-exportOptionsPlist path` : 指定`ExportOptions.plist`路径。导出IPA文件时，需要指定一个`ExportOptions.plist`文件。
+* `-exportNotarizedApp` : 需要 `-archivePath` 和 `-exportPath`。
+* `-exportLocalizations` : 将本地化导出到XLIFF文件。需要`-project`和`-localizationPath`。
+* `-exportLanguage language` : 指定包含在本地化导出中的可选`ISO 639-1`语言。
+
+# actions
+
+* `build`
+* `build-for-testing`
+* `analyze`
+* `archive`
+* `test`
+* `test-without-building`
+* `installsrc`
+* `install`
+* `clean`
+
+# 示例
+
+
+# 资料
+* [Xcodebuild从入门到精通](https://www.hualong.me/2018/03/14/Xcodebuild/)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
