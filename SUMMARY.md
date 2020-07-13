@@ -10,7 +10,7 @@
 	* [日期](Grammar/Date.md)
 	* [Block](Grammar/Block.md)
 	* [xcodebuild](/Grammar/xcodebuild.md)
-
+	* [xcrun](/Grammar/xcrun.md)
 * [UI](UI/README.md)
 	* [UIView](UI/UIView.md)
     * [UIStackView](UI/UIStackView.md)
@@ -23,7 +23,8 @@
 --- 
 
 ## 其他
-
+* [iOS系统更新内容](/iosSys/README.md)
+	* [iOS14](/iosSys/iOS14.md)
 * [WWDC记录](/wwdc/README.md)
 	* [WWDC2020](/wwdc/wwdc2020.md)
 

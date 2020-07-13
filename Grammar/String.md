@@ -40,3 +40,9 @@ NSObliquenessAttributeName; //字体倾斜
 NSExpansionAttributeName; //字体扁平化
 NSVerticalGlyphFormAttributeName;//垂直或者水平，value是 NSNumber，0表示水平，1垂直
 ```
+
+# 去掉两端的空格
+
+```objc
+string = [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+```
