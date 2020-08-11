@@ -79,3 +79,49 @@ extern NSInteger const count;
 NSString * const name = @"王五";
 NSInteger const count = 3;
 ```
+
+# 忽略警告语法
+
+```objc
+#pragma clang diagnostic push  
+#pragma clang diagnostic ignored "-相关命令"  
+ // code here
+#pragma clang diagnostic pop
+```
+
+* `-Wdeprecated-declarations`: 方法弃用警告。
+* `-Wincompatible-pointer-types`: 不兼容指针类型。
+* `-Warc-retain-cycles`: 循环引用警告。
+* `-Wunused-variable`: 未使用变量警告。
+* `-Wdeprecated-declarations`: 已废弃属性或方法警告。
+
+# Debug、Release
+
+```objc
+#ifdef DEBUG
+// debug code here
+#else
+// release code here
+#endif
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
