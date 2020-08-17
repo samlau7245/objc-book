@@ -4,6 +4,8 @@
 
 ## 技能树
 
+* [教程](tutorial/README.md)
+	* [App Store Connect](tutorial/app_store.md)
 * [语法](Grammar/README.md)
 	* [枚举](/Grammar/enum.md)
 	* [字符串](Grammar/String.md)
