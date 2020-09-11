@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>WWDC记录 · Objective-C</title>
+        <title>xcrun · Objective-C</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -90,10 +90,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="wwdc2020.html" />
+    <link rel="next" href="keychar.html" />
     
     
-    <link rel="prev" href="../iosSys/iOS14.html" />
+    <link rel="prev" href="xcodebuild.html" />
     
 
     
@@ -179,9 +179,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="../Grammar/">
+        <li class="chapter " data-level="2.2" data-path="./">
             
-                <a href="../Grammar/">
+                <a href="./">
             
                     
                     语法
@@ -193,9 +193,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.2.1" data-path="../Grammar/enum.html">
+        <li class="chapter " data-level="2.2.1" data-path="enum.html">
             
-                <a href="../Grammar/enum.html">
+                <a href="enum.html">
             
                     
                     枚举
@@ -206,9 +206,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.2" data-path="../Grammar/String.html">
+        <li class="chapter " data-level="2.2.2" data-path="String.html">
             
-                <a href="../Grammar/String.html">
+                <a href="String.html">
             
                     
                     字符串
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.3" data-path="../Grammar/Date.html">
+        <li class="chapter " data-level="2.2.3" data-path="Date.html">
             
-                <a href="../Grammar/Date.html">
+                <a href="Date.html">
             
                     
                     日期
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.4" data-path="../Grammar/Block.html">
+        <li class="chapter " data-level="2.2.4" data-path="Block.html">
             
-                <a href="../Grammar/Block.html">
+                <a href="Block.html">
             
                     
                     Block
@@ -245,9 +245,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.5" data-path="../Grammar/xcodebuild.html">
+        <li class="chapter " data-level="2.2.5" data-path="xcodebuild.html">
             
-                <a href="../Grammar/xcodebuild.html">
+                <a href="xcodebuild.html">
             
                     
                     xcodebuild
@@ -258,9 +258,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.6" data-path="../Grammar/xcrun.html">
+        <li class="chapter active" data-level="2.2.6" data-path="xcrun.html">
             
-                <a href="../Grammar/xcrun.html">
+                <a href="xcrun.html">
             
                     
                     xcrun
@@ -271,9 +271,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.7" data-path="../Grammar/keychar.html">
+        <li class="chapter " data-level="2.2.7" data-path="keychar.html">
             
-                <a href="../Grammar/keychar.html">
+                <a href="keychar.html">
             
                     
                     关键字
@@ -483,9 +483,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="./">
+        <li class="chapter " data-level="3.2" data-path="../wwdc/">
             
-                <a href="./">
+                <a href="../wwdc/">
             
                     
                     WWDC记录
@@ -497,9 +497,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="wwdc2020.html">
+        <li class="chapter " data-level="3.2.1" data-path="../wwdc/wwdc2020.html">
             
-                <a href="wwdc2020.html">
+                <a href="../wwdc/wwdc2020.html">
             
                     
                     WWDC2020
@@ -603,7 +603,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >WWDC记录</a>
+        <a href=".." >xcrun</a>
     </h1>
 </div>
 
@@ -618,7 +618,64 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <pre><code class="lang-sh"><span class="hljs-comment"># Don&apos;t consult the cache when looking up values. In effect, causes the cache entry to be refreshed.</span>
+-n, --no-cache
+
+<span class="hljs-comment"># Removes the cache. Causes all values to be re-cached.</span>
+-k, --kill-cache
+
+<span class="hljs-comment"># Specifies which SDK to search for tools. If no --sdk argument is provided, then the SDK used will be taken from the SDKROOT environment variable, if present.</span>
+<span class="hljs-comment"># Use xcodebuild -showsdks to list the available SDK names.</span>
+--sdk  
+
+<span class="hljs-comment"># Specifies which toolchain to use to perform the lookup. If no --toolchain argument is provided, then the toolchain to use will be taken from the TOOLCHAINS environment variable, if present.</span>
+--toolchain
+
+<span class="hljs-comment"># Print the full command line that is invoked.</span>
+<span class="hljs-_">-l</span>, --log
+
+<span class="hljs-comment"># Enable &quot;find&quot; mode, in which the resolved tool path is printed instead of the tool being executed.</span>
+<span class="hljs-_">-f</span>, --find
+
+<span class="hljs-comment"># Enable &quot;run&quot; mode, in which the resolved tool path is executed with any provided additional arguments. This is the default mode.</span>
+-r, --run
+
+<span class="hljs-comment"># Print the path to the selected SDK.</span>
+--show-sdk-path
+
+<span class="hljs-comment"># Print the version number of the selected SDK.</span>
+--show-sdk-version
+
+<span class="hljs-comment"># Print the build version number of the selected SDK.</span>
+--show-sdk-build-version
+
+<span class="hljs-comment"># Print the path to the platform for the selected SDK.</span>
+--show-sdk-platform-path
+
+<span class="hljs-comment"># Print the version number of the platform for the selected SDK.</span>
+--show-sdk-platform-version
+</code></pre>
+<pre><code class="lang-sh">% xcrun --find clang
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+
+% xcrun --sdk iphoneos --find texturetool
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/texturetool
+
+xcrun --sdk macosx --show-sdk-path
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk
+</code></pre>
+<pre><code class="lang-sh">% xcrun git status
+<span class="hljs-comment"># On branch master</span>
+<span class="hljs-comment"># Your branch is up to date with &apos;origin/master&apos;.</span>
+<span class="hljs-comment"># </span>
+<span class="hljs-comment"># Changes not staged for commit:</span>
+<span class="hljs-comment">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span>
+<span class="hljs-comment">#   (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)</span>
+<span class="hljs-comment">#     modified:   Podfile</span>
+<span class="hljs-comment"># </span>
+<span class="hljs-comment"># no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -645,12 +702,12 @@
 
             
                 
-                <a href="../iosSys/iOS14.html" class="navigation navigation-prev " aria-label="Previous page: iOS14">
+                <a href="xcodebuild.html" class="navigation navigation-prev " aria-label="Previous page: xcodebuild">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="wwdc2020.html" class="navigation navigation-next " aria-label="Next page: WWDC2020">
+                <a href="keychar.html" class="navigation navigation-next " aria-label="Next page: 关键字">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -661,7 +718,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WWDC记录","level":"3.2","depth":1,"next":{"title":"WWDC2020","level":"3.2.1","depth":2,"path":"wwdc/wwdc2020.md","ref":"wwdc/wwdc2020.md","articles":[]},"previous":{"title":"iOS14","level":"3.1.1","depth":2,"path":"iosSys/iOS14.md","ref":"iosSys/iOS14.md","articles":[]},"dir":"neutral"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"wwdc/README.md","mtime":"2020-07-02T01:02:19.688Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-11T10:10:17.707Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"xcrun","level":"2.2.6","depth":2,"next":{"title":"关键字","level":"2.2.7","depth":2,"path":"Grammar/keychar.md","ref":"Grammar/keychar.md","articles":[]},"previous":{"title":"xcodebuild","level":"2.2.5","depth":2,"path":"Grammar/xcodebuild.md","ref":"Grammar/xcodebuild.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"Grammar/xcrun.md","mtime":"2020-07-13T07:16:04.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-11T10:10:17.707Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

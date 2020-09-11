@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>WWDC记录 · Objective-C</title>
+        <title>UICollectionView · Objective-C</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -90,10 +90,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="wwdc2020.html" />
+    <link rel="next" href="../Effective/" />
     
     
-    <link rel="prev" href="../iosSys/iOS14.html" />
+    <link rel="prev" href="table.html" />
     
 
     
@@ -289,9 +289,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="../UI/">
+        <li class="chapter " data-level="2.3" data-path="./">
             
-                <a href="../UI/">
+                <a href="./">
             
                     
                     UI
@@ -303,9 +303,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="../UI/UIView.html">
+        <li class="chapter " data-level="2.3.1" data-path="UIView.html">
             
-                <a href="../UI/UIView.html">
+                <a href="UIView.html">
             
                     
                     UIView
@@ -316,9 +316,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.2" data-path="../UI/UIStackView.html">
+        <li class="chapter " data-level="2.3.2" data-path="UIStackView.html">
             
-                <a href="../UI/UIStackView.html">
+                <a href="UIStackView.html">
             
                     
                     UIStackView
@@ -329,9 +329,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="../UI/UITextField.html">
+        <li class="chapter " data-level="2.3.3" data-path="UITextField.html">
             
-                <a href="../UI/UITextField.html">
+                <a href="UITextField.html">
             
                     
                     UITextField
@@ -342,9 +342,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.4" data-path="../UI/UIImage.html">
+        <li class="chapter " data-level="2.3.4" data-path="UIImage.html">
             
-                <a href="../UI/UIImage.html">
+                <a href="UIImage.html">
             
                     
                     UIImage
@@ -355,9 +355,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.5" data-path="../UI/table.html">
+        <li class="chapter " data-level="2.3.5" data-path="table.html">
             
-                <a href="../UI/table.html">
+                <a href="table.html">
             
                     
                     表格
@@ -368,9 +368,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.6" data-path="../UI/UICollectionView.html">
+        <li class="chapter active" data-level="2.3.6" data-path="UICollectionView.html">
             
-                <a href="../UI/UICollectionView.html">
+                <a href="UICollectionView.html">
             
                     
                     UICollectionView
@@ -483,9 +483,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="./">
+        <li class="chapter " data-level="3.2" data-path="../wwdc/">
             
-                <a href="./">
+                <a href="../wwdc/">
             
                     
                     WWDC记录
@@ -497,9 +497,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.2.1" data-path="wwdc2020.html">
+        <li class="chapter " data-level="3.2.1" data-path="../wwdc/wwdc2020.html">
             
-                <a href="wwdc2020.html">
+                <a href="../wwdc/wwdc2020.html">
             
                     
                     WWDC2020
@@ -603,7 +603,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >WWDC记录</a>
+        <a href=".." >UICollectionView</a>
     </h1>
 </div>
 
@@ -618,7 +618,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#uicollectionviewdelegate"><b>1. </b>UICollectionViewDelegate</a></li><ul><li><span class="title-icon "></span><a href="#&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;"><b>1.1. </b>&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;</a></li><li><span class="title-icon "></span><a href="#cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;"><b>1.2. </b>cell&#x3001;header&#x3001;footer &#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;</a></li><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;"><b>1.3. </b>&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;</a></li></ul></ul></div><a href="#uicollectionviewdelegate" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="uicollectionviewdelegate"><a name="uicollectionviewdelegate" class="plugin-anchor" href="#uicollectionviewdelegate"><i class="fa fa-link" aria-hidden="true"></i></a><a name="uicollectionviewdelegate" class="anchor-navigation-ex-anchor" href="#uicollectionviewdelegate"><i class="fa fa-link" aria-hidden="true"></i></a>1. UICollectionViewDelegate</h1>
+<h2 id="&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;"><a name="&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;" class="plugin-anchor" href="#&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;" class="anchor-navigation-ex-anchor" href="#&#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x9009;&#x62E9;&#x548C;&#x9AD8;&#x4EAE;</h2>
+<pre><code class="lang-objc"><span class="hljs-comment">/// &#x662F;&#x5426;&#x9009;&#x4E2D;&#x67D0;&#x4E2A;item</span>
+- (<span class="hljs-built_in">BOOL</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView shouldSelectItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+<span class="hljs-comment">/// &#x662F;&#x548C;&#x5426;&#x53D6;&#x6D88;&#x9009;&#x4E2D;&#x67D0;&#x4E2A;item</span>
+- (<span class="hljs-built_in">BOOL</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView shouldDeselectItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath; 
+<span class="hljs-comment">/// &#x9009;&#x4E2D;&#x67D0;&#x4E2A;item</span>
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didSelectItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+<span class="hljs-comment">/// &#x53D6;&#x6D88;&#x9009;&#x4E2D;&#x67D0;&#x4E2A;item</span>
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didDeselectItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+
+<span class="hljs-comment">/// &#x662F;&#x5426;&#x9009;&#x4E2D;&#x67D0;&#x4E2A;item&#x9AD8;&#x4EAE;</span>
+- (<span class="hljs-built_in">BOOL</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView shouldHighlightItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didHighlightItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didUnhighlightItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+</code></pre>
+<h2 id="cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;"><a name="cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;" class="plugin-anchor" href="#cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;" class="anchor-navigation-ex-anchor" href="#cell&#x3001;header&#x3001;footer-&#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. cell&#x3001;header&#x3001;footer &#x663E;&#x793A;&#x3001;&#x9690;&#x85CF;</h2>
+<pre><code class="lang-objc">- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView willDisplayCell:(<span class="hljs-built_in">UICollectionViewCell</span> *)cell forItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath API_<span class="hljs-built_in">AVAILABLE</span>(ios(<span class="hljs-number">8.0</span>));
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView willDisplaySupplementaryView:(<span class="hljs-built_in">UICollectionReusableView</span> *)view forElementKind:(<span class="hljs-built_in">NSString</span> *)elementKind atIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath API_<span class="hljs-built_in">AVAILABLE</span>(ios(<span class="hljs-number">8.0</span>));
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didEndDisplayingCell:(<span class="hljs-built_in">UICollectionViewCell</span> *)cell forItemAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+- (<span class="hljs-keyword">void</span>)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView didEndDisplayingSupplementaryView:(<span class="hljs-built_in">UICollectionReusableView</span> *)view forElementOfKind:(<span class="hljs-built_in">NSString</span> *)elementKind atIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath;
+</code></pre>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x81EA;&#x5B9A;&#x4E49;&#x5E03;&#x5C40;</h2>
+<pre><code class="lang-objc">- (nonnull <span class="hljs-built_in">UICollectionViewTransitionLayout</span> *)collectionView:(<span class="hljs-built_in">UICollectionView</span> *)collectionView transitionLayoutForOldLayout:(<span class="hljs-built_in">UICollectionViewLayout</span> *)fromLayout newLayout:(<span class="hljs-built_in">UICollectionViewLayout</span> *)toLayout;
+</code></pre>
+
                                 
                                 </section>
                             
@@ -645,12 +670,12 @@
 
             
                 
-                <a href="../iosSys/iOS14.html" class="navigation navigation-prev " aria-label="Previous page: iOS14">
+                <a href="table.html" class="navigation navigation-prev " aria-label="Previous page: 表格">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="wwdc2020.html" class="navigation navigation-next " aria-label="Next page: WWDC2020">
+                <a href="../Effective/" class="navigation navigation-next " aria-label="Next page: Effective OBJ">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -661,7 +686,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WWDC记录","level":"3.2","depth":1,"next":{"title":"WWDC2020","level":"3.2.1","depth":2,"path":"wwdc/wwdc2020.md","ref":"wwdc/wwdc2020.md","articles":[]},"previous":{"title":"iOS14","level":"3.1.1","depth":2,"path":"iosSys/iOS14.md","ref":"iosSys/iOS14.md","articles":[]},"dir":"neutral"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"wwdc/README.md","mtime":"2020-07-02T01:02:19.688Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-11T10:10:17.707Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"UICollectionView","level":"2.3.6","depth":2,"next":{"title":"Effective OBJ","level":"2.4","depth":1,"path":"Effective/README.md","ref":"Effective/README.md","articles":[{"title":"开发记录","level":"2.4.1","depth":2,"path":"Effective/dev_rec.md","ref":"Effective/dev_rec.md","articles":[]},{"title":"错误随笔","level":"2.4.2","depth":2,"path":"Effective/mistake_note.md","ref":"Effective/mistake_note.md","articles":[]},{"title":"错误分析","level":"2.4.3","depth":2,"path":"Effective/analyse.md","ref":"Effective/analyse.md","articles":[]}]},"previous":{"title":"表格","level":"2.3.5","depth":2,"path":"UI/table.md","ref":"UI/table.md","articles":[]},"dir":"ltr"},"config":{"plugins":["simple-page-toc","anchor-navigation-ex","-lunr","-search","search-plus","advanced-emoji","splitter","expandable-chapters-small","local-video","anchors","copy-code-button","alerts","include-csv","include-codeblock","ace","favicon","todo","emphasize","disqus","-chapter-fold"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"include-csv":{},"disqus":{"useIdentifier":false,"shortName":"samLau-Hua"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true,"showGoTop":true,"favicon":{"shortcut":"assets/favicon.ico","bookmark":"assets/favicon.ico","appleTouch":"assets/favicon.ico","appleTouchMore":{"120x120":"assets/favicon.ico","180x180":"assets/favicon.ico"}},"printLog":false,"multipleH1":true,"associatedWithSummary":true,"include-codeblock":{"template":"ace"},"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false}},"favicon":{},"alerts":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"check":false,"edit":false,"fixlang":false,"lang":"","template":"default","theme":"chrome","unindent":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"Sam Lau","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Objective-C","language":"zh-hans","gitbook":"*","description":"记录学习Objective-C的知识点！"},"file":{"path":"UI/UICollectionView.md","mtime":"2020-07-31T05:48:58.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-11T10:10:17.707Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
