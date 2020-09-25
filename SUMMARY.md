@@ -7,6 +7,9 @@
 * [教程](tutorial/README.md)
 	* [App Store Connect](tutorial/app_store.md)
 	* [NFC](tutorial/nfc.md)
+	* [拦截器设计](tutorial/Interceptor.md)
+	* [协议(Protocol)](tutorial/protocol.md)
+	
 * [语法](Grammar/README.md)
 	* [枚举](/Grammar/enum.md)
 	* [字符串](Grammar/String.md)
@@ -26,6 +29,9 @@
 	* [开发记录](/Effective/dev_rec.md)
 	* [错误随笔](/Effective/mistake_note.md)
 	* [错误分析](/Effective/analyse.md)
+* [核心动画](/coreAnimation/README.md)
+	* [图层树](/coreAnimation/layertree.md)
+* [逆向工程](/reverse/README.md)
 
 --- 
 
@@ -38,3 +44,5 @@
 	* [Xcode 使用](/Tools/Xcode.md)
 	* [Masonry](/Tools/Masonry.md)
     * [Reactivecocoa](/Tools/Reactivecocoa.md)
+    * [Reveal](/Tools/Reveal.md)
+    
