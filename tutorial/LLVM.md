@@ -53,15 +53,36 @@ iOS中的Clang与LVVM：
 
 <img src="/assets/images/tutorial/10.png"/>
 
-## IR
+* `FunctionDecl` : 
+* `ParmVarDecl` : 
+* `ParmVarDecl` : 
+* `CompoundStmt` : 
+* `DeclStmt` : 
+* `VarDecl` : 
+* `BinaryOperator` : 
+* `BinaryOperator` : 
+* `ImplicitCastExpr` : 
+* `DeclRefExpr` : 
+* `IntegerLiteral` : 
+
+## IR(中间代码)
+
+* IR格式：
+	* `text` : text格式；扩展名`.ll`；`clang -S -emit-llvm main.m`，在`main`函数的同级目录下生成一个`main.ll`格式的文件。
+	* `memory` : 内存格式。
+	* `bitcode` : 二进制格式；扩展名`.bc`；`clang -c -emit-llvm main.m`，在`main`函数的同级目录下生成一个`main.bc`格式的文件。
 
 
+# LVVM插件
 
+## 环境搭建
 
-
-
-
-
+* 下载LVVM源码： `git clone https://git.llvm.org/git/llvm.git/`。
+* 下载Clang ： 
+	* `cd llvm/tools`
+	* `git clone https://git.llvm.org/git/clang.git/`。
+* 安装cmake：`brew install cmake`
+* 安装ninja：`brew install ninja`，如果安装失败可以从[GitHub](https://github.com/ninja-build/ninja)获取Release版本放到`/usr/loca/bin`中。
 
 
 
