@@ -34,7 +34,9 @@
 * [核心动画](/coreAnimation/README.md)
 	* [图层树](/coreAnimation/layertree.md)
 * [逆向工程](/reverse/README.md)
-
+* [自动化](/automatic/README.md)
+	* [xcodebuild](/automatic/xcodebuild.md)
+	* [xcrun](/automatic/xcrun.md)
 --- 
 
 ## 其他
@@ -47,4 +49,6 @@
 	* [Masonry](/Tools/Masonry.md)
     * [Reactivecocoa](/Tools/Reactivecocoa.md)
     * [Reveal](/Tools/Reveal.md)
+    * [CocoaPods](/Tools/cocoapods.md)
+
     
