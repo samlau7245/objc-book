@@ -2,63 +2,56 @@
 
 * `help`: Show all commands, or show usage for a command.
 
-* `list-keychains`: Display or manipulate the keychain search list.
+* `list-keychains`: Display or manipulate the keychain search list. 显示或设置钥匙串搜索列表
 
-```sh
-"/Users/shanliu/Library/Keychains/login.keychain-db"
-"/Library/Keychains/System.keychain"
-```
+* `default-keychain`: Display or set the default keychain. 显示或设置默认的钥匙串 
+* `login-keychain`: Display or set the login keychain. 显示或设置登录钥匙串
+* `create-keychain`: Create keychains. 创建钥匙串并加入搜索列表
+* `delete-keychain`: Delete keychains and remove them from the search list. 删除钥匙串并从搜索列表移除
 
-* `default-keychain`: Display or set the default keychain.
-* `login-keychain`: Display or set the login keychain.
-* `create-keychain`: Create keychains.
-* `delete-keychain`: Delete keychains and remove them from the search list.
+* `lock-keychain`: Lock the specified keychain. 锁定指定的钥匙串
+* `unlock-keychain`: Unlock the specified keychain. 解锁指定的钥匙串
 
-* `lock-keychain`: Lock the specified keychain. 加锁
-* `unlock-keychain`: Unlock the specified keychain. 解锁
-
-* `set-keychain-settings`: Set settings for a keychain.
-* `set-keychain-password`: Set password for a keychain.
+* `set-keychain-settings`: Set settings for a keychain. 设置钥匙串配置
+* `set-keychain-password`: Set password for a keychain. 设置钥匙串密码
 
 * `show-keychain-info`: Show the settings for keychain.
-* `dump-keychain`: Dump the contents of one or more keychains.
-* `create-keypair`: Create an asymmetric key pair.
+* `dump-keychain`: Dump the contents of one or more keychains. 显示一个或多个钥匙串的内容
+* `create-keypair`: Create an asymmetric key pair. 创建非对称密钥对
 
-* `add-generic-password`: Add a generic password item.
-* `add-internet-password`: Add an internet password item.
-* `add-certificates`: Add certificates to a keychain.
-
-* `find-generic-password`: Find a generic password item.
-* `delete-generic-password`: Delete a generic password item.
+* `add-generic-password`: Add a generic password item. 向钥匙串中添加通用密码项
+* `find-generic-password`: Find a generic password item. 查找通用密码项
+* `delete-generic-password`: Delete a generic password item. 删除通用密码项
 * `set-generic-password-partition-list`: Set the partition list of a generic password item.
 
-* `find-internet-password`: Find an internet password item.
-* `delete-internet-password`: Delete an internet password item.
+* `add-internet-password`: Add an internet password item. 向钥匙串中添加网络密码项
+* `find-internet-password`: Find an internet password item. 查找网络密码项
+* `delete-internet-password`: Delete an internet password item. 删除网络密码项
 * `set-internet-password-partition-list`: Set the partition list of a internet password item.
 
 * `find-key`: Find keys in the keychain
 * `set-key-partition-list`: Set the partition list of a key.
 
-* `find-certificate`: Find a certificate item.
-* `find-identity`: Find an identity (certificate + private key).
+* `add-certificates`: Add certificates to a keychain. 向钥匙串种添加证书
+* `find-certificate`: Find a certificate item. 查找证书
+* `delete-certificate`: Delete a certificate from a keychain. 从钥匙串种删除证书
 
-* `delete-certificate`: Delete a certificate from a keychain.
+* `find-identity`: Find an identity (certificate + private key). 查找认证实体（证书+私钥）
 * `delete-identity`: Delete a certificate and its private key from a keychain.
-
 * `set-identity-preference`: Set the preferred identity to use for a service.
 * `get-identity-preference`: Get the preferred identity to use for a service.
 
 * `create-db`: Create a db using the DL.
+* `install-mds`: Install (or re-install) the MDS database. 安装/重装MDS 数据库
 
 * `export`: Export items from a keychain. 
 * `import`: Import items into a keychain. 
 
-* `cms`: Encode or decode CMS messages. 加密、解密 CMS 消息
+* `cms`: Encode or decode CMS messages. 编码或解码CMS信息（PKCS#7）
 
-* `install-mds`: Install (or re-install) the MDS database.
-
-* `add-trusted-cert`: Add trusted certificate(s).
-* `remove-trusted-cert`: Remove trusted certificate(s).
+* `add-trusted-cert`: Add trusted certificate(s). 添加可信证书（只包含公钥，无私钥）
+* `remove-trusted-cert`: Remove trusted certificate(s). 删除可信证书
+* `verify-cert`: Verify certificate(s). 验证证书
 
 * `dump-trust-settings`: Display contents of trust settings.
 * `user-trust-settings-enable`: Display or manipulate user-level trust settings.
@@ -66,10 +59,8 @@
 * `trust-settings-export`: Export trust settings.
 * `trust-settings-import`: Import trust settings.
 
-* `verify-cert`: Verify certificate(s).
-
-* `authorize`: Perform authorization operations.
-* `authorizationdb`: Make changes to the authorization policy database.
+* `authorize`: Perform authorization operations. 授权操作
+* `authorizationdb`: Make changes to the authorization policy database. 变更授权策略数据库
 
 * `execute-with-privileges`: Execute tool with privileges.
 * `leaks`: Run `/usr/bin/leaks` on this process.
@@ -79,6 +70,20 @@
 * `export-smartcard`: Export/display items from a smartcard.
 
 * `error`: Display a descriptive message for the given error code(s).
+
+## create-keychain
+
+```sh
+Usage: create-keychain [-P] [-p password] [keychains...]
+    -p  Use "password" as the password for the keychains being created
+    -P  Prompt the user for a password using the SecurityAgent
+Use of the -p option is insecure
+        Create keychains and add them to the search list.
+```
+
+```sh
+security create-keychain -p 1234 "${HOME}/Library/Keychains/acrchive.keychain-db"
+```
 
 ## default-keychain
 
@@ -114,15 +119,15 @@ security export -k newcert.keychain -t identities -f pkcs12 -o /tmp/mycerts.p12
 
 ```sh
 Usage: import inputfile [-k keychain] [-t type] [-f format] [-w] [-P passphrase] [options...]
-    -k  Target keychain to import into
-    -t  Type = pub|priv|session|cert|agg
+    -k  Target keychain to import into 指定要导入项目到哪个钥匙串中
+    -t  Type = pub|priv|session|cert|agg 指定要导入的项目类型
     -f  Format = openssl|openssh1|openssh2|bsafe|raw|pkcs7|pkcs8|pkcs12|netscape|pemseq
-    -w  Specify that private keys are wrapped and must be unwrapped on import
-    -x  Specify that private keys are non-extractable after being imported
-    -P  Specify wrapping passphrase immediately (default is secure passphrase via GUI)
-    -a  Specify name and value of extended attribute (can be used multiple times)
-    -A  Allow any application to access the imported key without warning (insecure, not recommended!)
-    -T  Specify an application which may access the imported key (multiple -T options are allowed)
+    -w  Specify that private keys are wrapped and must be unwrapped on import 标明包装了私钥，导入时要解开
+    -x  Specify that private keys are non-extractable after being imported 标明导入后，私钥无法提取私钥
+    -P  Specify wrapping passphrase immediately (default is secure passphrase via GUI) 直接输入导入项目密码，默认会使用GUI输入密码
+    -a  Specify name and value of extended attribute (can be used multiple times) 指定键值对属性，可以重复出现多次
+    -A  Allow any application to access the imported key without warning (insecure, not recommended!) 所有程序可以使用导入的项目
+    -T  Specify an application which may access the imported key (multiple -T options are allowed) 指定可以使用导入项目的程序，可以重复出现多次
 Use of the -P option is insecure
 
         Import items into a keychain.
@@ -137,6 +142,15 @@ security import /tmp/mycerts.p12 -f pkcs12 -k newcert.keychain
 ## find-identity
 
 ```sh
+Usage: find-identity [-p policy] [-s string] [-v] [keychain...]
+    -p  Specify policy to evaluate (multiple -p options are allowed)Supported policies: basic, ssl-client, ssl-server, smime, eap,ipsec, ichat, codesigning, sys-default, sys-kerberos-kdc, macappstore, appleID
+    -s  Specify optional policy-specific string (e.g. DNS hostname for SSL,or RFC822 email address for S/MIME)
+    -v  Show valid identities only (default is to show all identities)
+If no keychains are specified to search, the default search list is used.
+        Find an identity (certificate + private key).
+```
+
+```sh
 # 发现可用的证书
 security find-identity -p codesigning
 #Policy: Code Signing
@@ -147,6 +161,23 @@ security find-identity -p codesigning
 #  4) DA69E38A76604B5D17DE7B2C336F52DE50199E2E "iPhone Developer: xianghua zhou (F4EHA96CDG)" (CSSMERR_TP_CERT_EXPIRED)
 #  5) E6EC078D98BF879C5C1AFBC0DC23656EF18D978C "iPhone Developer: xianghua zhou (F4EHA96CDG)" (CSSMERR_TP_CERT_EXPIRED)
 ```
+
+## delete-identity
+
+```sh
+Usage: delete-identity [-c name] [-Z hash] [-t] [keychain...]
+    -c  Specify certificate to delete by its common name
+    -Z  Specify certificate to delete by its SHA-256 (or SHA-1) hash value
+    -t  Also delete user trust settings for this identity certificate
+The identity to be deleted must be uniquely specified either by a string found in its common name, or by its SHA-256 (or SHA-1) hash.
+If no keychains are specified to search, the default search list is used.
+        Delete an identity (certificate + private key) from a keychain.
+```
+
+* `keychain` :本地数据库DB，用于存储用户信息。
+* `.certSigningRequest` :本地公钥信息。
+* `.cer` :公钥信息
+* `.p12` :公钥+私钥
 
 ## cms 
 
@@ -208,7 +239,13 @@ security  cms -D -i match_AppStore_comfunmore.mobileprovision > a.xml
 
 ## unlock-keychain
 
-* `unlock-keychain [-hu] [-p password] [keychain]`
+```sh
+Usage: unlock-keychain [-u] [-p password] [keychain]
+    -p  Use "password" as the password to unlock the keychain
+    -u  Do not use the password
+Use of the -p option is insecure
+        Unlock the specified keychain.
+```
 
 ```sh
 security list-keychains
@@ -637,6 +674,21 @@ security authorize -ud my-right
 
 # Authorizing a right and passing it to another command as a way to add authorization to shell scripts.
 security -q authorize -uew my-right | security -q authorize -i my-right
+```
+
+## list-keychains
+
+```sh
+Usage: list-keychains [-d user|system|common|dynamic] [-s [keychain...]]
+    -d  Use the specified preference domain
+    -s  Set the search list to the specified keychains
+With no parameters, display the search list.
+        Display or manipulate the keychain search list.
+```
+
+```sh
+"/Users/shanliu/Library/Keychains/login.keychain-db"
+"/Library/Keychains/System.keychain"
 ```
 
 # 文件
