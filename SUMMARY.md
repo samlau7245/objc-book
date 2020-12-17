@@ -5,6 +5,7 @@
 ## 技能树
 
 * [教程](tutorial/README.md)
+	* [变量、常量](tutorial/variable.md)
 	* [OC对象本质](tutorial/oc_theory.md)
 	* [App Store Connect](tutorial/app_store.md)
 	* [NFC](tutorial/nfc.md)
@@ -12,6 +13,7 @@
 	* [协议(Protocol)](tutorial/protocol.md)
 	* [分类(Category)](tutorial/category.md)
 	* [LLVM](tutorial/LLVM.md)
+	* [注释说明](tutorial/annotation.md)
 * [语法](Grammar/README.md)
 	* [枚举](/Grammar/enum.md)
 	* [字符串](Grammar/String.md)
