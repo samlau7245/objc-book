@@ -8,8 +8,9 @@
 
 ```objc
 #import <Foundation/Foundation.h>
-
+// 没有返回值
 typedef void(^TestBlock)(NSInteger arg1,NSString * _Nullable arg2);
+// 有返回值
 typedef NSInteger(^TestReturnBlock)(NSInteger arg1,NSString * _Nullable arg2);
 
 @interface Manager : NSObject
