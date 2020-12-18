@@ -1,5 +1,30 @@
+# 基础
 
-[1601-Category的本质01-基本使用](https://www.bilibili.com/video/BV1ae411s7qo?p=181)
+## 给分类添加变量
+
+* `.h`文件
+
+```objc
+@interface NSButton (WebCache)
+@property (nonatomic, strong, readonly, nullable) NSURL *sd_currentImageURL;
+@end
+
+```
+
+* `.m`文件
+
+```objc
+#import "objc/runtime.h"
+@implementation NSButton (WebCache)
+- (NSURL *)sd_currentImageURL {
+    return objc_getAssociatedObject(self, @selector(sd_currentImageURL));
+}
+- (void)setSd_currentImageURL:(NSURL *)sd_currentImageURL {
+    objc_setAssociatedObject(self, @selector(sd_currentImageURL), sd_currentImageURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+@end
+```
+
 
 # Category分类本质
 
@@ -23,3 +48,4 @@
 
 # 内存分配
 
+* [1601-Category的本质01-基本使用](https://www.bilibili.com/video/BV1ae411s7qo?p=181)

@@ -14,6 +14,8 @@
 	* [分类(Category)](tutorial/category.md)
 	* [LLVM](tutorial/LLVM.md)
 	* [注释说明](tutorial/annotation.md)
+	* [宏的使用](tutorial/macro.md)
+	* [block](tutorial/block.md)
 * [语法](Grammar/README.md)
 	* [枚举](/Grammar/enum.md)
 	* [字符串](Grammar/String.md)
