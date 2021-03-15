@@ -19,8 +19,8 @@
 | `-scheme NAME` | 编译计划名称 |
 | `-configuration NAME` | 为构建每一个目标使用`build`配置名称 |
 | `-xcconfig PATH` | 在`PATH`作为替代应用文件中定义的构建设置 |
-| `-arch ARCH` | 指定 指令集|
-| `-sdk SDK` | 使用指定的SDK编译项目 |
+| `-arch ARCH` | 指定 指令集 `arm64 armv7 armv7s`|
+| `-sdk SDK` | 使用指定的SDK编译项目 `-sdk iphoneos`|
 | `-toolchain NAME` | 使用identifier或name指定的toolchain |
 | `-destination DESTINATIONSPECIFIER` | |
 | `-destination-timeout TIMEOUT` | |
@@ -641,6 +641,263 @@ clean #
 
 # 资料
 * [Xcodebuild从入门到精通](https://www.hualong.me/2018/03/14/Xcodebuild/)
+
+
+`xcodebuild -list -project SEGRongHui.xcodeproj`
+
+```sh
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -list -project SEGRongHui.xcodeproj
+
+Information about project "SEGRongHui":
+    Targets:
+        SEGRongHui
+
+    Build Configurations:
+        Debug
+        Release
+
+    If no build configuration is specified and -scheme is not passed then "Release" is used.
+
+    Schemes:
+        SEGRongHu
+```
+
+`xcodebuild -list -workspace SEGRongHui.xcworkspace `
+
+```sh
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -list -workspace SEGRongHui.xcworkspace
+
+Information about workspace "SEGRongHui":
+    Schemes:
+        AFNetworking
+        AlipaySDK-iOS
+        BaiduMapKit
+        BMKLocationKit
+        Commom
+        CommonMediator
+        commonPay
+        commonThirds
+        GDTMobSDK
+        JCore
+        JPush
+        Pods-SEGRongHui
+        ReactiveObjC
+        SEGActivity
+        SEGBill
+        SEGCommunityBussiness
+        SEGCommunitySocial
+        SEGIntelligentHardware
+        SEGMenberPoints
+        SEGMenus
+        SEGModel
+        SEGOldModules
+        SEGPlatform
+        SEGPropertyBaseService
+        SEGPropertyGrowthService
+        SEGRongHui
+        SEGStandard
+        SEGViewModel
+        SEGWebView
+        SEGWebView-SEGWebView
+        SEGWorkOrder
+        SVProgressHUD
+        Toast
+        UMCCommon
+        WechatOpenSDK
+        YZAppSDK
+```
+
+`xcodebuild -showsdks [-json]`
+
+```sh
+iOS SDKs:
+  iOS 14.1                        -sdk iphoneos14.1
+
+iOS Simulator SDKs:
+  Simulator - iOS 14.1            -sdk iphonesimulator14.1
+
+macOS SDKs:
+  DriverKit 19.0                  -sdk driverkit.macosx19.0
+  macOS 10.15                     -sdk macosx10.15
+
+tvOS SDKs:
+  tvOS 14.0                       -sdk appletvos14.0
+
+tvOS Simulator SDKs:
+  Simulator - tvOS 14.0           -sdk appletvsimulator14.0
+
+watchOS SDKs:
+  watchOS 7.0                     -sdk watchos7.0
+
+watchOS Simulator SDKs:
+  Simulator - watchOS 7.0         -sdk watchsimulator7.0
+```
+
+`xcodebuild clean`
+
+```sh
+xcodebuild build \
+-sdk iphoneos \
+-workspace SEGRongHui.xcworkspace \
+-scheme SEGRongHui \
+-configuration Debug \
+-allowProvisioningUpdates \
+OBJROOT=$(PWD)/build \
+SYMROOT=$(PWD)/build \
+clean \
+ONLY_ACTIVE_ARCH=YES TARGETED_DEVICE_FAMILY=1 
+```
+
+./builds
+
+xcodebuild 
+-archivePath "$ARCHIVE_PATH" 
+-project "$(pwd)/repo/quantum_unity/Build/$PLATFORM/Unity-iPhone.xcodeproj" 
+-sdk iphoneos 
+-allowProvisioningUpdates 
+-scheme 'Unity-iPhone' 
+-configuration 'Release Development' 
+archive DEVELOPMENT_TEAM=$TEAMID
+
+
+
+xcodebuild -project SEGRongHui.xcodeproj -target SEGRongHui -target Pods  -configuration Debug
+
+```sh
+xcodebuild \
+[-project name.xcodeproj] \
+[[-target targetname] ... | -alltargets] \
+[-configuration configurationname] \
+[-sdk [sdkfullpath | sdkname]] \
+[action ...] \
+[buildsetting=value ...] \
+[-userdefault=value ...]
+
+xcodebuild \
+[-project name.xcodeproj] \
+-scheme schemename [[-destination destinationspecifier] ...] \
+[-destination-timeout value] \
+[-configuration configurationname] \
+[-sdk [sdkfullpath | sdkname]] \
+[action ...] \
+[buildsetting=value ...] \
+[-userdefault=value ...]
+
+xcodebuild \
+-workspace name.xcworkspace \
+-scheme schemename [[-destination destinationspecifier] ...] \
+[-destination-timeout value] \
+[-configuration configurationname] \
+[-sdk [sdkfullpath | sdkname]] \
+[action ...] \
+[buildsetting=value ...] \
+[-userdefault=value ...]
+```
+
+SEGRongHui.xcodeproj
+SEGRongHui.xcworkspace
+SEGRongHui
+
+xcodebuild -project SEGRongHui.xcodeproj -alltargets -configuration Debug build OBJROOT=$(PWD)/build SYMROOT=$(PWD)/build
+
+```sh
+xcodebuild clean build \
+-sdk iphoneos \
+-workspace SEGRongHui.xcworkspace \
+-scheme SEGRongHui \
+-configuration Debug \
+-allowProvisioningUpdates \
+OBJROOT=$(PWD)/build \
+SYMROOT=$(PWD)/build \
+-destination 'generic/platform=iOS' \
+```
+
+xcodebuild archive -archivePath $(PWD)/archives -workspace SEGRongHui.xcworkspace -scheme SEGRongHui -configuration Debug -sdk iphoneos
+
+xcodebuild -exportArchive -archivePath archives.xcarchive -exportPath $(PWD)/ipas ExportDestination -exportOptionsPlist 'ExportOptions.plist'
+
+xcodebuild  -exportArchive
+-archivePath <archivePath> #.archive文件的全路径 eg: .../.../XXX.xcarchive
+-exportPath <exportPath> #ipa文件导出路径
+-exportOptionsPlist <exportOptionsPlistPath> #exportOptionsPlist文件全路径 eg: .../.../XXX.plist
+
+xcodebuild -exportArchive -archivePath MyMobileApp.xcarchive -exportPath ExportDestination -exportOptionsPlist 'export.plist'  
+xcodebuild -exportArchive -archivePath xcarchivepath -exportPath destinationpath -exportOptionsPlist path
+
+
+-destination 'generic/platform=iOS'
+-sdk iphoneos
+-configuration Release
+
+--configuration = Pods.xcconfig
+
+
+```sh
+xcodebuild build \
+-sdk iphoneos \
+-workspace SEGRongHui.xcworkspace \
+-scheme SEGRongHui \
+-configuration Release \
+-allowProvisioningUpdates \
+OBJROOT=$( PWD )/build \
+SYMROOT=$( PWD )/build \
+-destination 'generic/platform=iOS' \
+-quiet 
+```
+
+* `-quiet` 忽略 warnings 打印日志。
+* -arch arm64  -arch armv7
+
+```sh
+xcodebuild -exportArchive -archivePath archive文件的地址.xcarchive 
+ -exportPath 导出的文件夹地址 \
+ -exportOptionsPlist exprotOptionsPlist.plist \
+ CODE_SIGN_IDENTITY=证书 \
+ PROVISIONING_PROFILE=描述文件UUID  \
+```
+
+/Users/shanliu/Library/Developer/Xcode/DerivedData/SEGRongHui-atyahnzpxkckgoadplauiehyqlkh
+
+```sh
+xcrun -sdk iphoneos -v PackageApplication ./build/Release-iphoneos/$(target|scheme).app
+```
+
+```
+CODE_SIGN_IDENTITY = "iPhone Distribution: companyname (9xxxxxxx9A)"
+PROVISIONING_PROFILE = "xxxxx-xxxx-xxx-xxxx-xxxxxxxxx"
+CONFIGURATION = "Release"
+SDK = "iphoneos"
+
+USER_KEY = "15d6xxxxxxxxxxxxxxxxxx" 是蒲公英开放 API 的密钥
+API_KEY = "efxxxxxxxxxxxxxxxxxxxx" 是蒲公英开放 API 的密钥
+```
+
+CODE_SIGN_IDENTITY="iPhone Distribution: xxxxxxx"
+
+* Xcode -> Preferences -> 选中申请开发者证书的 Apple ID -> 选中开发者证书 -> View Details… -> 根据 Provisioning Profiles 的名字选中打包所需的 mobileprovision 文件 -> 右键菜单 -> Show in Finder -> 找到该文件后，除了该文件后缀名的字符串就是 PROVISIONING_PROFILE 字段的内容。
+
+* [Building from the Command Line with Xcode FAQ](https://developer.apple.com/library/archive/technotes/tn2339/_index.html)
+
+
+
+
+Manual
+No signing certificate "iOS Development" found
+
+```
+Missing private key for signing certificate.
+Failed to locate the private key matching certificate "Apple Development: SHAN LAU (DP3HXX5B36)" in the keychain. To sign with this signing certificate, install its private key in your keychain. If you don't have the private key, select a different signing certificate for CODE_SIGN_IDENTITY in the build settings editor.
+```
+
+1. 钥匙串 -> `Apple Development: SHAN LAU (DP3HXX5B36)` -> 始终信任
+2. `Repair Trust Settings`
+
+
+
+
+
 
 
 

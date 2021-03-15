@@ -547,6 +547,10 @@ Usage: add-trusted-cert  [<options>] [certFile]
 ```sh
 security add-trusted-cert /tmp/cert.der
 security add-trusted-cert -d .tmp/cert.der
+security add-trusted-cert -d -r trustAsRoot -k /Library/Keychains/System.keychain
+
+security add-trusted-cert -d -r trustAsRoot -p 123 -k "/Library/Keychains/System.keychain" "/private/tmp/certs/certname.cer"
+security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/private/tmp/certs/certname.cer" srm "/private/tmp/certs/certname.cer"
 ```
 
 ## remove-trusted-cert
