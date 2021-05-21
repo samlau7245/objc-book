@@ -9,8 +9,6 @@
     "plugins":[
         "simple-page-toc",
         "anchor-navigation-ex",
-        "-lunr",
-        "-search",
         "search-plus",
         "advanced-emoji",
         "splitter",
@@ -23,7 +21,6 @@
         "include-codeblock",
         "ace",
         "favicon",
-        "todo",
         "emphasize",
         "disqus",
         "-chapter-fold"
